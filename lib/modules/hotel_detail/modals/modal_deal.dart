@@ -1,0 +1,165 @@
+part of '../index.dart';
+
+final class ModalDeal extends StatelessWidget {
+  const ModalDeal({super.key, required this.paddingTop, required this.deal});
+
+  final double paddingTop;
+  final DealOpening deal;
+
+  @override
+  Widget build(BuildContext context) {
+    final label = AppConstants.shared.label;
+    return Column(
+      children: [
+        SizedBox(height: paddingTop),
+        HeaderModal(label: label.sellingDeal),
+        Expanded(
+          child: ListView(
+            physics: const ClampingScrollPhysics(),
+            shrinkWrap: true,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Text(
+                      deal.tenLoaiGia,
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.orange[600],
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const Divider(height: 30),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          label.startingPrice,
+                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                        ),
+                        MoneyWidget(money: deal.minRateVnd),
+                      ],
+                    ),
+                    const Divider(height: 30),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          label.sellingTime,
+                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              Utils.time.format(date: deal.thoiGianBanStart),
+                              style: const TextStyle(fontSize: 16),
+                            ),
+                            Text(
+                              Utils.time.format(date: deal.thoiGianBanEnd),
+                              style: const TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          label.usingTime,
+                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              Utils.time.format(date: deal.thoiGianSuDungStart),
+                              style: const TextStyle(fontSize: 16),
+                            ),
+                            Text(
+                              Utils.time.format(date: deal.thoiGianSuDungEnd),
+                              style: const TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    const Divider(height: 30),
+                    ListView.separated(
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: deal.roomIncludes.length,
+                      shrinkWrap: true,
+                      separatorBuilder: (_, __) {
+                        return const SizedBox(height: 10);
+                      },
+                      itemBuilder: (_, int index) {
+                        final item = deal.roomIncludes[index];
+                        return Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Padding(
+                              padding: EdgeInsets.only(top: 8),
+                              child: Icon(Icons.circle, size: 7),
+                            ),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              child: Text(
+                                item.includeName,
+                                style: const TextStyle(fontSize: 16),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    ),
+                    const Divider(height: 30),
+                    Html(
+                      shrinkWrap: true,
+                      data: deal.luuYChinhSach,
+                      style: {
+                        '*': Style(
+                          fontSize: FontSize(16),
+                          padding: HtmlPaddings.zero,
+                          margin: Margins.zero,
+                        )
+                      },
+                    ),
+                    const Divider(height: 30),
+                    Html(
+                      shrinkWrap: true,
+                      data: deal.cancellationPolicy,
+                      style: {
+                        '*': Style(
+                          fontSize: FontSize(16),
+                          padding: HtmlPaddings.zero,
+                          margin: Margins.zero,
+                        )
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        ButtonFilledWidget(
+          margin: const EdgeInsets.all(20),
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: Center(
+            child: Text(
+              label.watchDetailPrice,
+              style: const TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
