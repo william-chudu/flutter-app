@@ -7,7 +7,7 @@ import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
 import 'package:chudu24/modules/bootstrap/bloc/authentication/authentication_bloc.dart';
 import 'package:chudu24/modules/bootstrap/bloc/language/language_bloc.dart';
-import 'package:chudu24/modules/bootstrap/models/param_login.dart';
+import 'package:chudu24/modules/bootstrap/models/param_sign_in.dart';
 import 'package:chudu24/utils/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,8 +29,8 @@ final class Setting extends StatefulWidget {
 }
 
 class _SettingState extends State<Setting> {
-  final accountController = TextEditingController();
-  final passwordController = TextEditingController();
+  final accountController = TextEditingController(text: '0328381259');
+  final passwordController = TextEditingController(text: '123123');
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final signInStream = StreamController<Progress>();
 
@@ -45,14 +45,14 @@ class _SettingState extends State<Setting> {
 
     signInStream.sink.add(Progress.loading);
 
-    context.read<AuthenticationBloc>().add(SignInEvent(
-          param: ParamLogin(
-            username: accountController.text,
-            password:
-                Utils.string.genMd5('${passwordController.text}XbKT\$Qa6MIAH8z0AxhbJNtLj9U7RQ%Ro'),
-            hash: Utils.string.genMd5('match24hotelchudu${accountController.text}'),
+    context.read<AuthenticationBloc>().add(
+          SignInEvent(
+            param: ParamSignIn(
+              username: accountController.text,
+              password: passwordController.text,
+            ),
           ),
-        ));
+        );
   }
 
   @override
@@ -73,7 +73,7 @@ class _SettingState extends State<Setting> {
         ),
         centerTitle: true,
         actions: [
-          IconShoppingCart(color: AppConstants.accent),
+          const IconShoppingCart(color: AppConstants.accent),
           BlocBuilder<LanguageBloc, LanguageState>(
             builder: (context, state) {
               return Padding(

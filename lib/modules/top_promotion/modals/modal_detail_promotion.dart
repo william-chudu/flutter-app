@@ -108,7 +108,7 @@ class _ModalDetailPromotionState extends State<ModalDetailPromotion> {
                                         TextSpan(text: label.priceJustFrom),
                                         TextSpan(
                                           text: ' ${Utils.money.money(info.minRateVnd)}.000 đ',
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             fontWeight: FontWeight.bold,
                                             color: AppConstants.accent,
                                             fontSize: 18,
@@ -123,7 +123,7 @@ class _ModalDetailPromotionState extends State<ModalDetailPromotion> {
                                   : TextSpan(
                                       children: [
                                         TextSpan(text: label.call),
-                                        TextSpan(
+                                        const TextSpan(
                                           text: ' 0375656505 ',
                                           style: TextStyle(
                                             fontWeight: FontWeight.bold,

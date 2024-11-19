@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:chudu24/constants/url_path.dart';
 import 'package:chudu24/enum/index.dart';
 import 'package:chudu24/extensions/exception.dart';
-import 'package:chudu24/modules/bootstrap/models/param_login.dart';
+import 'package:chudu24/modules/bootstrap/models/param_sign_in.dart';
 import 'package:chudu24/request/index.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -30,7 +30,10 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
       try {
         emit(const AuthenticationLoading());
         await Future.delayed(const Duration(seconds: 0));
-        final data = await ApiClient.shared.mPost(UrlPath.shared.signIn, event.param.toJson());
+        final param = await event.param.toJson();
+        print(jsonEncode(param));
+        return;
+        final data = await ApiClient.shared.mPost(UrlPath.shared.signIn, param);
         if (data.statusCode != 200) {
           emit(const AuthenticationError());
           return;

@@ -40,7 +40,7 @@ final class IconShoppingCart extends StatelessWidget {
                 right: 10,
                 child: Container(
                   padding: const EdgeInsets.all(3),
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: AppConstants.accent,
                   ),

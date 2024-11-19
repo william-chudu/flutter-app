@@ -42,13 +42,13 @@ class HeaderHome extends StatelessWidget {
                 AppConstants.link.logoApp,
                 height: 40,
               ),
-              Row(
+              const Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(Icons.phone, color: AppConstants.accent, size: 22),
-                  const SizedBox(width: 5),
-                  const Text(
+                  SizedBox(width: 5),
+                  Text(
                     '0375656505',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),

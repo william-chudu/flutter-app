@@ -97,7 +97,7 @@ final class ItemRoomBoxClose extends StatelessWidget {
                   const Spacer(),
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                    decoration: BoxDecoration(color: AppConstants.accent),
+                    decoration: const BoxDecoration(color: AppConstants.accent),
                     child: Row(
                       children: [
                         Expanded(

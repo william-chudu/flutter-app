@@ -59,7 +59,7 @@ final class CartHeader extends StatelessWidget {
                 onPressed: () {
                   //
                 },
-                icon: Icon(Icons.delete, color: AppConstants.accent),
+                icon: const Icon(Icons.delete, color: AppConstants.accent),
               )
             ],
           )

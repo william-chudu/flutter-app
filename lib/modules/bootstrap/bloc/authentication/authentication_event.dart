@@ -9,7 +9,7 @@ final class InitializeAuthentication extends AuthenticationEvent {
 }
 
 final class SignInEvent extends AuthenticationEvent {
-  final ParamLogin param;
+  final ParamSignIn param;
 
   const SignInEvent({required this.param});
 }

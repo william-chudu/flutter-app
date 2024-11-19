@@ -16,6 +16,7 @@ final class Utils {
   static const string = StringUtil();
   static const device = DeviceInfo();
   static const toast = ToastNotification();
+
   static Widget? w(Progress status) {
     if (status == Progress.initial || status == Progress.loading) {
       return const LoadingWidget();

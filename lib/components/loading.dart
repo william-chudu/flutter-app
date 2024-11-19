@@ -9,8 +9,8 @@ class LoadingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: label == null
-          ? Padding(
-              padding: const EdgeInsets.all(10.0),
+          ? const Padding(
+              padding: EdgeInsets.all(10.0),
               child: SizedBox(
                 width: 20,
                 height: 20,
@@ -32,7 +32,7 @@ class LoadingWidget extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 5),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                   height: 20,
                   child: CircularProgressIndicator(

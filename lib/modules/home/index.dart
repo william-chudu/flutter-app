@@ -1,3 +1,4 @@
+import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
 import 'package:chudu24/modules/bootstrap/bloc/app_search/app_search_bloc.dart';
 import 'package:chudu24/modules/bootstrap/models/address_search.dart';
@@ -71,6 +72,7 @@ final class HomeScreen extends StatelessWidget {
             const Divider(height: 0),
             Expanded(
               child: ListView(
+                key: PageStorageKey(AppConstants.shared.label.home),
                 physics: const ClampingScrollPhysics(),
                 children: [
                   const BoxSearch(),

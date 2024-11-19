@@ -35,7 +35,6 @@ final class ListOfRooms extends StatelessWidget {
           if (hotelIdInt == null) {
             return const SliverToBoxAdapter(child: SizedBox(height: 20));
           }
-          void addToCart(String roomTypeId) {}
           return BlocBuilder<HotelRoomRateBloc, HotelRoomRateState>(
             builder: (context, state) {
               if (state.status == Progress.error) {

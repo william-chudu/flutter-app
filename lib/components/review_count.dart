@@ -46,7 +46,7 @@ class ReviewCount extends StatelessWidget {
               Container(
                 width: 60,
                 height: 60,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: AppConstants.accent,
                 ),

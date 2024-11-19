@@ -27,7 +27,6 @@ class TopSale extends StatelessWidget {
           LabelPrior(
             label: label.topPromotion,
             onTapSeemore: () {
-              print(TopPromotion.routeName);
               Navigator.of(context).pushNamed(TopPromotion.routeName);
             },
           ),

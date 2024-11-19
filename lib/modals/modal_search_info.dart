@@ -174,7 +174,7 @@ class _ModalSearchInfoState extends State<ModalSearchInfo> {
                           snapshot.data == Progress.error) {
                         return const SizedBox.shrink();
                       } else {
-                        return SizedBox(
+                        return const SizedBox(
                           height: 15,
                           width: 15,
                           child: CircularProgressIndicator(
