@@ -11,6 +11,7 @@ import 'package:chudu24/modules/bootstrap/bloc/authentication/authentication_blo
 import 'package:chudu24/modules/bootstrap/bloc/language/language_bloc.dart';
 import 'package:chudu24/modules/bootstrap/models/param_sign_in.dart';
 import 'package:chudu24/modules/list_point/index.dart';
+import 'package:chudu24/modules/notifications/index.dart';
 import 'package:chudu24/modules/setting/bloc/member_policy/member_policy_bloc.dart';
 import 'package:chudu24/utils/index.dart';
 import 'package:flutter/material.dart';

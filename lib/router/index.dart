@@ -8,6 +8,7 @@ import 'package:chudu24/modules/hotel_review/index.dart';
 import 'package:chudu24/modules/international_item/index.dart';
 import 'package:chudu24/modules/list_point/index.dart';
 import 'package:chudu24/modules/notfound/index.dart';
+import 'package:chudu24/modules/notifications/index.dart';
 import 'package:chudu24/modules/search_info/index.dart';
 import 'package:chudu24/modules/setting/index.dart';
 import 'package:chudu24/modules/shopping_cart/index.dart';
@@ -50,6 +51,8 @@ class AppRouter {
         return ShoppingCart.route();
       case ListPoint.routeName:
         return ListPoint.route();
+      case Notifications.routeName:
+        return Notifications.route();
       case Webview.routeName:
         return Webview.route(routeSettings);
       default:

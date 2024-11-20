@@ -74,7 +74,12 @@ final class Profile extends StatelessWidget {
                 },
               ),
               ItemNavigation(title: label.myReviews),
-              ItemNavigation(title: label.promotions),
+              ItemNavigation(
+                title: label.promotions,
+                onTap: () {
+                  Navigator.of(context).pushNamed(Notifications.routeName);
+                },
+              ),
               ItemNavigation(title: label.favoriteHotels),
               ItemNavigation(
                 title: label.memberPolicy,
