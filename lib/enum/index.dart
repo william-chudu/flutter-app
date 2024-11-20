@@ -4,6 +4,9 @@ enum Language { vn, en }
 
 final class ConstantType {
   const ConstantType();
+  static const language = 'Language';
+  static const memshipAccountProfile = 'MemShipAccountProfileAdapter';
+  static const authernticatedUser = 'AuthernticatedUserAdapter';
   static const hotel = 'CartHotelAdapter';
   static const city = 'City';
   static const ticket = 'Ticket';

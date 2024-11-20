@@ -113,6 +113,18 @@ final class LanguageForApp {
     shoppingCart: 'Giỏ hàng',
     selectAll: 'Chọn tất cả',
     delete: 'Xoá',
+    company: 'Doanh nghiệp',
+    personal: 'Cá nhân',
+    accountInfo: 'Thông tin tài khoản',
+    favoriteHotels: 'Khách sạn yêu thích',
+    level: 'Hạng',
+    memberPolicy: 'Quy chế thành viên',
+    myReviews: 'Đánh giá của tôi',
+    point: 'Điểm thưởng',
+    promotions: 'Thông báo ưu đãi',
+    services: 'Danh sách dịch vụ',
+    accountType: 'Loại tài khoản',
+    signOut: 'Đăng xuất',
   );
 
   final enLabel = const LanguageLabel(
@@ -225,6 +237,18 @@ final class LanguageForApp {
     shoppingCart: 'Shopping cart',
     selectAll: 'Select all',
     delete: 'Delete',
+    company: 'Enterprise',
+    personal: 'Personal',
+    accountInfo: 'Account Info',
+    favoriteHotels: 'Favorite hotels',
+    level: 'Level',
+    memberPolicy: "Member's policy",
+    myReviews: 'My reviews',
+    point: 'Point',
+    promotions: 'Promotions',
+    services: 'Services',
+    accountType: "Account's type",
+    signOut: 'Sign Out',
   );
 }
 
@@ -338,6 +362,18 @@ class LanguageLabel {
   final String shoppingCart;
   final String selectAll;
   final String delete;
+  final String company;
+  final String personal;
+  final String point;
+  final String level;
+  final String accountInfo;
+  final String services;
+  final String myReviews;
+  final String promotions;
+  final String favoriteHotels;
+  final String memberPolicy;
+  final String accountType;
+  final String signOut;
 
   const LanguageLabel({
     required this.home,
@@ -449,6 +485,18 @@ class LanguageLabel {
     required this.shoppingCart,
     required this.selectAll,
     required this.delete,
+    required this.personal,
+    required this.company,
+    required this.accountInfo,
+    required this.favoriteHotels,
+    required this.level,
+    required this.memberPolicy,
+    required this.myReviews,
+    required this.point,
+    required this.promotions,
+    required this.services,
+    required this.accountType,
+    required this.signOut,
   });
 
   Map<String, String> get jsonOrder => {
@@ -458,5 +506,10 @@ class LanguageLabel {
         'standard51star': standard51star,
         'standard15star': standard15star,
         'highestRating': highestRating,
+      };
+
+  Map<String, String> get jsonAccountType => {
+        'company': company,
+        'personal': personal,
       };
 }

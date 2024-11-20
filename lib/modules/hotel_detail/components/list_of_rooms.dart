@@ -147,23 +147,22 @@ final class _BoxConsultation extends StatelessWidget {
                   ],
                 ),
               ),
-              hasConsultation
-                  ? ButtonFilledWidget(
-                      color: Colors.blue[800],
-                      radius: 0,
-                      margin: const EdgeInsets.only(top: 20),
-                      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-                      child: Text(
-                        labelSubmit.toUpperCase(),
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                    )
-                  : const SizedBox.shrink(),
+              if (hasConsultation)
+                ButtonFilledWidget(
+                  color: Colors.blue[800],
+                  radius: 0,
+                  margin: const EdgeInsets.only(top: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                  child: Text(
+                    labelSubmit.toUpperCase(),
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
             ],
           ),
         ),

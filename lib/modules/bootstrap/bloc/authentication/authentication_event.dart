@@ -13,3 +13,7 @@ final class SignInEvent extends AuthenticationEvent {
 
   const SignInEvent({required this.param});
 }
+
+final class SignOutEvent extends AuthenticationEvent {
+  const SignOutEvent();
+}

@@ -96,31 +96,30 @@ class _ImageReviewState extends State<ImageReview> {
     return Column(
       mainAxisSize: MainAxisSize.max,
       children: [
-        widget.hasAppbar
-            ? const SizedBox.shrink()
-            : SizedBox(
-                height: widget.paddingTop,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+        if (widget.hasAppbar)
+          SizedBox(
+            height: widget.paddingTop,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Column(
                   children: [
-                    Column(
-                      children: [
-                        const SizedBox(height: kToolbarHeight),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: const Icon(
-                            IconData(0x274C),
-                            size: 20,
-                          ),
-                        ),
-                      ],
+                    const SizedBox(height: kToolbarHeight),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Icon(
+                        IconData(0x274C),
+                        size: 20,
+                      ),
                     ),
-                    const SizedBox(width: 20),
                   ],
                 ),
-              ),
+                const SizedBox(width: 20),
+              ],
+            ),
+          ),
         Expanded(
           child: Stack(
             children: [

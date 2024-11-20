@@ -91,9 +91,7 @@ final class ItemRoomBoxClose extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  room.minRateLoaiPhong > 0
-                      ? MoneyWidget(money: room.minRateLoaiPhong)
-                      : const SizedBox.shrink(),
+                  if (room.minRateLoaiPhong > 0) MoneyWidget(money: room.minRateLoaiPhong),
                   const Spacer(),
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),

@@ -72,7 +72,6 @@ final class HomeScreen extends StatelessWidget {
             const Divider(height: 0),
             Expanded(
               child: ListView(
-                key: PageStorageKey(AppConstants.shared.label.home),
                 physics: const ClampingScrollPhysics(),
                 children: [
                   const BoxSearch(),

@@ -37,7 +37,7 @@ final class IconShoppingCart extends StatelessWidget {
               }
               return Positioned(
                 top: 0,
-                right: 10,
+                right: 15,
                 child: Container(
                   padding: const EdgeInsets.all(3),
                   decoration: const BoxDecoration(

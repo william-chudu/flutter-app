@@ -28,31 +28,29 @@ final class LabelPrior extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            detail != null
-                ? Text(
-                    detail ?? '',
-                    style: const TextStyle(color: Colors.black54, fontSize: 16),
-                  )
-                : const SizedBox.shrink(),
+            if (detail != null)
+              Text(
+                detail ?? '',
+                style: const TextStyle(color: Colors.black54, fontSize: 16),
+              ),
           ],
         ),
-        onTapSeemore != null
-            ? TextButton(
-                onPressed: onTapSeemore,
-                style: const ButtonStyle(
-                  enableFeedback: true,
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                ),
-                child: Text(
-                  '${AppConstants.shared.label.seemore} >',
-                  style: const TextStyle(
-                    fontSize: 16,
-                    color: Colors.blueAccent,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              )
-            : const SizedBox.shrink(),
+        if (onTapSeemore != null)
+          TextButton(
+            onPressed: onTapSeemore,
+            style: const ButtonStyle(
+              enableFeedback: true,
+              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            ),
+            child: Text(
+              '${AppConstants.shared.label.seemore} >',
+              style: const TextStyle(
+                fontSize: 16,
+                color: Colors.blueAccent,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
       ],
     );
   }

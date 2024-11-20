@@ -15,77 +15,76 @@ final class OpeningDeal extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: heightFromTop),
-            deals.isEmpty
-                ? const SizedBox.shrink()
-                : Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: double.infinity,
-                        padding: const EdgeInsets.all(20),
-                        decoration: const BoxDecoration(color: Colors.green),
-                        child: Text(
-                          AppConstants.shared.label.sellingDeal,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
+            if (deals.isNotEmpty)
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(20),
+                    decoration: const BoxDecoration(color: Colors.green),
+                    child: Text(
+                      AppConstants.shared.label.sellingDeal,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
                       ),
-                      Container(
-                        width: double.infinity,
-                        padding: const EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.green),
-                        ),
-                        child: ListView.separated(
-                          itemCount: deals.length,
-                          physics: const NeverScrollableScrollPhysics(),
-                          padding: EdgeInsets.zero,
-                          shrinkWrap: true,
-                          separatorBuilder: (_, __) {
-                            return const SizedBox(height: 10);
-                          },
-                          itemBuilder: (BuildContext context, int index) {
-                            final deal = deals[index];
-                            return GestureDetector(
-                              onTap: () {
-                                showBottomSheet(
-                                  context: context,
-                                  builder: (BuildContext ctx) {
-                                    final paddingTop = MediaQuery.paddingOf(context).top;
-                                    return ModalDeal(paddingTop: paddingTop, deal: deal);
-                                  },
-                                );
+                    ),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green),
+                    ),
+                    child: ListView.separated(
+                      itemCount: deals.length,
+                      physics: const NeverScrollableScrollPhysics(),
+                      padding: EdgeInsets.zero,
+                      shrinkWrap: true,
+                      separatorBuilder: (_, __) {
+                        return const SizedBox(height: 10);
+                      },
+                      itemBuilder: (BuildContext context, int index) {
+                        final deal = deals[index];
+                        return GestureDetector(
+                          onTap: () {
+                            showBottomSheet(
+                              context: context,
+                              builder: (BuildContext ctx) {
+                                final paddingTop = MediaQuery.paddingOf(context).top;
+                                return ModalDeal(paddingTop: paddingTop, deal: deal);
                               },
-                              child: Container(
-                                width: double.infinity,
-                                padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.green),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: Text(
-                                        deal.tenLoaiGia,
-                                        style: TextStyle(color: Colors.orange[600], fontSize: 16),
-                                        maxLines: 1,
-                                      ),
-                                    ),
-                                    const SizedBox(width: 10),
-                                    Icon(Icons.chevron_right_rounded, color: Colors.orange[600]),
-                                  ],
-                                ),
-                              ),
                             );
                           },
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                    ],
+                          child: Container(
+                            width: double.infinity,
+                            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.green),
+                            ),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    deal.tenLoaiGia,
+                                    style: TextStyle(color: Colors.orange[600], fontSize: 16),
+                                    maxLines: 1,
+                                  ),
+                                ),
+                                const SizedBox(width: 10),
+                                Icon(Icons.chevron_right_rounded, color: Colors.orange[600]),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   ),
+                  const SizedBox(height: 20),
+                ],
+              ),
             const ButtonLogin(hasDivider: true),
           ],
         ),

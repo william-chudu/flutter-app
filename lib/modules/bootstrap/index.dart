@@ -19,7 +19,7 @@ class Bootstrap extends StatelessWidget {
           create: (context) => AppSearchBloc(),
         ),
         BlocProvider(
-          create: (context) => LanguageBloc(),
+          create: (context) => LanguageBloc()..add(const InitializeLanguage()),
         ),
         BlocProvider(
           create: (context) => AuthenticationBloc()..add(const InitializeAuthentication()),
