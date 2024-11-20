@@ -69,23 +69,22 @@ final class PhotoSlider extends StatelessWidget {
             },
           ),
         ),
-        isFocusing
-            ? Positioned(
-                left: 0,
-                bottom: 10,
-                child: Container(
-                  width: imageSize,
-                  height: imageSize,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      width: borderThickness,
-                      color: activeColor,
-                    ),
-                    borderRadius: BorderRadius.circular(radius),
-                  ),
+        if (isFocusing)
+          Positioned(
+            left: 0,
+            bottom: 10,
+            child: Container(
+              width: imageSize,
+              height: imageSize,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  width: borderThickness,
+                  color: activeColor,
                 ),
-              )
-            : const SizedBox.shrink(),
+                borderRadius: BorderRadius.circular(radius),
+              ),
+            ),
+          ),
       ],
     );
   }

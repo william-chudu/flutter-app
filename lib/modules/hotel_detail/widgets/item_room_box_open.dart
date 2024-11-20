@@ -305,23 +305,22 @@ class _BoxInfoRoomRateState extends State<BoxInfoRoomRate> {
               },
             ),
             const SizedBox(width: 20),
-            (widget.supplier == null || widget.supplier == 'cddl')
-                ? ButtonFilledWidget(
-                    onTap: () {
-                      AddToCartProtocol.of(context)?.onTapAddToCart(
-                        widget.room.roomTypeId,
-                        widget.room.roomTypeParentId,
-                        noOfRooms,
-                      );
-                    },
-                    radius: 7,
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-                    child: Text(
-                      label.addToCart,
-                      style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-                    ),
-                  )
-                : const SizedBox.shrink(),
+            if (widget.supplier == null || widget.supplier == 'cddl')
+              ButtonFilledWidget(
+                onTap: () {
+                  AddToCartProtocol.of(context)?.onTapAddToCart(
+                    widget.room.roomTypeId,
+                    widget.room.roomTypeParentId,
+                    noOfRooms,
+                  );
+                },
+                radius: 7,
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                child: Text(
+                  label.addToCart,
+                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+                ),
+              ),
             ButtonFilledWidget(
               color: Colors.green,
               radius: 7,
