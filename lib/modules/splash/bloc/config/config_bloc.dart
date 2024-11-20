@@ -30,11 +30,11 @@ class ConfigBloc extends Bloc<ConfigEvent, ConfigState> {
       Hive.registerAdapter(MemShipAccountProfileAdapter());
 
       final data = await Future.wait([
-        Hive.openBox<bool>(ConstantType.language),
-        ApiClient.shared.mPost(UrlPath.shared.config)
+        ApiClient.shared.mPost(UrlPath.shared.config),
+        Hive.openBox<bool>(ConstantType.language)
       ]);
 
-      final json = jsonDecode((data[1] as dynamic).body);
+      final json = jsonDecode((data[0] as dynamic).body);
       if (json['data'] == null) {
         emit(const ConfigError());
         return;
