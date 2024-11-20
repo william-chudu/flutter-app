@@ -21,5 +21,6 @@ final class UrlPath {
   final String detailPromotion = 'api-hotel/v1/mobile/get-detail-top-sales';
   final String listPoint = 'api-members/v1/mobile/get-danh-sach-diem-thuong';
   final String policy = 'api-hotel/v1/mobile/dieu-khoan-dieu-kien';
+  final String notification = 'api-members/v1/mobile/getListNotifications';
   final String a = '';
 }
