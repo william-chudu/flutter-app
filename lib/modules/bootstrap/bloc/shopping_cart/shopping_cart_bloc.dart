@@ -34,6 +34,7 @@ final class ShoppingCartBloc extends Bloc<ShoppingCartEvent, ShoppingCartState> 
               await box.add(pair.first);
               return ShoppingCartAdded(count: total + 1);
             }
+            await box.close();
             return const ShoppingCartExceed();
           },
           Pair(event.item, await getApplicationDocumentsDirectory()),
@@ -48,14 +49,11 @@ final class ShoppingCartBloc extends Bloc<ShoppingCartEvent, ShoppingCartState> 
     on<InitializeCart>((InitializeCart event, Emitter<ShoppingCartState> emit) async {
       try {
         emit(const ShoppingCartLoading(count: 0));
-        final count = await compute(
-          (Directory dir) async {
-            final box = await getHiveBox(dir.path);
-            return box.values.length;
-          },
-          await getApplicationDocumentsDirectory(),
-        );
+        final dir = await getApplicationDocumentsDirectory();
+        final box = await getHiveBox(dir.path);
+        final count = box.values.length;
         emit(ShoppingCartLoaded(count: count));
+        await box.close();
       } on Exception catch (e) {
         e.pError();
         emit(const ShoppingCartError(count: 0));
