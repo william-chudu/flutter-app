@@ -68,6 +68,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
               },
             ),
           );
+          await box.close();
           final List<RoomRateInfo> rates = roomRate.nonNulls.toList();
           return CartLoaded(mapRoom: mapRoom, items: rates);
         }, dir.path);
