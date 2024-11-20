@@ -116,29 +116,9 @@ final class ModalDeal extends StatelessWidget {
                       },
                     ),
                     const Divider(height: 30),
-                    Html(
-                      shrinkWrap: true,
-                      data: deal.luuYChinhSach,
-                      style: {
-                        '*': Style(
-                          fontSize: FontSize(16),
-                          padding: HtmlPaddings.zero,
-                          margin: Margins.zero,
-                        )
-                      },
-                    ),
+                    HtmlBox(content: deal.luuYChinhSach),
                     const Divider(height: 30),
-                    Html(
-                      shrinkWrap: true,
-                      data: deal.cancellationPolicy,
-                      style: {
-                        '*': Style(
-                          fontSize: FontSize(16),
-                          padding: HtmlPaddings.zero,
-                          margin: Margins.zero,
-                        )
-                      },
-                    ),
+                    HtmlBox(content: deal.cancellationPolicy),
                   ],
                 ),
               ),

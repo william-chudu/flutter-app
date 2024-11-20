@@ -5,6 +5,7 @@ import 'package:chudu24/components/button_login.dart';
 import 'package:chudu24/components/detail_review_score.dart';
 import 'package:chudu24/components/header_modal.dart';
 import 'package:chudu24/components/hotel_list_tags.dart';
+import 'package:chudu24/components/html_box.dart';
 import 'package:chudu24/components/icon_shopping_cart.dart';
 import 'package:chudu24/components/image_builder.dart';
 import 'package:chudu24/components/image_review.dart';

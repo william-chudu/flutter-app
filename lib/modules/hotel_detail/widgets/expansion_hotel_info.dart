@@ -52,16 +52,7 @@ final class ExpansionHotelInfo extends StatelessWidget {
                           border: Border.all(color: color, width: 2),
                           color: Colors.white,
                         ),
-                        child: Html(
-                          data: item.content,
-                          style: {
-                            '*': Style(
-                              margin: Margins.zero,
-                              padding: HtmlPaddings.zero,
-                              fontSize: FontSize(16),
-                            ),
-                          },
-                        ),
+                        child: HtmlBox(content: item.content),
                       ),
                     ],
                   ),

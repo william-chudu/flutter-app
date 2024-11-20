@@ -83,16 +83,7 @@ final class ModalRoomInformation extends StatelessWidget {
                 style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               const SizedBox(height: 10),
-              Html(
-                data: room.roomDescription,
-                style: {
-                  '*': Style(
-                    margin: Margins.zero,
-                    padding: HtmlPaddings.zero,
-                    fontSize: FontSize(16),
-                  ),
-                },
-              ),
+              HtmlBox(content: room.roomDescription),
               const Divider(height: 40),
               Text(
                 label.facilitiesOfHotel,
