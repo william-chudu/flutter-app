@@ -27,19 +27,20 @@ class ApiClient extends http.BaseClient {
   }
 
   Future<Response> mGet(String path, [Map<String, String>? query]) async {
-    _logRequest(path, query);
+    _logRequest(path, query != null ? jsonEncode(query) : null);
     final uri = Uri.https(host, path, query);
     return await _client.get(uri);
   }
 
   Future<Response> mPost(String path, [Map<String, dynamic>? data]) async {
     try {
-      _logRequest(path, data);
+      final body = data != null ? jsonEncode(data) : null;
+      _logRequest(path, body);
       final uri = Uri.https(host, path);
       return await _client.post(
         uri,
         headers: {HttpHeaders.contentTypeHeader: 'application/json'},
-        body: data != null ? jsonEncode(data) : null,
+        body: body,
         encoding: Encoding.getByName('utf-8'),
       );
     } on Exception catch (e) {
@@ -48,7 +49,7 @@ class ApiClient extends http.BaseClient {
     }
   }
 
-  void _logRequest(String path, [Map<String, dynamic>? data]) {
+  void _logRequest(String path, [String? data]) {
     if (!_ApiClientEnv.logging || !kDebugMode) {
       return;
     }

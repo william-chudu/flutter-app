@@ -9,6 +9,7 @@ import 'package:chudu24/models/authenticated_user.dart';
 import 'package:chudu24/modules/bootstrap/bloc/authentication/authentication_bloc.dart';
 import 'package:chudu24/modules/bootstrap/bloc/language/language_bloc.dart';
 import 'package:chudu24/modules/bootstrap/models/param_sign_in.dart';
+import 'package:chudu24/modules/list_point/index.dart';
 import 'package:chudu24/utils/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

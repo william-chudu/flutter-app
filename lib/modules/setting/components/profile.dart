@@ -56,7 +56,7 @@ final class Profile extends StatelessWidget {
                   ),
                   ItemUserInfo(
                     title: label.point,
-                    content: Utils.money.currency.format(user.totalPoint),
+                    content: Utils.money.currency(user.totalPoint),
                   ),
                   ItemUserInfo(
                     title: label.level,
@@ -67,7 +67,12 @@ final class Profile extends StatelessWidget {
               const SizedBox(height: 20),
               ItemNavigation(title: label.accountInfo),
               ItemNavigation(title: label.services),
-              ItemNavigation(title: label.point),
+              ItemNavigation(
+                title: label.point,
+                onTap: () {
+                  Navigator.of(context).pushNamed(ListPoint.routeName);
+                },
+              ),
               ItemNavigation(title: label.myReviews),
               ItemNavigation(title: label.promotions),
               ItemNavigation(title: label.favoriteHotels),

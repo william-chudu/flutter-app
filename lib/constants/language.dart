@@ -125,6 +125,13 @@ final class LanguageForApp {
     services: 'Danh sách dịch vụ',
     accountType: 'Loại tài khoản',
     signOut: 'Đăng xuất',
+    availabelPoint: 'Điểm khả dụng',
+    currentMemberLevel: 'Cấp hiện tại',
+    memberLevel: 'Cấp thành viên',
+    pointInfo: 'Thông tin điểm thưởng',
+    pointLock: 'Điểm chờ kích hoạt',
+    category: 'Hạng mục',
+    addOrMinusDate: 'Ngày tích/trừ điểm',
   );
 
   final enLabel = const LanguageLabel(
@@ -249,6 +256,13 @@ final class LanguageForApp {
     services: 'Services',
     accountType: "Account's type",
     signOut: 'Sign Out',
+    availabelPoint: 'Availabel point',
+    currentMemberLevel: 'Current member level',
+    memberLevel: 'Member level',
+    pointInfo: 'Point information',
+    pointLock: 'Locked point',
+    category: 'Category',
+    addOrMinusDate: 'Date for add or minus point',
   );
 }
 
@@ -374,6 +388,13 @@ class LanguageLabel {
   final String memberPolicy;
   final String accountType;
   final String signOut;
+  final String pointInfo;
+  final String pointLock;
+  final String availabelPoint;
+  final String memberLevel;
+  final String currentMemberLevel;
+  final String category;
+  final String addOrMinusDate;
 
   const LanguageLabel({
     required this.home,
@@ -497,6 +518,13 @@ class LanguageLabel {
     required this.services,
     required this.accountType,
     required this.signOut,
+    required this.availabelPoint,
+    required this.currentMemberLevel,
+    required this.memberLevel,
+    required this.pointInfo,
+    required this.pointLock,
+    required this.addOrMinusDate,
+    required this.category,
   });
 
   Map<String, String> get jsonOrder => {

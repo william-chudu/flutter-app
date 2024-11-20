@@ -66,7 +66,7 @@ class _ModalFilterState extends State<ModalFilter> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text('0 đ'),
-              Text('${Utils.money.currency.format(maxPrice)}đ+'),
+              Text('${Utils.money.currency(maxPrice)} đ+'),
             ],
           ),
         ),
@@ -94,9 +94,9 @@ class _ModalFilterState extends State<ModalFilter> {
               StreamBuilder<RangeValues>(
                 stream: streamSlider.stream,
                 builder: (context, snapshot) {
-                  final start = Utils.money.currency.format(snapshot.data?.start ?? 0);
-                  final end = Utils.money.currency.format(snapshot.data?.end ?? maxPrice);
-                  final text = '$startđ - $endđ';
+                  final start = Utils.money.currency(snapshot.data?.start ?? 0);
+                  final end = Utils.money.currency(snapshot.data?.end ?? maxPrice);
+                  final text = '$start đ - $end đ';
                   return Text(text);
                 },
               ),
