@@ -76,7 +76,12 @@ final class Profile extends StatelessWidget {
               ItemNavigation(title: label.myReviews),
               ItemNavigation(title: label.promotions),
               ItemNavigation(title: label.favoriteHotels),
-              ItemNavigation(title: label.memberPolicy),
+              ItemNavigation(
+                title: label.memberPolicy,
+                onTap: () {
+                  MemberPolicy.showModal(context);
+                },
+              ),
               const SizedBox(height: 20),
             ],
           ),

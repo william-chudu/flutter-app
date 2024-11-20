@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:chudu24/components/button.dart';
+import 'package:chudu24/components/html_box.dart';
 import 'package:chudu24/components/icon_shopping_cart.dart';
 import 'package:chudu24/components/input_box.dart';
 import 'package:chudu24/constants/index.dart';
@@ -10,6 +11,7 @@ import 'package:chudu24/modules/bootstrap/bloc/authentication/authentication_blo
 import 'package:chudu24/modules/bootstrap/bloc/language/language_bloc.dart';
 import 'package:chudu24/modules/bootstrap/models/param_sign_in.dart';
 import 'package:chudu24/modules/list_point/index.dart';
+import 'package:chudu24/modules/setting/bloc/member_policy/member_policy_bloc.dart';
 import 'package:chudu24/utils/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,6 +21,8 @@ part 'widgets/item_navigation.dart';
 
 part 'components/sign_in.dart';
 part 'components/profile.dart';
+
+part 'modals/member_policy.dart';
 
 final class Setting extends StatelessWidget {
   static const String routeName = '/setting';

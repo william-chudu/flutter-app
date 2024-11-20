@@ -34,7 +34,6 @@ import 'package:chudu24/utils/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_html/flutter_html.dart';
 
 import 'bloc/hotel_info_detail/hotel_info_detail_bloc.dart';
 import 'bloc/hotel_room_rate/hotel_room_rate_bloc.dart';
