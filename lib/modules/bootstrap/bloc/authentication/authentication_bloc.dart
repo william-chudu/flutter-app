@@ -26,6 +26,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
         final user = box.get(key);
 
         emit(AuthenticationInitial(user: user));
+        await box.close();
       } on Exception catch (e) {
         e.pError();
         emit(const AuthenticationError());
@@ -50,6 +51,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
         final box = await Hive.openBox<AuthenticatedUser>(ConstantType.authernticatedUser);
         await box.put(key, user);
         emit(AuthenticationLoaded(user: user));
+        await box.close();
       } on Exception catch (e) {
         e.pError();
         emit(const AuthenticationError());
@@ -60,6 +62,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
       final box = await Hive.openBox<AuthenticatedUser>(ConstantType.authernticatedUser);
       await box.clear();
       emit(const AuthenticationSignOut());
+      await box.close();
     });
   }
 }

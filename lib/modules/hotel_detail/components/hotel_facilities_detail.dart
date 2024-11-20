@@ -83,12 +83,7 @@ final class _ItemFacility extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
-      child: Html(
-        data: content,
-        style: {
-          '*': Style(fontSize: FontSize(16), padding: HtmlPaddings.zero, margin: Margins.zero),
-        },
-      ),
+      child: HtmlBox(content: content),
     );
   }
 }

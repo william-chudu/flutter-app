@@ -36,6 +36,9 @@ final class InfoSearch extends StatelessWidget {
         guestStr.write(info.adults);
         guestStr.write(' ');
         guestStr.write(label.adult);
+        if (info.adults > 1) {
+          guestStr.write('s');
+        }
         if (info.children > 0) {
           guestStr.write(', ');
           guestStr.write(info.children);
@@ -184,7 +187,7 @@ final class InfoSearch extends StatelessWidget {
                     BoxPlaceholderInput(
                       flex: 2,
                       label: label.noOfRoom,
-                      content: '${info.noOfRooms} ${label.room}',
+                      content: '${info.noOfRooms} ${label.room}${info.noOfRooms > 1 ? 's' : ''}',
                     ),
                   ],
                 ),

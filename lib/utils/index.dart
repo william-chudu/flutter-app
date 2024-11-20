@@ -104,10 +104,14 @@ final class Datetime {
 }
 
 final class Currency {
-  final currency = NumberFormat.currency(locale: 'vi_VN', symbol: '');
+  final _curr = NumberFormat.currency(locale: 'vi_VN', symbol: '');
 
-  String money(int mn) {
-    return currency.format(mn / 1000).trim();
+  String currency(dynamic mn) {
+    return _curr.format(mn).trim();
+  }
+
+  String money(dynamic mn) {
+    return _curr.format(mn / 1000).trim();
   }
 }
 

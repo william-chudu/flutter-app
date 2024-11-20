@@ -23,12 +23,7 @@ final class HotelProperty extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TitleProperty(label: label),
-          Html(
-            data: Utils.string.subHtml(content),
-            style: {
-              '*': Style(fontSize: FontSize(16), padding: HtmlPaddings.zero, margin: Margins.zero),
-            },
-          ),
+          HtmlBox(content: Utils.string.subHtml(content)),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [

@@ -14,7 +14,6 @@ part 'shopping_cart_state.dart';
 
 final class ShoppingCartBloc extends Bloc<ShoppingCartEvent, ShoppingCartState> {
   static Future<Box<InfoCartHotel>> getHiveBox(String path) async {
-    Hive.registerAdapter(CartHotelAdapter(), override: true);
     return await Hive.openBox<InfoCartHotel>(
       ConstantType.hotel,
       path: path,

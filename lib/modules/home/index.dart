@@ -1,4 +1,3 @@
-import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
 import 'package:chudu24/modules/bootstrap/bloc/app_search/app_search_bloc.dart';
 import 'package:chudu24/modules/bootstrap/models/address_search.dart';

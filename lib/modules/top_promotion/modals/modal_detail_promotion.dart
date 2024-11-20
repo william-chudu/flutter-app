@@ -175,34 +175,14 @@ class _ModalDetailPromotionState extends State<ModalDetailPromotion> {
                         style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 10),
-                      Html(
-                        shrinkWrap: true,
-                        data: info.luuYChinhSach,
-                        style: {
-                          '*': Style(
-                            fontSize: FontSize(16),
-                            padding: HtmlPaddings.zero,
-                            margin: Margins.zero,
-                          )
-                        },
-                      ),
+                      HtmlBox(content: info.luuYChinhSach),
                       const Divider(height: 40),
                       Text(
                         label.cancelOrChangeRoomCondition,
                         style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 10),
-                      Html(
-                        shrinkWrap: true,
-                        data: info.cancellationPolicy,
-                        style: {
-                          '*': Style(
-                            fontSize: FontSize(16),
-                            padding: HtmlPaddings.zero,
-                            margin: Margins.zero,
-                          )
-                        },
-                      ),
+                      HtmlBox(content: info.cancellationPolicy),
                     ],
                   ),
                 );

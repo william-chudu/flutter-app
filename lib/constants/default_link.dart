@@ -12,4 +12,6 @@ final class DefaultLink {
   final String placeholder =
       'https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary-1200x675.webp';
   final String travelNewsUrl = 'https://www.chudu24.com/thongtindulich/';
+  final String promotion =
+      'https://www.chudu24.com/thongtindulich/2018/01/26/uu-dai-dac-biet-danh-cho-khach-hang-thiet-cua-chudu24/';
 }
