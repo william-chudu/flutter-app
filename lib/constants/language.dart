@@ -132,6 +132,10 @@ final class LanguageForApp {
     pointLock: 'Điểm chờ kích hoạt',
     category: 'Hạng mục',
     addOrMinusDate: 'Ngày tích/trừ điểm',
+    processing: 'Đang xử lý',
+    prepareForCheckIn: 'Sắp check-in',
+    youHaveNoJourneyFor: 'Quý khách chưa có chuyến đi nào',
+    bookingCode: 'Mã dịch vụ',
   );
 
   final enLabel = const LanguageLabel(
@@ -263,6 +267,10 @@ final class LanguageForApp {
     pointLock: 'Locked point',
     category: 'Category',
     addOrMinusDate: 'Date for add or minus point',
+    prepareForCheckIn: 'Prepare for check in',
+    processing: 'Processing',
+    youHaveNoJourneyFor: 'You have no journey for',
+    bookingCode: 'Booking code',
   );
 }
 
@@ -395,6 +403,10 @@ class LanguageLabel {
   final String currentMemberLevel;
   final String category;
   final String addOrMinusDate;
+  final String processing;
+  final String prepareForCheckIn;
+  final String youHaveNoJourneyFor;
+  final String bookingCode;
 
   const LanguageLabel({
     required this.home,
@@ -525,6 +537,10 @@ class LanguageLabel {
     required this.pointLock,
     required this.addOrMinusDate,
     required this.category,
+    required this.processing,
+    required this.prepareForCheckIn,
+    required this.youHaveNoJourneyFor,
+    required this.bookingCode,
   });
 
   Map<String, String> get jsonOrder => {
