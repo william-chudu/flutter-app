@@ -1,23 +1,16 @@
 import 'package:chudu24/constants/index.dart';
-import 'package:chudu24/modules/bootstrap/bloc/language/language_bloc.dart';
+import 'package:chudu24/modules/favourite_hotel/index.dart';
 import 'package:chudu24/modules/home/index.dart';
 import 'package:chudu24/modules/journey/index.dart';
-import 'package:chudu24/modules/setting/index.dart';
+import 'package:chudu24/modules/account/index.dart';
 import 'package:chudu24/modules/travel_news/index.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-class BottomTabsScreen extends StatefulWidget {
+final class BottomTabsScreen extends StatefulWidget {
   static const String routeName = '/bottom-tabs';
   static Route route() {
     return MaterialPageRoute(
-      builder: (BuildContext context) => BlocBuilder<LanguageBloc, LanguageState>(
-        builder: (context, state) {
-          return BottomTabsScreen(
-            key: Key(state.isEn ? 'EN' : 'VN'),
-          );
-        },
-      ),
+      builder: (BuildContext context) => const BottomTabsScreen(),
       settings: const RouteSettings(name: routeName),
     );
   }
@@ -32,10 +25,10 @@ class _HomeScreenState extends State<BottomTabsScreen> {
   int _indexPage = 0;
   final List<Widget> pages = [
     HomeScreen.screen,
-    Container(),
+    FavouriteHotel.screen,
     Journey.screen,
     TravelNews.screen,
-    Setting.screen,
+    Account.screen,
   ];
   void _onItemTapped(value) {
     setState(() {

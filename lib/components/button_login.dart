@@ -1,6 +1,6 @@
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/modules/bootstrap/bloc/authentication/authentication_bloc.dart';
-import 'package:chudu24/modules/setting/index.dart';
+import 'package:chudu24/modules/account/index.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'button.dart';
@@ -14,7 +14,7 @@ final class ButtonLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void redirectToSignin() {
-      Navigator.of(context).pushNamed(Setting.routeName);
+      Navigator.of(context).pushNamed(Account.routeName);
     }
 
     return BlocBuilder<AuthenticationBloc, AuthenticationState>(

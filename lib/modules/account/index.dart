@@ -8,11 +8,12 @@ import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
 import 'package:chudu24/models/authenticated_user.dart';
 import 'package:chudu24/modules/bootstrap/bloc/authentication/authentication_bloc.dart';
-import 'package:chudu24/modules/bootstrap/bloc/language/language_bloc.dart';
 import 'package:chudu24/modules/bootstrap/models/param_sign_in.dart';
+import 'package:chudu24/modules/favourite_hotel/index.dart';
+import 'package:chudu24/modules/journey/index.dart';
 import 'package:chudu24/modules/list_point/index.dart';
 import 'package:chudu24/modules/notifications/index.dart';
-import 'package:chudu24/modules/setting/bloc/member_policy/member_policy_bloc.dart';
+import 'package:chudu24/modules/account/bloc/member_policy/member_policy_bloc.dart';
 import 'package:chudu24/utils/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,9 +26,9 @@ part 'components/profile.dart';
 
 part 'modals/member_policy.dart';
 
-final class Setting extends StatelessWidget {
-  static const String routeName = '/setting';
-  static const Widget screen = Setting();
+final class Account extends StatelessWidget {
+  static const String routeName = '/account';
+  static const Widget screen = Account();
   static Route route() {
     return MaterialPageRoute(
       builder: (BuildContext context) => screen,
@@ -35,7 +36,7 @@ final class Setting extends StatelessWidget {
     );
   }
 
-  const Setting({super.key});
+  const Account({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,24 +50,15 @@ final class Setting extends StatelessWidget {
         centerTitle: true,
         actions: [
           const IconShoppingCart(color: AppConstants.accent),
-          BlocBuilder<LanguageBloc, LanguageState>(
-            builder: (context, state) {
-              return Padding(
-                padding: const EdgeInsets.only(right: 20.0),
-                child: Switch.adaptive(
-                  value: state.isEn,
-                  thumbIcon: const WidgetStatePropertyAll(
-                    Icon(
-                      Icons.language,
-                      color: Colors.redAccent,
-                    ),
-                  ),
-                  onChanged: (bool isEN) {
-                    context.read<LanguageBloc>().add(ChangeLanguage(isEN: isEN));
-                  },
-                ),
-              );
+          IconButton(
+            padding: const EdgeInsets.only(right: 20),
+            onPressed: () {
+              // Navigator.of(context).pushNamed(Setting.routeName);
             },
+            icon: const Icon(
+              Icons.settings,
+              color: AppConstants.accent,
+            ),
           ),
         ],
       ),
