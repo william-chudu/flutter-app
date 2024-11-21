@@ -1,6 +1,7 @@
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/modules/bootstrap/bloc/language/language_bloc.dart';
 import 'package:chudu24/modules/home/index.dart';
+import 'package:chudu24/modules/journey/index.dart';
 import 'package:chudu24/modules/setting/index.dart';
 import 'package:chudu24/modules/travel_news/index.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class _HomeScreenState extends State<BottomTabsScreen> {
   final List<Widget> pages = [
     HomeScreen.screen,
     Container(),
-    Container(),
+    Journey.screen,
     TravelNews.screen,
     Setting.screen,
   ];
@@ -59,9 +60,9 @@ class _HomeScreenState extends State<BottomTabsScreen> {
       activeIcon: const Icon(Icons.shopping_bag_outlined, size: 25),
     ),
     BottomNavigationBarItem(
-      icon: const Icon(Icons.difference_outlined),
+      icon: const Icon(Icons.edit_document),
       label: AppConstants.shared.label.news,
-      activeIcon: const Icon(Icons.difference_outlined, size: 25),
+      activeIcon: const Icon(Icons.edit_document, size: 25),
     ),
     BottomNavigationBarItem(
       icon: const Icon(Icons.person_pin),

@@ -18,7 +18,7 @@ class TopDestinations extends StatelessWidget {
         return GridView.builder(
           shrinkWrap: true,
           itemCount: topDestinations.length,
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             mainAxisSpacing: 10,
             crossAxisSpacing: 10,
