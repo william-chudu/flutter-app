@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chudu24/components/loading.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 
 final class ImageBuilder extends StatelessWidget {
@@ -24,8 +25,8 @@ final class ImageBuilder extends StatelessWidget {
       width: width,
       height: height,
       fit: fit,
-      errorWidget: (context, url, error) => const Center(
-        child: Icon(Icons.error),
+      errorWidget: (context, url, error) => Center(
+        child: Icon(Icons.error, color: context.color.outline),
       ),
     );
   }

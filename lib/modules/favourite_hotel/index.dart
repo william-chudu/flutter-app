@@ -6,6 +6,7 @@ import 'package:chudu24/components/star.dart';
 import 'package:chudu24/components/xnn.dart';
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/extensions/string.dart';
 import 'package:chudu24/models/authenticated_user.dart';
 import 'package:chudu24/models/hotel_tag.dart';
@@ -59,7 +60,7 @@ final class FavouriteHotel extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           label.favorite,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+          style: context.text.displayMedium,
         ),
       ),
       body: BlocBuilder<AppSearchBloc, AppSearchState>(

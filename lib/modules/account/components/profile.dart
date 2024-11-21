@@ -113,8 +113,8 @@ final class Profile extends StatelessWidget {
               child: Center(
                 child: Text(
                   label.signOut,
-                  style: const TextStyle(
-                    color: Colors.white,
+                  style: TextStyle(
+                    color: context.color.surfaceTint,
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   ),

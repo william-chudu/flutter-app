@@ -4,6 +4,7 @@ import 'package:chudu24/components/image_builder.dart';
 import 'package:chudu24/components/loading.dart';
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/extensions/list.dart';
 import 'package:chudu24/extensions/string.dart';
 import 'package:chudu24/modules/bootstrap/bloc/app_search/app_search_bloc.dart';
@@ -24,6 +25,7 @@ final class ModalSearchInfo extends StatefulWidget {
   static void showModal(BuildContext context) {
     showBottomSheet(
       context: context,
+      backgroundColor: context.color.primaryContainer,
       builder: (BuildContext ctxModal) {
         return MultiBlocProvider(
           providers: [
@@ -114,7 +116,7 @@ class _ModalSearchInfoState extends State<ModalSearchInfo> {
                   child: Center(
                     child: Text(
                       label.search,
-                      style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+                      style: context.text.displayLarge,
                     ),
                   ),
                 ),

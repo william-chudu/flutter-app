@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:chudu24/components/button.dart';
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/modules/bootstrap/bloc/app_search/app_search_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -106,8 +107,8 @@ class _ModalRoomAndGuestState extends State<ModalRoomAndGuest> {
                   child: Center(
                     child: Text(
                       label.submit,
-                      style: const TextStyle(
-                        color: Colors.white,
+                      style: TextStyle(
+                        color: context.color.surfaceTint,
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
                       ),

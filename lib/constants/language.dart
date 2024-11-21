@@ -141,6 +141,8 @@ final class LanguageForApp {
     setting: 'Cài đặt',
     language: 'Ngôn ngữ',
     theme: 'Nền hệ thống',
+    english: 'Tiếng Anh',
+    darkTheme: 'Nền tối',
   );
 
   final enLabel = const LanguageLabel(
@@ -281,6 +283,8 @@ final class LanguageForApp {
     setting: 'Setting',
     language: 'Language',
     theme: 'Theme',
+    english: 'English',
+    darkTheme: 'Dark theme',
   );
 }
 
@@ -422,6 +426,8 @@ class LanguageLabel {
   final String setting;
   final String language;
   final String theme;
+  final String english;
+  final String darkTheme;
 
   const LanguageLabel({
     required this.home,
@@ -561,6 +567,8 @@ class LanguageLabel {
     required this.setting,
     required this.language,
     required this.theme,
+    required this.english,
+    required this.darkTheme,
   });
 
   Map<String, String> get jsonOrder => {

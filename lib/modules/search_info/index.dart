@@ -1,5 +1,6 @@
 import 'package:chudu24/components/info_search.dart';
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 
 final class SearchInfo extends StatelessWidget {
@@ -23,7 +24,7 @@ final class SearchInfo extends StatelessWidget {
             AppBar(
               title: Text(
                 AppConstants.shared.label.search,
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                style: context.text.displayMedium,
               ),
             ),
             Padding(

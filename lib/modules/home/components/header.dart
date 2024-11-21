@@ -1,5 +1,6 @@
 import 'package:chudu24/components/button.dart';
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 
 class HeaderHome extends StatelessWidget {
@@ -11,19 +12,22 @@ class HeaderHome extends StatelessWidget {
     return Column(
       children: [
         Container(
-          color: Colors.grey[200],
+          color: context.color.secondaryContainer,
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(label.constructiveOpinion),
+              Text(
+                label.constructiveOpinion,
+                style: TextStyle(color: context.color.primary),
+              ),
               ButtonFilledWidget(
                 radius: 3,
                 padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 10),
                 child: Text(
                   label.opinion.toUpperCase(),
-                  style: const TextStyle(
-                    color: Colors.white,
+                  style: TextStyle(
+                    color: context.color.surfaceTint,
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
                   ),
@@ -42,15 +46,19 @@ class HeaderHome extends StatelessWidget {
                 AppConstants.link.logoApp,
                 height: 40,
               ),
-              const Row(
+              Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.phone, color: AppConstants.accent, size: 22),
-                  SizedBox(width: 5),
+                  const Icon(Icons.phone, color: AppConstants.accent, size: 22),
+                  const SizedBox(width: 5),
                   Text(
                     '0375656505',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: context.color.primary,
+                    ),
                   ),
                 ],
               )

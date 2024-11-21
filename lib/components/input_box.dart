@@ -1,3 +1,4 @@
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 
 final class InputBox extends StatelessWidget {
@@ -22,7 +23,7 @@ final class InputBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey[200],
+        color: context.color.secondaryContainer,
         borderRadius: BorderRadius.circular(5),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),

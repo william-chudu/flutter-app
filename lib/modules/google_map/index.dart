@@ -1,3 +1,4 @@
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/models/map_param.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -59,7 +60,10 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
           ),
         ],
         elevation: 1,
-        title: Text(MapParam.now.hotelName),
+        title: Text(
+          MapParam.now.hotelName,
+          style: context.text.displayMedium,
+        ),
       ),
       extendBodyBehindAppBar: true,
       body: SafeArea(

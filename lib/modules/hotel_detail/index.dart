@@ -15,6 +15,7 @@ import 'package:chudu24/components/review_count.dart';
 import 'package:chudu24/components/star.dart';
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/extensions/string.dart';
 import 'package:chudu24/models/hotel_image.dart';
 import 'package:chudu24/models/hotel_info_detail.dart';

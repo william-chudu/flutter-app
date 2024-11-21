@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:chudu24/components/button.dart';
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/models/pair.dart';
 import 'package:chudu24/modules/city_n_ticket/bloc/list_hotel/list_hotel_bloc.dart';
 import 'package:chudu24/modules/city_n_ticket/models/param_list_hotel.dart';
@@ -86,8 +87,8 @@ class _ModalFilterState extends State<ModalOrder> {
               child: Center(
                 child: Text(
                   label.apply,
-                  style: const TextStyle(
-                    color: Colors.white,
+                  style: TextStyle(
+                    color: context.color.surfaceTint,
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   ),

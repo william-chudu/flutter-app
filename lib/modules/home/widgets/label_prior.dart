@@ -1,4 +1,5 @@
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 
 final class LabelPrior extends StatelessWidget {
@@ -23,15 +24,16 @@ final class LabelPrior extends StatelessWidget {
           children: [
             Text(
               label,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
+                color: context.color.primary,
               ),
             ),
             if (detail != null)
               Text(
                 detail ?? '',
-                style: const TextStyle(color: Colors.black54, fontSize: 16),
+                style: TextStyle(color: context.color.outline, fontSize: 16),
               ),
           ],
         ),

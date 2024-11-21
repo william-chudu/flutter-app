@@ -1,5 +1,6 @@
 import 'package:chudu24/components/info_search.dart';
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/extensions/string.dart';
 import 'package:chudu24/modules/bootstrap/bloc/app_search/app_search_bloc.dart';
 import 'package:flutter/material.dart';
@@ -26,13 +27,13 @@ final class BoxSearch extends StatelessWidget {
         ),
       ),
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(
             Radius.circular(10),
           ),
-          color: Colors.white.withOpacity(0.75),
+          color: context.color.secondary.withOpacity(0.5),
         ),
         child: InfoSearch(onSelectDate: onSelectDate, isBack: false),
       ),

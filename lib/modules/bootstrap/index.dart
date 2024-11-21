@@ -11,6 +11,7 @@ import 'package:chudu24/modules/bootstrap/components/setting.dart';
 import 'package:chudu24/modules/bottom/index.dart';
 import 'package:chudu24/modules/notfound/index.dart';
 import 'package:chudu24/router/index.dart';
+import 'package:chudu24/theme/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -50,24 +51,28 @@ final class Bootstrap extends StatelessWidget {
         builder: (_, config) {
           if (config.status == Progress.loaded) {
             return BlocBuilder<LanguageBloc, LanguageState>(
-              builder: (_, state) {
-                return BlocBuilder<SettingBloc, SettingState>(
-                  builder: (_, setting) {
-                    return MaterialApp(
-                      title: 'ChuduApp',
-                      debugShowCheckedModeBanner: false,
-                      theme: ThemeData(
-                        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        useMaterial3: true,
-                      ),
-                      onGenerateRoute: AppRouter.onGenerateRoute,
-                      home: Builder(builder: (context) {
-                        if (setting.isSetting) {
-                          return const Setting();
-                        }
-                        return const BottomTabsScreen();
-                      }),
+              builder: (_, language) {
+                return BlocBuilder<AppThemeBloc, AppThemeState>(
+                  builder: (_, theme) {
+                    return BlocBuilder<SettingBloc, SettingState>(
+                      builder: (_, setting) {
+                        final key = Key(
+                          'language: ${language.isEn.toString()}, light: ${theme.isLight.toString()}',
+                        );
+                        return MaterialApp(
+                          title: 'ChuduApp',
+                          debugShowCheckedModeBanner: false,
+                          theme: theme.isLight ? lightMode : darkMode,
+                          darkTheme: darkMode,
+                          onGenerateRoute: AppRouter.onGenerateRoute,
+                          home: Builder(builder: (context) {
+                            if (setting.isSetting) {
+                              return Setting(key: key);
+                            }
+                            return BottomTabsScreen(key: key);
+                          }),
+                        );
+                      },
                     );
                   },
                 );
@@ -77,11 +82,8 @@ final class Bootstrap extends StatelessWidget {
           return MaterialApp(
             title: 'ChuduApp',
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              useMaterial3: true,
-            ),
+            theme: lightMode,
+            darkTheme: darkMode,
             home: Builder(builder: (context) {
               if (config.status == Progress.error) {
                 return const NotFoundScreen();

@@ -3,6 +3,7 @@ import 'package:chudu24/components/loading.dart';
 import 'package:chudu24/components/tabbar_header.dart';
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/extensions/list.dart';
 import 'package:chudu24/extensions/string.dart';
 import 'package:chudu24/models/header_list_items.dart';
@@ -47,7 +48,7 @@ final class InternationItem extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             label.internationalHotel,
-            style: const TextStyle(fontWeight: FontWeight.w600),
+            style: context.text.displayMedium,
           ),
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(40),

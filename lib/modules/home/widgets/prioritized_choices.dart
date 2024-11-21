@@ -1,5 +1,6 @@
 import 'package:chudu24/components/image_builder.dart';
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/extensions/string.dart';
 import 'package:flutter/material.dart';
 
@@ -73,10 +74,10 @@ final class PrioritizedChoices extends StatelessWidget {
                           summary ?? '',
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
-                            color: Colors.white,
+                            color: context.color.primary,
                           ),
                         ),
                         const SizedBox(height: 10),

@@ -1,4 +1,5 @@
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/modules/bootstrap/bloc/authentication/authentication_bloc.dart';
 import 'package:chudu24/modules/webview/index.dart';
 import 'package:chudu24/utils/index.dart';
@@ -38,7 +39,7 @@ final class Notifications extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           label.promotions,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+          style: context.text.displayMedium,
         ),
       ),
       body: SafeArea(

@@ -131,9 +131,9 @@ final class ModalDeal extends StatelessWidget {
           child: Center(
             child: Text(
               label.watchDetailPrice,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 20,
-                color: Colors.white,
+                color: context.color.surfaceTint,
                 fontWeight: FontWeight.bold,
               ),
             ),

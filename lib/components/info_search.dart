@@ -1,6 +1,7 @@
 import 'package:chudu24/components/button.dart';
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/modals/modal_room_and_guest.dart';
 import 'package:chudu24/modals/modal_search_info.dart';
 import 'package:chudu24/modules/bootstrap/bloc/app_search/app_search_bloc.dart';
@@ -123,16 +124,20 @@ final class InfoSearch extends StatelessWidget {
                   width: double.infinity,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
-                    color: Colors.white,
+                    color: context.color.secondary,
                   ),
                   child: info.search?.title != null
                       ? Text(
                           info.search?.title ?? '',
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: context.color.primary,
+                            fontWeight: FontWeight.w500,
+                          ),
                         )
                       : Text(
                           label.addressOrHotel,
-                          style: TextStyle(fontSize: 16, color: Colors.grey[600]),
+                          style: TextStyle(fontSize: 16, color: context.color.outline),
                         ),
                 ),
               ),
@@ -141,7 +146,7 @@ final class InfoSearch extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
-                    color: Colors.white,
+                    color: context.color.secondary,
                   ),
                   child: IntrinsicHeight(
                     child: Row(
@@ -149,6 +154,7 @@ final class InfoSearch extends StatelessWidget {
                       children: [
                         BoxPlaceholderInput(
                           label: label.checkIn,
+                          hasBackground: true,
                           content: Utils.time.format(
                             date: info.checkIn,
                             oF: TimeType.edmy,
@@ -162,6 +168,7 @@ final class InfoSearch extends StatelessWidget {
                         ),
                         BoxPlaceholderInput(
                           label: label.checkOut,
+                          hasBackground: true,
                           content: Utils.time.format(
                             date: info.checkOut,
                             oF: TimeType.edmy,
@@ -198,8 +205,8 @@ final class InfoSearch extends StatelessWidget {
                 child: Center(
                   child: Text(
                     label.search,
-                    style: const TextStyle(
-                      color: Colors.white,
+                    style: TextStyle(
+                      color: context.color.surfaceTint,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),

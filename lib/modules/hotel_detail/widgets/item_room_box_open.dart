@@ -318,7 +318,7 @@ class _BoxInfoRoomRateState extends State<BoxInfoRoomRate> {
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
                 child: Text(
                   label.addToCart,
-                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+                  style: TextStyle(color: context.color.surfaceTint, fontWeight: FontWeight.w600),
                 ),
               ),
             ButtonFilledWidget(
@@ -327,7 +327,7 @@ class _BoxInfoRoomRateState extends State<BoxInfoRoomRate> {
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
               child: Text(
                 label.bookNow,
-                style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+                style: TextStyle(color: context.color.surfaceTint, fontWeight: FontWeight.w600),
               ),
             )
           ],

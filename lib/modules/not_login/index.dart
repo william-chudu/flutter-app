@@ -1,6 +1,7 @@
 import 'package:chudu24/components/button.dart';
 import 'package:chudu24/components/image_builder.dart';
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/modules/account/index.dart';
 import 'package:flutter/material.dart';
 
@@ -33,8 +34,8 @@ final class NotLogin extends StatelessWidget {
               child: Center(
                 child: Text(
                   label.signIn,
-                  style: const TextStyle(
-                    color: Colors.white,
+                  style: TextStyle(
+                    color: context.color.surfaceTint,
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   ),

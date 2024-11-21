@@ -2,6 +2,7 @@ import 'package:chudu24/components/image_builder.dart';
 import 'package:chudu24/components/loading.dart';
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/modules/home/bloc/travel_guide/travel_guide_bloc.dart';
 import 'package:chudu24/modules/home/widgets/label_prior.dart';
 import 'package:chudu24/modules/webview/index.dart';
@@ -77,7 +78,7 @@ class TravelGuide extends StatelessWidget {
                                   guide.postTitle,
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(fontSize: 16),
+                                  style: TextStyle(fontSize: 16, color: context.color.primary),
                                 ),
                               ),
                             ],

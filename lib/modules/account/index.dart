@@ -6,6 +6,7 @@ import 'package:chudu24/components/icon_shopping_cart.dart';
 import 'package:chudu24/components/input_box.dart';
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/models/authenticated_user.dart';
 import 'package:chudu24/modules/bootstrap/bloc/authentication/authentication_bloc.dart';
 import 'package:chudu24/modules/bootstrap/bloc/setting/setting_bloc.dart';
@@ -46,7 +47,7 @@ final class Account extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           label.account,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+          style: context.text.displayMedium,
         ),
         centerTitle: true,
         actions: [
