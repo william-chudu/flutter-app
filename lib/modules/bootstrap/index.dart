@@ -8,7 +8,7 @@ import 'package:chudu24/router/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class Bootstrap extends StatelessWidget {
+final class Bootstrap extends StatelessWidget {
   const Bootstrap({super.key});
 
   @override
@@ -32,7 +32,7 @@ class Bootstrap extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Chudu24',
+        title: 'ChuduApp',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -41,7 +41,6 @@ class Bootstrap extends StatelessWidget {
         ),
         onGenerateRoute: AppRouter.onGenerateRoute,
         initialRoute: SplashScreen.routeName,
-        // home: const GoogleMapPage(),
       ),
     );
   }

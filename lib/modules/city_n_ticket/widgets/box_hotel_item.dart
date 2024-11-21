@@ -12,7 +12,12 @@ import 'package:chudu24/modules/city_n_ticket/widgets/hotel_thumbnail.dart';
 import 'package:flutter/material.dart';
 
 class BoxHotelItem extends StatefulWidget {
-  const BoxHotelItem({super.key, required this.width, required this.hotel, required this.onTap});
+  const BoxHotelItem({
+    super.key,
+    required this.width,
+    required this.hotel,
+    required this.onTap,
+  });
 
   final double width;
   final HotelInfo hotel;
@@ -60,43 +65,50 @@ class _BoxHotelItemState extends State<BoxHotelItem> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           HotelThumbnail(thumbnail: hotel.thumbnail.imgUrl, width: width, height: _height),
-          Container(
-            color: Colors.white54,
-            width: width * 3 / 5 - 1,
-            padding: const EdgeInsets.only(left: 10.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  hotel.hotelname,
-                  maxLines: 2,
-                  softWrap: true,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                ),
-                const SizedBox(height: 5),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    StarRating(star: hotel.starrating),
-                    ReviewCount(count: hotel.reviewcount, averageReview: averageReview)
-                  ],
-                ),
-                const SizedBox(height: 5),
-                HotelListTags(
-                  tags: hotel.hotelTags,
-                  isColumn: true,
-                ),
-                const SizedBox(height: 10),
-                hotel.minRateHotel > 0
-                    ? MoneyWidget(money: hotel.minRateHotel)
-                    : const PhoneWidget(fontSize: 15),
-                const SizedBox(height: 5),
-                XnnWidget(isXNN: hotel.hotelSupplierList?.isNotEmpty == true),
-                const SizedBox(height: 5),
-              ],
+          Expanded(
+            child: Container(
+              color: Colors.white54,
+              width: width * 3 / 5 - 1,
+              padding: const EdgeInsets.only(left: 10.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    hotel.hotelname,
+                    maxLines: 2,
+                    softWrap: true,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
+                  const SizedBox(height: 5),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    padding: EdgeInsets.zero,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        StarRating(star: hotel.starrating),
+                        const SizedBox(width: 10),
+                        ReviewCount(count: hotel.reviewcount, averageReview: averageReview)
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  HotelListTags(
+                    tags: hotel.hotelTags,
+                    isColumn: true,
+                  ),
+                  const SizedBox(height: 10),
+                  hotel.minRateHotel > 0
+                      ? MoneyWidget(money: hotel.minRateHotel)
+                      : const PhoneWidget(fontSize: 15),
+                  const SizedBox(height: 5),
+                  XnnWidget(isXNN: hotel.hotelSupplierList?.isNotEmpty == true),
+                  const SizedBox(height: 5),
+                ],
+              ),
             ),
           )
         ],

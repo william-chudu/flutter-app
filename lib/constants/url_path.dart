@@ -23,5 +23,6 @@ final class UrlPath {
   final String policy = 'api-hotel/v1/mobile/dieu-khoan-dieu-kien';
   final String notification = 'api-members/v1/mobile/getListNotifications';
   final String listReservation = 'api-members/v1/mobile/get-list-reservation';
+  final String favouriteHotel = 'api-members/v1/mobile/show-wanted-product';
   final String a = '';
 }

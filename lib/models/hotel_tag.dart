@@ -1,4 +1,4 @@
-class HotelTag {
+final class HotelTag {
   String? tagLine;
   String id;
   String tag;

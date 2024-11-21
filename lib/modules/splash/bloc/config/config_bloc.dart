@@ -31,7 +31,8 @@ class ConfigBloc extends Bloc<ConfigEvent, ConfigState> {
 
       final data = await Future.wait([
         ApiClient.shared.mPost(UrlPath.shared.config),
-        Hive.openBox<bool>(ConstantType.language)
+        Hive.openBox<bool>(ConstantType.language),
+        Hive.openBox<bool>(ConstantType.theme),
       ]);
 
       final json = jsonDecode((data[0] as dynamic).body);

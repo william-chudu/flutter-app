@@ -1,6 +1,7 @@
 import 'package:chudu24/modules/bottom/index.dart';
 import 'package:chudu24/modules/city_n_ticket/index.dart';
 import 'package:chudu24/modules/error/index.dart';
+import 'package:chudu24/modules/favourite_hotel/index.dart';
 import 'package:chudu24/modules/google_map/index.dart';
 import 'package:chudu24/modules/home/index.dart';
 import 'package:chudu24/modules/hotel_detail/index.dart';
@@ -11,7 +12,7 @@ import 'package:chudu24/modules/list_point/index.dart';
 import 'package:chudu24/modules/notfound/index.dart';
 import 'package:chudu24/modules/notifications/index.dart';
 import 'package:chudu24/modules/search_info/index.dart';
-import 'package:chudu24/modules/setting/index.dart';
+import 'package:chudu24/modules/account/index.dart';
 import 'package:chudu24/modules/shopping_cart/index.dart';
 import 'package:chudu24/modules/splash/index.dart';
 import 'package:chudu24/modules/top_promotion/index.dart';
@@ -34,8 +35,8 @@ class AppRouter {
         return CityNTicket.route();
       case HotelDetail.routeName:
         return HotelDetail.route();
-      case Setting.routeName:
-        return Setting.route();
+      case Account.routeName:
+        return Account.route();
       case SearchInfo.routeName:
         return SearchInfo.route();
       case GoogleMapPage.routeName:
@@ -56,6 +57,8 @@ class AppRouter {
         return Notifications.route();
       case Journey.routeName:
         return Journey.route();
+      case FavouriteHotel.routeName:
+        return FavouriteHotel.route();
       case Webview.routeName:
         return Webview.route(routeSettings);
       default:

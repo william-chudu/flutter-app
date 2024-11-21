@@ -136,6 +136,11 @@ final class LanguageForApp {
     prepareForCheckIn: 'Sắp check-in',
     youHaveNoJourneyFor: 'Quý khách chưa có chuyến đi nào',
     bookingCode: 'Mã dịch vụ',
+    or: 'Hoặc',
+    register: 'Đăng kí',
+    setting: 'Cài đặt',
+    language: 'Ngôn ngữ',
+    theme: 'Nền hệ thống',
   );
 
   final enLabel = const LanguageLabel(
@@ -271,6 +276,11 @@ final class LanguageForApp {
     processing: 'Processing',
     youHaveNoJourneyFor: 'You have no journey for',
     bookingCode: 'Booking code',
+    or: 'Or',
+    register: 'Register',
+    setting: 'Setting',
+    language: 'Language',
+    theme: 'Theme',
   );
 }
 
@@ -407,6 +417,11 @@ class LanguageLabel {
   final String prepareForCheckIn;
   final String youHaveNoJourneyFor;
   final String bookingCode;
+  final String or;
+  final String register;
+  final String setting;
+  final String language;
+  final String theme;
 
   const LanguageLabel({
     required this.home,
@@ -541,6 +556,11 @@ class LanguageLabel {
     required this.prepareForCheckIn,
     required this.youHaveNoJourneyFor,
     required this.bookingCode,
+    required this.or,
+    required this.register,
+    required this.setting,
+    required this.language,
+    required this.theme,
   });
 
   Map<String, String> get jsonOrder => {

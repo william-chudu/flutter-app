@@ -3,7 +3,7 @@ import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
 import 'package:chudu24/models/authenticated_user.dart';
 import 'package:chudu24/modules/bootstrap/bloc/authentication/authentication_bloc.dart';
-import 'package:chudu24/modules/notfound/index.dart';
+import 'package:chudu24/modules/not_login/index.dart';
 import 'package:chudu24/utils/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,7 +22,7 @@ final class Journey extends StatelessWidget {
   static final Widget screen = BlocBuilder<AuthenticationBloc, AuthenticationState>(
     builder: (context, state) {
       if (state.user == null) {
-        return const NotFoundScreen();
+        return const NotLogin();
       }
       final user = state.user as AuthenticatedUser;
       return BlocProvider(
