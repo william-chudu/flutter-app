@@ -1,11 +1,18 @@
 part of '../index.dart';
 
 final class ListCartItems extends StatelessWidget {
-  const ListCartItems({super.key, required this.label, required this.rooms, required this.mapRoom});
+  const ListCartItems({
+    super.key,
+    required this.label,
+    required this.rooms,
+    required this.mapRoom,
+    required this.isDarkMode,
+  });
 
   final LanguageLabel label;
   final List<RoomRateInfo> rooms;
   final Map<String, InfoCartHotel> mapRoom;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +55,7 @@ final class ListCartItems extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      InfoHotel(room: room, label: label),
+                      InfoHotel(room: room, label: label, isDarkMode: isDarkMode),
                       const Divider(height: 20, thickness: 2),
                       InfoRoom(room: room, mapRoom: mapRoom, label: label)
                     ],

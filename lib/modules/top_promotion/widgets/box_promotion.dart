@@ -5,10 +5,12 @@ final class BoxPromotion extends StatelessWidget {
     super.key,
     required this.sale,
     required this.label,
+    required this.isDarkMode,
   });
 
   final DataHangMuc sale;
   final LanguageLabel label;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +28,7 @@ final class BoxPromotion extends StatelessWidget {
             width: 150,
             height: double.infinity,
             fit: BoxFit.cover,
+            isDarkMode: isDarkMode,
           ),
           const SizedBox(width: 10),
           Expanded(

@@ -14,6 +14,7 @@ final class PrioritizedChoices extends StatelessWidget {
     required this.height,
     this.summary,
     this.onTap,
+    required this.isDarkMode,
   });
   final int id;
   final String image;
@@ -22,6 +23,7 @@ final class PrioritizedChoices extends StatelessWidget {
   final double width;
   final double height;
   final void Function()? onTap;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +50,7 @@ final class PrioritizedChoices extends StatelessWidget {
               width: width,
               height: height,
               fit: BoxFit.cover,
+              isDarkMode: isDarkMode,
             ),
           ),
           Positioned(

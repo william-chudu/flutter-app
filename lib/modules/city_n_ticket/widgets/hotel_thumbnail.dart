@@ -3,16 +3,18 @@ import 'package:chudu24/modules/city_n_ticket/widgets/favorite_icon.dart';
 import 'package:flutter/material.dart';
 
 class HotelThumbnail extends StatelessWidget {
-  const HotelThumbnail({
-    super.key,
-    required this.thumbnail,
-    required this.width,
-    required double height,
-  }) : _height = height;
+  const HotelThumbnail(
+      {super.key,
+      required this.thumbnail,
+      required this.width,
+      required double height,
+      required this.isDarkMode})
+      : _height = height;
 
   final String thumbnail;
   final double width;
   final double _height;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +28,7 @@ class HotelThumbnail extends StatelessWidget {
             width: width * 2 / 5,
             height: _height,
             fit: BoxFit.fitHeight,
+            isDarkMode: isDarkMode,
           ),
         ),
         Positioned(

@@ -9,9 +9,10 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TopDestination extends StatelessWidget {
-  final void Function(BuildContext context, AddressSearch address) onTapItem;
+  const TopDestination({super.key, required this.onTapItem, required this.isDarkMode});
 
-  const TopDestination({super.key, required this.onTapItem});
+  final bool isDarkMode;
+  final void Function(BuildContext context, AddressSearch address) onTapItem;
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +46,7 @@ class TopDestination extends StatelessWidget {
                         title: location.title,
                         width: width,
                         height: height,
+                        isDarkMode: isDarkMode,
                         onTap: () {
                           onTapItem(
                             context,

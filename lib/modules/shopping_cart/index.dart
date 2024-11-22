@@ -37,6 +37,7 @@ final class ShoppingCart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final label = AppConstants.shared.label;
+    final isDarkMode = context.isDarkMode;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -64,7 +65,12 @@ final class ShoppingCart extends StatelessWidget {
                   children: [
                     CartHeader(label: label),
                     Expanded(
-                      child: ListCartItems(label: label, rooms: rooms, mapRoom: mapRoom),
+                      child: ListCartItems(
+                        label: label,
+                        rooms: rooms,
+                        mapRoom: mapRoom,
+                        isDarkMode: isDarkMode,
+                      ),
                     ),
                   ],
                 ),

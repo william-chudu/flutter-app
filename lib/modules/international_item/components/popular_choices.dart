@@ -1,9 +1,14 @@
 part of '../index.dart';
 
 final class PopularChoices extends StatelessWidget {
-  const PopularChoices({super.key, required this.onTapItem});
+  const PopularChoices({
+    super.key,
+    required this.onTapItem,
+    required this.isDarkMode,
+  });
 
   final void Function(InternationalElement item) onTapItem;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +62,11 @@ final class PopularChoices extends StatelessWidget {
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            ImageBuilder(item.linkImage.imgUrl, width: 175),
+                            ImageBuilder(
+                              item.linkImage.imgUrl,
+                              width: 175,
+                              isDarkMode: isDarkMode,
+                            ),
                             Expanded(
                               child: Center(
                                 child: Title(title: item.tieuDe),

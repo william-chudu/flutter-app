@@ -11,9 +11,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TopSale extends StatelessWidget {
-  final void Function(BuildContext context, AddressSearch address) onTapItem;
+  const TopSale({super.key, required this.onTapItem, required this.isDarkMode});
 
-  const TopSale({super.key, required this.onTapItem});
+  final void Function(BuildContext context, AddressSearch address) onTapItem;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +51,7 @@ class TopSale extends StatelessWidget {
                         summary: topSale.tomTat,
                         width: width,
                         height: height,
+                        isDarkMode: isDarkMode,
                         onTap: () {
                           onTapItem(
                             context,

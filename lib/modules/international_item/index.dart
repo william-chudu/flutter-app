@@ -42,6 +42,7 @@ final class InternationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final label = AppConstants.shared.label;
+    final isDarkMode = context.isDarkMode;
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -78,9 +79,9 @@ final class InternationItem extends StatelessWidget {
             return SafeArea(
               child: TabBarView(
                 children: [
-                  TopDestinations(onTapItem: onTapItem),
-                  PopularChoices(onTapItem: onTapItem),
-                  ListTravelNews(label: label),
+                  TopDestinations(onTapItem: onTapItem, isDarkMode: isDarkMode),
+                  PopularChoices(onTapItem: onTapItem, isDarkMode: isDarkMode),
+                  ListTravelNews(label: label, isDarkMode: isDarkMode),
                 ],
               ),
             );

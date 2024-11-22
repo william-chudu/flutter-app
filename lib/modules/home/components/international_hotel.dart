@@ -11,9 +11,10 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class InternationalHotel extends StatelessWidget {
-  final void Function(BuildContext context, AddressSearch address) onTapItem;
+  const InternationalHotel({super.key, required this.onTapItem, required this.isDarkMode});
 
-  const InternationalHotel({super.key, required this.onTapItem});
+  final void Function(BuildContext context, AddressSearch address) onTapItem;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +50,7 @@ class InternationalHotel extends StatelessWidget {
                         title: location.title.toCapitalize(),
                         width: width,
                         height: height,
+                        isDarkMode: isDarkMode,
                         onTap: () {
                           onTapItem(
                             context,

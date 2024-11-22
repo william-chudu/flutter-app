@@ -1,10 +1,16 @@
 part of '../index.dart';
 
 final class InfoHotel extends StatelessWidget {
-  const InfoHotel({super.key, required this.room, required this.label});
+  const InfoHotel({
+    super.key,
+    required this.room,
+    required this.label,
+    required this.isDarkMode,
+  });
 
   final RoomRateInfo room;
   final LanguageLabel label;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +28,7 @@ final class InfoHotel extends StatelessWidget {
               room.thumbnail.imgUrl,
               width: width,
               height: height,
+              isDarkMode: isDarkMode,
             ),
           ),
         ),

@@ -1,9 +1,10 @@
 part of '../index.dart';
 
 class TopDestinations extends StatelessWidget {
-  const TopDestinations({super.key, required this.onTapItem});
+  const TopDestinations({super.key, required this.onTapItem, required this.isDarkMode});
 
   final void Function(InternationalElement item) onTapItem;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,10 @@ class TopDestinations extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Expanded(
-                      child: ImageBuilder(item.linkImage.imgUrl),
+                      child: ImageBuilder(
+                        item.linkImage.imgUrl,
+                        isDarkMode: isDarkMode,
+                      ),
                     ),
                     const SizedBox(height: 10),
                     Title(title: item.tieuDe),

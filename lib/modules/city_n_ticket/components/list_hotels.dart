@@ -2,6 +2,7 @@ import 'package:chudu24/components/button_login.dart';
 import 'package:chudu24/components/loading.dart';
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/modules/bootstrap/bloc/app_search/app_search_bloc.dart';
 import 'package:chudu24/modules/bootstrap/models/address_search.dart';
 import 'package:chudu24/modules/bootstrap/models/app_search.dart';
@@ -13,8 +14,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ListHotels extends StatefulWidget {
-  final AppSearch search;
   const ListHotels({super.key, required this.search});
+
+  final AppSearch search;
 
   @override
   State<ListHotels> createState() => _ListHotelsState();
@@ -32,6 +34,7 @@ class _ListHotelsState extends State<ListHotels> {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = context.isDarkMode;
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -66,14 +69,24 @@ class _ListHotelsState extends State<ListHotels> {
                       const SizedBox(height: 20),
                       const ButtonLogin(),
                       const SizedBox(height: 20),
-                      BoxHotelItem(width: width, hotel: hotel, onTap: chooseHotel),
+                      BoxHotelItem(
+                        width: width,
+                        hotel: hotel,
+                        onTap: chooseHotel,
+                        isDarkMode: isDarkMode,
+                      ),
                     ],
                   );
                 }
                 if (index == lastIx) {
                   return Column(
                     children: [
-                      BoxHotelItem(width: width, hotel: hotel, onTap: chooseHotel),
+                      BoxHotelItem(
+                        width: width,
+                        hotel: hotel,
+                        onTap: chooseHotel,
+                        isDarkMode: isDarkMode,
+                      ),
                       const SizedBox(height: 20),
                       Builder(builder: (context) {
                         if (hotelLength >= state.total) {
@@ -100,7 +113,12 @@ class _ListHotelsState extends State<ListHotels> {
                     ],
                   );
                 }
-                return BoxHotelItem(width: width, hotel: hotel, onTap: chooseHotel);
+                return BoxHotelItem(
+                  width: width,
+                  hotel: hotel,
+                  onTap: chooseHotel,
+                  isDarkMode: isDarkMode,
+                );
               },
             );
           },

@@ -7,12 +7,14 @@ final class ItemRoomBoxClose extends StatelessWidget {
     required this.label,
     required this.onTapAlbum,
     required this.toggleOpen,
+    required this.isDarkMode,
   });
 
   final LanguageLabel label;
   final ItemRoomRate room;
   final void Function(List<HotelImage> photos) onTapAlbum;
   final void Function(bool value) toggleOpen;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +37,7 @@ final class ItemRoomBoxClose extends StatelessWidget {
                       room.roomThumbnail.imgUrl,
                       fit: BoxFit.fitHeight,
                       height: double.infinity,
+                      isDarkMode: isDarkMode,
                     ),
                   ),
                   Positioned(

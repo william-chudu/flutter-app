@@ -4,9 +4,11 @@ final class TopSales extends StatelessWidget {
   const TopSales({
     super.key,
     required this.label,
+    required this.isDarkMode,
   });
 
   final LanguageLabel label;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,7 @@ final class TopSales extends StatelessWidget {
                   key: Key(sale.id.toString()),
                   sale: sale,
                   label: label,
+                  isDarkMode: isDarkMode,
                 );
               },
             );

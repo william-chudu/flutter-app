@@ -8,6 +8,7 @@ import 'package:chudu24/modules/bootstrap/bloc/language/language_bloc.dart';
 import 'package:chudu24/modules/bootstrap/bloc/setting/setting_bloc.dart';
 import 'package:chudu24/modules/bootstrap/bloc/shopping_cart/shopping_cart_bloc.dart';
 import 'package:chudu24/modules/bootstrap/components/setting.dart';
+import 'package:chudu24/modules/bootstrap/protocols/theme_protocol.dart';
 import 'package:chudu24/modules/bottom/index.dart';
 import 'package:chudu24/modules/notfound/index.dart';
 import 'package:chudu24/router/index.dart';
@@ -66,10 +67,12 @@ final class Bootstrap extends StatelessWidget {
                           darkTheme: darkMode,
                           onGenerateRoute: AppRouter.onGenerateRoute,
                           home: Builder(builder: (context) {
-                            if (setting.isSetting) {
-                              return Setting(key: key);
-                            }
-                            return BottomTabsScreen(key: key);
+                            return ThemeProtocol(
+                              isDarkThemeApp: !theme.isLight,
+                              child: setting.isSetting
+                                  ? Setting(key: key)
+                                  : BottomTabsScreen(key: key),
+                            );
                           }),
                         );
                       },

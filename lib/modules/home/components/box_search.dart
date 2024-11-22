@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 final class BoxSearch extends StatelessWidget {
-  const BoxSearch({super.key});
+  const BoxSearch({super.key, required this.isDarkMode});
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +25,12 @@ final class BoxSearch extends StatelessWidget {
         image: DecorationImage(
           image: NetworkImage(AppConstants.link.backgroundSearch.imgUrl),
           fit: BoxFit.cover,
+          colorFilter: isDarkMode
+              ? const ColorFilter.mode(
+                  Color.fromRGBO(0, 0, 0, 0.25),
+                  BlendMode.darken,
+                )
+              : null,
         ),
       ),
       child: Container(

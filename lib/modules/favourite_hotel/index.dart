@@ -57,6 +57,7 @@ final class FavouriteHotel extends StatelessWidget {
     final label = AppConstants.shared.label;
     final size = MediaQuery.sizeOf(context);
     final width = size.width - 40;
+    final isDarkMode = context.isDarkMode;
 
     return Scaffold(
       appBar: AppBar(
@@ -90,7 +91,11 @@ final class FavouriteHotel extends StatelessWidget {
                           separatorBuilder: (context, index) => const SizedBox(height: 20),
                           itemBuilder: (_, index) {
                             final hotel = state.hotels[index];
-                            return HotelItem(hotel: hotel, width: width);
+                            return HotelItem(
+                              hotel: hotel,
+                              width: width,
+                              isDarkMode: isDarkMode,
+                            );
                           },
                         );
                   },

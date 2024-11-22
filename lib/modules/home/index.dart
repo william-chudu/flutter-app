@@ -1,4 +1,5 @@
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/modules/bootstrap/bloc/app_search/app_search_bloc.dart';
 import 'package:chudu24/modules/bootstrap/models/address_search.dart';
 import 'package:chudu24/modules/city_n_ticket/index.dart';
@@ -63,6 +64,7 @@ final class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const h20 = 20.0;
+    final isDarkMode = context.isDarkMode;
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -73,17 +75,17 @@ final class HomeScreen extends StatelessWidget {
               child: ListView(
                 physics: const ClampingScrollPhysics(),
                 children: [
-                  const BoxSearch(),
+                  BoxSearch(isDarkMode: isDarkMode),
                   const SizedBox(height: h20),
-                  const PromotionBanner(),
+                  PromotionBanner(isDarkMode: isDarkMode),
                   const SizedBox(height: h20),
-                  TopSale(onTapItem: onTapItem),
+                  TopSale(onTapItem: onTapItem, isDarkMode: isDarkMode),
                   const SizedBox(height: h20),
-                  TopDestination(onTapItem: onTapItem),
+                  TopDestination(onTapItem: onTapItem, isDarkMode: isDarkMode),
                   const SizedBox(height: h20),
-                  InternationalHotel(onTapItem: onTapItem),
+                  InternationalHotel(onTapItem: onTapItem, isDarkMode: isDarkMode),
                   const SizedBox(height: h20),
-                  const TravelGuide(),
+                  TravelGuide(isDarkMode: isDarkMode),
                   const SizedBox(height: 40),
                   const Divider(height: 0),
                   const SizedBox(height: h20),

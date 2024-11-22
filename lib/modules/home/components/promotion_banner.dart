@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:chudu24/components/image_builder.dart';
 import 'package:chudu24/components/loading.dart';
 import 'package:chudu24/enum/index.dart';
 import 'package:chudu24/extensions/string.dart';
@@ -8,7 +9,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/promotion_banner/promotion_banner_bloc.dart';
 
 class PromotionBanner extends StatelessWidget {
-  const PromotionBanner({super.key});
+  const PromotionBanner({super.key, required this.isDarkMode});
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +29,10 @@ class PromotionBanner extends StatelessWidget {
             ),
             itemCount: banners.length,
             itemBuilder: (BuildContext context, int index, int _) {
-              return Image.network(
+              return ImageBuilder(
                 banners[index].itemUrl.imgUrl,
                 fit: BoxFit.cover,
+                isDarkMode: isDarkMode,
               );
             },
           );

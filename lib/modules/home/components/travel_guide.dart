@@ -10,7 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TravelGuide extends StatelessWidget {
-  const TravelGuide({super.key});
+  const TravelGuide({super.key, required this.isDarkMode});
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -70,6 +71,7 @@ class TravelGuide extends StatelessWidget {
                                   fit: BoxFit.fill,
                                   width: width,
                                   height: height - 70,
+                                  isDarkMode: isDarkMode,
                                 ),
                               ),
                               Padding(

@@ -91,6 +91,7 @@ class _ModalSearchInfoState extends State<ModalSearchInfo> {
   Widget build(BuildContext context) {
     final emitter = context.read<SearchLocationBloc>();
     final label = AppConstants.shared.label;
+    final isDarkMode = context.isDarkMode;
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -218,11 +219,13 @@ class _ModalSearchInfoState extends State<ModalSearchInfo> {
                             hotels: data[index] as List<HotelFromSearch>,
                             label: label,
                             onSubmitLocation: submitLocation,
+                            isDarkMode: isDarkMode,
                           );
                         } else if (index == 2) {
                           return _ListTickets(
                             tickets: data[index] as List<TicketFromSearch>,
                             label: label,
+                            isDarkMode: isDarkMode,
                           );
                         } else {
                           return _ListTicketItems(
@@ -233,7 +236,11 @@ class _ModalSearchInfoState extends State<ModalSearchInfo> {
                       },
                     );
                   } else {
-                    return _TopDestination(label: label, onSubmitLocation: submitLocation);
+                    return _TopDestination(
+                      label: label,
+                      onSubmitLocation: submitLocation,
+                      isDarkMode: isDarkMode,
+                    );
                   }
                 },
               ),
@@ -296,10 +303,16 @@ final class _ListCities extends StatelessWidget {
 }
 
 final class _ListHotels extends StatelessWidget {
-  const _ListHotels({required this.hotels, required this.label, required this.onSubmitLocation});
+  const _ListHotels({
+    required this.hotels,
+    required this.label,
+    required this.onSubmitLocation,
+    required this.isDarkMode,
+  });
 
   final List<HotelFromSearch> hotels;
   final LanguageLabel label;
+  final bool isDarkMode;
   final void Function(int id, String title, SearchType type, [String? thumbnail]) onSubmitLocation;
 
   @override
@@ -324,7 +337,10 @@ final class _ListHotels extends StatelessWidget {
               },
               child: Row(
                 children: [
-                  _ImageThumbnail(url: hotel.thumbnail.imgUrl),
+                  _ImageThumbnail(
+                    url: hotel.thumbnail.imgUrl,
+                    isDarkMode: isDarkMode,
+                  ),
                   const SizedBox(width: 15),
                   Expanded(
                     child: Column(
@@ -356,10 +372,12 @@ final class _ListTickets extends StatelessWidget {
   const _ListTickets({
     required this.tickets,
     required this.label,
+    required this.isDarkMode,
   });
 
   final List<TicketFromSearch> tickets;
   final LanguageLabel label;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -378,7 +396,10 @@ final class _ListTickets extends StatelessWidget {
           (int i) {
             return Row(
               children: [
-                _ImageThumbnail(url: tickets[i].thumbnail.imgUrl),
+                _ImageThumbnail(
+                  url: tickets[i].thumbnail.imgUrl,
+                  isDarkMode: isDarkMode,
+                ),
                 const SizedBox(width: 15),
                 Expanded(
                   child: Text(
@@ -396,9 +417,10 @@ final class _ListTickets extends StatelessWidget {
 }
 
 class _ImageThumbnail extends StatelessWidget {
-  const _ImageThumbnail({required this.url});
+  const _ImageThumbnail({required this.url, required this.isDarkMode});
 
   final String url;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -407,6 +429,7 @@ class _ImageThumbnail extends StatelessWidget {
       width: 40,
       height: 25,
       fit: BoxFit.cover,
+      isDarkMode: isDarkMode,
     );
   }
 }
@@ -495,7 +518,11 @@ final class _ListTicketItems extends StatelessWidget {
 }
 
 class _TopDestination extends StatelessWidget {
-  const _TopDestination({required this.label, required this.onSubmitLocation});
+  const _TopDestination({
+    required this.label,
+    required this.onSubmitLocation,
+    required this.isDarkMode,
+  });
 
   final LanguageLabel label;
   final void Function(
@@ -506,6 +533,7 @@ class _TopDestination extends StatelessWidget {
     DateTime? checkIn,
     DateTime? checkOut,
   ]) onSubmitLocation;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -681,6 +709,7 @@ class _TopDestination extends StatelessWidget {
                               width: 50,
                               height: 50,
                               fit: BoxFit.cover,
+                              isDarkMode: isDarkMode,
                             ),
                           ),
                           const SizedBox(width: 10),

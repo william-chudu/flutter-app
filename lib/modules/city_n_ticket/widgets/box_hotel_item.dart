@@ -18,11 +18,13 @@ class BoxHotelItem extends StatefulWidget {
     required this.width,
     required this.hotel,
     required this.onTap,
+    required this.isDarkMode,
   });
 
   final double width;
   final HotelInfo hotel;
   final void Function(AddressSearch s) onTap;
+  final bool isDarkMode;
 
   @override
   State<BoxHotelItem> createState() => _BoxHotelItemState();
@@ -65,7 +67,12 @@ class _BoxHotelItemState extends State<BoxHotelItem> {
         key: Key(hotel.hotelid),
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          HotelThumbnail(thumbnail: hotel.thumbnail.imgUrl, width: width, height: _height),
+          HotelThumbnail(
+            thumbnail: hotel.thumbnail.imgUrl,
+            width: width,
+            height: _height,
+            isDarkMode: widget.isDarkMode,
+          ),
           Expanded(
             child: Container(
               width: width * 3 / 5 - 1,

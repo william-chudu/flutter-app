@@ -4,9 +4,11 @@ final class OtherPromotions extends StatelessWidget {
   const OtherPromotions({
     super.key,
     required this.label,
+    required this.isDarkMode,
   });
 
   final LanguageLabel label;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,11 @@ final class OtherPromotions extends StatelessWidget {
                       promotion.items.length,
                       (int ix) {
                         final sale = promotion.items[ix];
-                        return BoxPromotion(sale: sale, label: label);
+                        return BoxPromotion(
+                          sale: sale,
+                          label: label,
+                          isDarkMode: isDarkMode,
+                        );
                       },
                     ).separator(const SizedBox(height: 10)),
                   ),

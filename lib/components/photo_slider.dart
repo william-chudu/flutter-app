@@ -1,5 +1,6 @@
 import 'package:chudu24/components/image_builder.dart';
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/extensions/string.dart';
 import 'package:chudu24/models/hotel_image.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +34,7 @@ final class PhotoSlider extends StatelessWidget {
     }
     final imageSize = thumbSize - 20;
     final activeColor = borderColor ?? AppConstants.accent.withOpacity(0.8);
+    final isDarkMode = context.isDarkMode;
     return Stack(
       children: [
         SizedBox(
@@ -56,6 +58,7 @@ final class PhotoSlider extends StatelessWidget {
                     photo: photos[i],
                     borderThickness: borderThickness,
                     radius: radius,
+                    isDarkMode: isDarkMode,
                   ),
                 );
               }
@@ -65,6 +68,7 @@ final class PhotoSlider extends StatelessWidget {
                 key: Key(photos[i].uuid),
                 borderThickness: borderThickness,
                 radius: radius,
+                isDarkMode: isDarkMode,
               );
             },
           ),
@@ -97,12 +101,14 @@ class _ItemPhoto extends StatelessWidget {
     required this.photo,
     required this.borderThickness,
     required this.radius,
+    required this.isDarkMode,
   });
 
   final double borderThickness;
   final double imageSize;
   final double radius;
   final HotelImage photo;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -120,6 +126,7 @@ class _ItemPhoto extends StatelessWidget {
         key: Key(photo.uuid),
         photo.url.imgUrl,
         fit: BoxFit.cover,
+        isDarkMode: isDarkMode,
       ),
     );
   }

@@ -50,6 +50,7 @@ final class TopPromotion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final label = AppConstants.shared.label;
+    final isDarkMode = context.isDarkMode;
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -66,8 +67,8 @@ final class TopPromotion extends StatelessWidget {
         body: SafeArea(
           child: TabBarView(
             children: [
-              TopSales(label: label),
-              OtherPromotions(label: label),
+              TopSales(label: label, isDarkMode: isDarkMode),
+              OtherPromotions(label: label, isDarkMode: isDarkMode),
             ],
           ),
         ),

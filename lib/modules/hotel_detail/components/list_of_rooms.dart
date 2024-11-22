@@ -8,6 +8,7 @@ final class ListOfRooms extends StatelessWidget {
     required this.hasConsultation,
     required this.label,
     required this.onTapAlbum,
+    required this.isDarkMode,
   });
 
   final double floatingHeight;
@@ -15,6 +16,7 @@ final class ListOfRooms extends StatelessWidget {
   final bool hasConsultation;
   final LanguageLabel label;
   final void Function(List<HotelImage> photos) onTapAlbum;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -81,6 +83,7 @@ final class ListOfRooms extends StatelessWidget {
                       label: label,
                       onTapAlbum: onTapAlbum,
                       isLastItem: index == count - 1,
+                      isDarkMode: isDarkMode,
                     ),
                   );
                 },

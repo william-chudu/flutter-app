@@ -90,6 +90,7 @@ final class HotelDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = context.isDarkMode;
     return BlocBuilder<AppSearchBloc, AppSearchState>(
       buildWhen: (prev, cur) {
         return prev.appSearch.search?.id != cur.appSearch.search?.id;
@@ -188,6 +189,7 @@ final class HotelDetail extends StatelessWidget {
                             hasConsultation: (int.tryParse(hotel.starrating) ?? 0) > 3,
                             label: label,
                             onTapAlbum: showPhotoAlbum,
+                            isDarkMode: isDarkMode,
                           ),
                           Properties(hotel: hotel, onTap: onTapSeemore, label: label),
                         ],

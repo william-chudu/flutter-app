@@ -5,10 +5,12 @@ final class HotelItem extends StatefulWidget {
     super.key,
     required this.hotel,
     required this.width,
+    required this.isDarkMode,
   });
 
   final ItemFavHotel hotel;
   final double width;
+  final bool isDarkMode;
 
   @override
   State<HotelItem> createState() => _HotelItemState();
@@ -49,7 +51,12 @@ class _HotelItemState extends State<HotelItem> {
         key: Key(hotel.hotelid),
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          HotelThumbnail(thumbnail: hotel.thumbnail.imgUrl, width: width, height: _height),
+          HotelThumbnail(
+            thumbnail: hotel.thumbnail.imgUrl,
+            width: width,
+            height: _height,
+            isDarkMode: widget.isDarkMode,
+          ),
           Expanded(
             child: Container(
               width: width * 3 / 5 - 1,

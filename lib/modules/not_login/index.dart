@@ -23,6 +23,7 @@ final class NotLogin extends StatelessWidget {
               width: 300,
               height: 50,
               fit: BoxFit.fitHeight,
+              isDarkMode: context.isDarkMode,
             ),
             const SizedBox(height: 50),
             ButtonFilledWidget(

@@ -1,9 +1,10 @@
 part of '../index.dart';
 
 final class ListTravelNews extends StatelessWidget {
-  const ListTravelNews({super.key, required this.label});
+  const ListTravelNews({super.key, required this.label, required this.isDarkMode});
 
   final LanguageLabel label;
+  final bool isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +65,11 @@ final class ListTravelNews extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        ImageBuilder(item.linkImage.imgUrl, width: 150),
+                        ImageBuilder(
+                          item.linkImage.imgUrl,
+                          width: 150,
+                          isDarkMode: isDarkMode,
+                        ),
                         const SizedBox(width: 10),
                         Expanded(
                           child: Text(
