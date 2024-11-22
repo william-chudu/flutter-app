@@ -154,7 +154,6 @@ class _HotelItemState extends State<HotelItem> {
           HotelThumbnail(thumbnail: hotel.thumbnail.imgUrl, width: width, height: _height),
           Expanded(
             child: Container(
-              color: Colors.white54,
               width: width * 3 / 5 - 1,
               padding: const EdgeInsets.only(left: 10.0),
               child: Column(
