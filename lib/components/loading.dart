@@ -1,4 +1,5 @@
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 
 class LoadingWidget extends StatelessWidget {
@@ -25,10 +26,9 @@ class LoadingWidget extends StatelessWidget {
               children: [
                 Text(
                   label ?? 'Loading...',
-                  style: const TextStyle(
+                  style: context.text.labelMedium?.copyWith(
                     color: Colors.black12,
                     fontSize: 30,
-                    fontWeight: FontWeight.w600,
                   ),
                 ),
                 const SizedBox(height: 5),

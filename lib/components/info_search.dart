@@ -129,12 +129,11 @@ final class InfoSearch extends StatelessWidget {
                   child: info.search?.title != null
                       ? Text(
                           info.search?.title ?? '',
-                          style: context.text.labelMedium,
+                          style: context.text.titleMedium,
                         )
                       : Text(
                           label.addressOrHotel,
-                          style: TextStyle(
-                            fontSize: context.text.titleMedium?.fontSize,
+                          style: context.text.bodyLarge?.copyWith(
                             color: context.color.outline,
                           ),
                         ),

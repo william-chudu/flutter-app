@@ -53,10 +53,8 @@ final class ButtonLogin extends StatelessWidget {
             child: Text(
               AppConstants.shared.label.loginAndSeePromotion,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: context.text.bodyLarge?.copyWith(
                 color: context.color.surfaceTint,
-                fontSize: context.text.titleMedium?.fontSize,
-                fontWeight: FontWeight.w500,
               ),
             ),
           );

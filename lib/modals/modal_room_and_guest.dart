@@ -64,7 +64,7 @@ class _ModalRoomAndGuestState extends State<ModalRoomAndGuest> {
               children: [
                 Text(
                   label.roomAndGuest.toUpperCase(),
-                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: context.text.displayMedium,
                 ),
                 const SizedBox(height: 20),
                 BoxCountValue(
@@ -107,10 +107,8 @@ class _ModalRoomAndGuestState extends State<ModalRoomAndGuest> {
                   child: Center(
                     child: Text(
                       label.submit,
-                      style: TextStyle(
+                      style: context.text.titleLarge?.copyWith(
                         color: context.color.surfaceTint,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
                       ),
                     ),
                   ),
@@ -147,7 +145,7 @@ class BoxCountValue extends StatelessWidget {
       children: [
         Text(
           label,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: context.text.titleLarge,
         ),
         StreamBuilder<int>(
           stream: adultStream.stream,
@@ -173,7 +171,7 @@ class BoxCountValue extends StatelessWidget {
                   child: Text(
                     count.toString(),
                     textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                    style: context.text.displaySmall,
                   ),
                 ),
                 const SizedBox(width: 10),

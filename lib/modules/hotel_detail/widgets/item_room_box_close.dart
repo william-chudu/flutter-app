@@ -97,8 +97,9 @@ final class ItemRoomBoxClose extends StatelessWidget {
                         Expanded(
                           child: Text(
                             label.viewPriceAndBookNow,
-                            style: context.text.bodyMedium
-                                ?.copyWith(color: context.color.primaryContainer),
+                            style: context.text.bodySmall?.copyWith(
+                              color: context.color.surfaceTint,
+                            ),
                           ),
                         ),
                         const SizedBox(width: 10),

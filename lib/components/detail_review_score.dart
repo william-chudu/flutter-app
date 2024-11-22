@@ -1,4 +1,5 @@
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 
 final class DetailReviewScore extends StatelessWidget {
@@ -77,7 +78,10 @@ final class _ItemScoreReview extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(label, style: const TextStyle(color: Colors.grey)),
+          Text(
+            label,
+            style: context.text.labelSmall,
+          ),
           Row(
             children: [
               Expanded(
@@ -96,7 +100,10 @@ final class _ItemScoreReview extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 20),
-              SizedBox(width: 20, child: Text(grade.toString())),
+              SizedBox(
+                width: 20,
+                child: Text(grade.toString(), style: context.text.bodyMedium),
+              ),
             ],
           ),
         ],

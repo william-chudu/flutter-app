@@ -35,8 +35,7 @@ final class InputBox extends StatelessWidget {
         validator: validator,
         decoration: InputDecoration(
           hintText: label,
-          hintStyle: TextStyle(
-            fontSize: context.text.titleMedium?.fontSize,
+          hintStyle: context.text.bodyLarge?.copyWith(
             color: Colors.grey,
           ),
           border: InputBorder.none,

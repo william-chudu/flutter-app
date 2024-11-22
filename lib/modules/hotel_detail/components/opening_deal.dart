@@ -66,13 +66,14 @@ final class OpeningDeal extends StatelessWidget {
                                   child: Text(
                                     deal.tenLoaiGia,
                                     style: context.text.labelMedium?.copyWith(
-                                      color: Colors.orange[600],
+                                      color: context.color.surfaceBright,
                                     ),
                                     maxLines: 1,
                                   ),
                                 ),
                                 const SizedBox(width: 10),
-                                Icon(Icons.chevron_right_rounded, color: Colors.orange[600]),
+                                Icon(Icons.chevron_right_rounded,
+                                    color: context.color.surfaceBright),
                               ],
                             ),
                           ),

@@ -24,7 +24,9 @@ final class ModalDeal extends StatelessWidget {
                   children: [
                     Text(
                       deal.tenLoaiGia,
-                      style: context.text.titleLarge?.copyWith(color: Colors.orange[600]),
+                      style: context.text.titleLarge?.copyWith(
+                        color: context.color.surfaceBright,
+                      ),
                     ),
                     const Divider(height: 30),
                     Row(

@@ -23,10 +23,8 @@ class XnnWidget extends StatelessWidget {
           Icon(Icons.bolt, color: isBox ? Colors.white : Colors.orange),
           Text(
             label.confirmNow,
-            style: TextStyle(
+            style: context.text.labelSmall?.copyWith(
               color: isBox ? Colors.white : Colors.orange,
-              fontSize: context.text.titleSmall?.fontSize,
-              fontWeight: FontWeight.w600,
             ),
           ),
         ],

@@ -1,4 +1,6 @@
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
+import 'package:chudu24/modals/modal_room_and_guest.dart';
 import 'package:chudu24/utils/index.dart';
 import 'package:flutter/material.dart';
 
@@ -14,25 +16,22 @@ class MoneyWidget extends StatelessWidget {
         children: [
           TextSpan(
             text: Utils.money.money(money),
-            style: TextStyle(
+            style: context.text.titleMedium?.copyWith(
               color: AppConstants.accent,
               fontSize: fontSize,
-              fontWeight: FontWeight.bold,
             ),
           ),
           TextSpan(
             text: '.000',
-            style: TextStyle(
+            style: context.text.labelMedium?.copyWith(
               color: AppConstants.accent,
               fontSize: fontSize - 2,
-              fontWeight: FontWeight.w500,
             ),
           ),
           TextSpan(
             text: ' VNĐ/đêm',
-            style: TextStyle(
+            style: context.text.labelMedium?.copyWith(
               color: Colors.green.shade600,
-              fontWeight: FontWeight.w500,
               fontSize: fontSize - 3,
             ),
           )

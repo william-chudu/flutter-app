@@ -15,8 +15,7 @@ final class HeaderModal extends StatelessWidget {
         children: [
           Text(
             '\u{274C}',
-            style: TextStyle(
-              fontSize: context.text.titleMedium?.fontSize,
+            style: context.text.labelMedium?.copyWith(
               color: Colors.transparent,
             ),
           ),

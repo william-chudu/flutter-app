@@ -19,12 +19,10 @@ final class NotFoundScreen extends StatelessWidget {
       body: Center(
         child: Text(
           '404',
-          style: TextStyle(
+          style: context.text.headlineLarge?.copyWith(
             fontSize: 100,
-            fontWeight: FontWeight.bold,
             color: context.color.outline,
-            decoration: TextDecoration.underline,
-            decorationColor: Colors.black12,
+            decorationColor: context.color.outline,
             decorationThickness: 0.5,
           ),
         ),

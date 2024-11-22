@@ -1,4 +1,5 @@
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 
 final class ErrorScreen extends StatelessWidget {
@@ -16,12 +17,11 @@ final class ErrorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const Center(
+      body: Center(
         child: Text(
           'ERROR',
-          style: TextStyle(
+          style: context.text.displayLarge?.copyWith(
             fontSize: 50,
-            fontWeight: FontWeight.bold,
             color: AppConstants.accent,
           ),
         ),

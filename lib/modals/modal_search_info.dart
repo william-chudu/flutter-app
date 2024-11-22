@@ -141,10 +141,7 @@ class _ModalSearchInfoState extends State<ModalSearchInfo> {
                       controller: inputController,
                       decoration: InputDecoration(
                         hintText: label.addressOrHotel,
-                        hintStyle: TextStyle(
-                          fontSize: context.text.titleMedium?.fontSize,
-                          color: Colors.grey,
-                        ),
+                        hintStyle: context.text.bodyLarge,
                         border: InputBorder.none,
                       ),
                       onChanged: (keyword) {
@@ -264,7 +261,7 @@ final class _ListCities extends StatelessWidget {
         const SizedBox(height: 10),
         Text(
           label.area,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: context.text.titleLarge,
         ),
         const SizedBox(height: 10),
         ...List<Widget>.generate(
@@ -314,7 +311,7 @@ final class _ListHotels extends StatelessWidget {
         const Divider(height: 40),
         Text(
           label.hotel,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: context.text.titleLarge,
         ),
         const SizedBox(height: 10),
         ...List<Widget>.generate(
@@ -340,10 +337,7 @@ final class _ListHotels extends StatelessWidget {
                         ),
                         Text(
                           hotel.address1,
-                          style: TextStyle(
-                            fontSize: context.text.titleMedium?.fontSize,
-                            color: Colors.grey,
-                          ),
+                          style: context.text.bodyMedium,
                         ),
                       ],
                     ),
@@ -376,7 +370,7 @@ final class _ListTickets extends StatelessWidget {
         const Divider(height: 40),
         Text(
           label.cityService,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: context.text.titleLarge,
         ),
         const SizedBox(height: 10),
         ...List<Widget>.generate(
@@ -435,7 +429,7 @@ final class _ListTicketItems extends StatelessWidget {
         const Divider(height: 40),
         Text(
           label.ticket,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: context.text.titleLarge,
         ),
         const SizedBox(height: 10),
         ...List<Widget>.generate(
@@ -486,10 +480,7 @@ final class _ListTicketItems extends StatelessWidget {
                           Expanded(
                             child: Text(
                               item.address ?? '',
-                              style: TextStyle(
-                                fontSize: context.text.titleMedium?.fontSize,
-                                color: Colors.grey,
-                              ),
+                              style: context.text.bodyMedium,
                             ),
                           ),
                         ],
@@ -555,7 +546,7 @@ class _TopDestination extends StatelessWidget {
                         shape: StadiumBorder(
                           side: BorderSide(width: 0, color: Colors.grey[200] ?? Colors.grey),
                         ),
-                        labelStyle: TextStyle(fontSize: context.text.titleMedium?.fontSize),
+                        labelStyle: context.text.titleMedium,
                         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
                         label: Text(location.title),
@@ -699,7 +690,7 @@ class _TopDestination extends StatelessWidget {
                             children: [
                               Text(
                                 item.keywordCityName,
-                                style: context.text.labelMedium,
+                                style: context.text.titleMedium,
                               ),
                               const SizedBox(height: 5),
                               Text(

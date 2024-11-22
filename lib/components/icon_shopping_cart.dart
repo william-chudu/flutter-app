@@ -38,18 +38,17 @@ final class IconShoppingCart extends StatelessWidget {
               }
               return Positioned(
                 top: 0,
-                right: 15,
+                right: 10,
                 child: Container(
-                  padding: const EdgeInsets.all(3),
+                  padding: const EdgeInsets.all(5),
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: AppConstants.accent,
                   ),
                   child: Text(
                     state.count.toString(),
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: context.text.bodyMedium?.fontSize,
+                    style: context.text.bodySmall?.copyWith(
+                      color: context.color.surfaceTint,
                     ),
                   ),
                 ),

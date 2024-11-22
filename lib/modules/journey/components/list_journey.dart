@@ -42,7 +42,7 @@ final class ListJourney extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 color: index == 0
-                    ? Colors.orange.shade600
+                    ? context.color.surfaceBright
                     : index == 1
                         ? Colors.blue
                         : Colors.green,

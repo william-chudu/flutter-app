@@ -1,3 +1,5 @@
+import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/extensions/list.dart';
 import 'package:chudu24/models/hotel_tag.dart';
 import 'package:chudu24/utils/index.dart';
@@ -48,11 +50,11 @@ class HotelListTags extends StatelessWidget {
             ? Container(
                 padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
                 margin: const EdgeInsets.only(bottom: 5),
-                color: Colors.orange,
+                color: context.color.surfaceBright,
                 child: Text(
                   tag.tag,
-                  style: TextStyle(
-                    color: Colors.white,
+                  style: context.text.labelMedium?.copyWith(
+                    color: context.color.surfaceTint,
                     fontSize: fontSize,
                     fontWeight: FontWeight.w500,
                   ),
@@ -66,10 +68,9 @@ class HotelListTags extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 5),
                 child: Text(
                   tag.tagLine ?? '',
-                  style: TextStyle(
-                    color: Colors.orange,
+                  style: context.text.labelMedium?.copyWith(
+                    color: context.color.surfaceBright,
                     fontSize: fontSize,
-                    fontWeight: FontWeight.w500,
                   ),
                 ),
               )
@@ -85,10 +86,9 @@ class HotelListTags extends StatelessWidget {
                 color: Colors.red,
                 child: Text(
                   tag.tag,
-                  style: TextStyle(
-                    color: Colors.white,
+                  style: context.text.labelMedium?.copyWith(
+                    color: context.color.surfaceTint,
                     fontSize: fontSize,
-                    fontWeight: FontWeight.w500,
                   ),
                 ),
               )
@@ -100,10 +100,9 @@ class HotelListTags extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 5),
                 child: Text(
                   tag.tagLine ?? '',
-                  style: TextStyle(
-                    color: Colors.red,
+                  style: context.text.labelMedium?.copyWith(
+                    color: AppConstants.accent,
                     fontSize: fontSize,
-                    fontWeight: FontWeight.w500,
                   ),
                 ),
               )
@@ -121,10 +120,9 @@ class HotelListTags extends StatelessWidget {
                 ),
                 child: Text(
                   tag.tag,
-                  style: TextStyle(
+                  style: context.text.labelMedium?.copyWith(
                     color: Colors.green,
                     fontSize: fontSize,
-                    fontWeight: FontWeight.w500,
                   ),
                 ),
               )
