@@ -1,3 +1,4 @@
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 
@@ -11,7 +12,11 @@ final class HtmlBox extends StatelessWidget {
     return Html(
       data: content,
       style: {
-        '*': Style(fontSize: FontSize(16), padding: HtmlPaddings.zero, margin: Margins.zero),
+        '*': Style(
+          fontSize: FontSize(context.text.bodyLarge?.fontSize ?? 16),
+          padding: HtmlPaddings.zero,
+          margin: Margins.zero,
+        ),
       },
     );
   }

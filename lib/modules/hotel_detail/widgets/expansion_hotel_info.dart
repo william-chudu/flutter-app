@@ -25,7 +25,7 @@ final class ExpansionHotelInfo extends StatelessWidget {
               list.length,
               (int ix) {
                 final item = list[ix];
-                final color = Colors.blueGrey[50] ?? Colors.blueGrey;
+                final color = context.color.secondaryContainer;
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0),
                   child: ExpansionTile(
