@@ -1,5 +1,6 @@
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/modules/bootstrap/bloc/shopping_cart/shopping_cart_bloc.dart';
 import 'package:chudu24/modules/shopping_cart/index.dart';
 import 'package:chudu24/utils/index.dart';
@@ -37,18 +38,17 @@ final class IconShoppingCart extends StatelessWidget {
               }
               return Positioned(
                 top: 0,
-                right: 15,
+                right: 10,
                 child: Container(
-                  padding: const EdgeInsets.all(3),
+                  padding: const EdgeInsets.all(5),
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: AppConstants.accent,
                   ),
                   child: Text(
                     state.count.toString(),
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
+                    style: context.text.bodySmall?.copyWith(
+                      color: context.color.surfaceTint,
                     ),
                   ),
                 ),

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:chudu24/components/button.dart';
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/models/pair.dart';
 import 'package:chudu24/modules/city_n_ticket/bloc/list_hotel/list_hotel_bloc.dart';
 import 'package:chudu24/modules/city_n_ticket/models/param_list_hotel.dart';
@@ -86,10 +87,8 @@ class _ModalFilterState extends State<ModalOrder> {
               child: Center(
                 child: Text(
                   label.apply,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                  style: context.text.titleLarge?.copyWith(
+                    color: context.color.surfaceTint,
                   ),
                 ),
               ),
@@ -137,41 +136,16 @@ class ItemOrder extends StatelessWidget {
           contentPadding: const EdgeInsets.symmetric(horizontal: 0, vertical: 5),
           title: Text(
             title,
-            style: TextStyle(
-              color: isChecking ? Colors.green : Colors.black,
-              fontSize: 17,
-              fontWeight: FontWeight.bold,
+            style: context.text.titleLarge?.copyWith(
+              color: isChecking ? Colors.green : null,
             ),
           ),
           trailing: Icon(
             Icons.check,
-            color: isChecking ? Colors.green : Colors.black,
+            color: isChecking ? Colors.green : context.color.primary,
             size: 25,
           ),
         );
-        // Row(
-        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //   children: [
-        //     Expanded(
-        //       child: Padding(
-        //         padding: const EdgeInsets.symmetric(vertical: 20.0),
-        //         child: Text(
-        //           title,
-        //           style: TextStyle(
-        //             color: isChecking ? Colors.green : Colors.black,
-        //             fontSize: 17,
-        //             fontWeight: FontWeight.bold,
-        //           ),
-        //         ),
-        //       ),
-        //     ),
-        //     Icon(
-        //       Icons.check,
-        //       color: isChecking ? Colors.green : Colors.black,
-        //       size: 25,
-        //     ),
-        //   ],
-        // ),
       },
     );
   }

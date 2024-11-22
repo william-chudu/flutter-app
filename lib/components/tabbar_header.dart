@@ -5,11 +5,11 @@ final class TabbarHeader extends StatelessWidget {
   const TabbarHeader({
     super.key,
     required this.labels,
-    this.fontSize = 18,
+    this.textStyle,
   });
 
   final List<String> labels;
-  final double fontSize;
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ final class TabbarHeader extends StatelessWidget {
         (int index) => Text(
           labels[index],
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: fontSize, fontWeight: FontWeight.w600),
+          style: textStyle,
         ),
       ),
     );

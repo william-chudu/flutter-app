@@ -1,7 +1,7 @@
 import 'package:chudu24/constants/index.dart';
 import 'package:flutter/material.dart';
 
-class ButtonFilledWidget extends StatelessWidget {
+final class ButtonFilledWidget extends StatelessWidget {
   const ButtonFilledWidget({
     super.key,
     required this.child,

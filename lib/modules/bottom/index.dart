@@ -69,7 +69,7 @@ class _HomeScreenState extends State<BottomTabsScreen> {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.grey[50],
+        // backgroundColor: Colors.grey[50],
         showSelectedLabels: true,
         showUnselectedLabels: true,
         selectedItemColor: AppConstants.accent,

@@ -3,6 +3,7 @@ import 'package:chudu24/components/image_builder.dart';
 import 'package:chudu24/components/tabbar_header.dart';
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/extensions/list.dart';
 import 'package:chudu24/models/room_include.dart';
 import 'package:chudu24/modules/home/bloc/top_sale/top_sale_bloc.dart';
@@ -55,7 +56,7 @@ final class TopPromotion extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             label.topPromotion,
-            style: const TextStyle(fontWeight: FontWeight.w600),
+            style: context.text.displayMedium,
           ),
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(40),

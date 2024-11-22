@@ -17,7 +17,7 @@ final class ListTravelNews extends StatelessWidget {
         }
         return Column(
           children: [
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
@@ -25,7 +25,7 @@ final class ListTravelNews extends StatelessWidget {
                 children: [
                   Text(
                     label.travelNews,
-                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: context.text.titleLarge,
                   ),
                   InkWell(
                     onTap: () {
@@ -33,7 +33,7 @@ final class ListTravelNews extends StatelessWidget {
                     },
                     child: Text(
                       '${label.seemore} >',
-                      style: const TextStyle(color: Colors.blue, fontSize: 16),
+                      style: context.text.labelSmall?.copyWith(color: Colors.blue),
                     ),
                   )
                 ],
@@ -71,7 +71,7 @@ final class ListTravelNews extends StatelessWidget {
                             item.tieuDe,
                             maxLines: 3,
                             overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(fontSize: 16, color: Colors.blue),
+                            style: context.text.labelMedium?.copyWith(color: Colors.blue),
                           ),
                         ),
                       ],

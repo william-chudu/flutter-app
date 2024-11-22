@@ -1,4 +1,5 @@
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/modules/bootstrap/bloc/authentication/authentication_bloc.dart';
 import 'package:chudu24/modules/account/index.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -38,11 +39,7 @@ final class ButtonLogin extends StatelessWidget {
                 child: Text(
                   AppConstants.shared.label.loginAndSeePromotion,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: context.text.titleMedium?.copyWith(color: context.color.surfaceTint),
                 ),
               ),
               const Divider(height: 1),
@@ -56,10 +53,8 @@ final class ButtonLogin extends StatelessWidget {
             child: Text(
               AppConstants.shared.label.loginAndSeePromotion,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
+              style: context.text.bodyLarge?.copyWith(
+                color: context.color.surfaceTint,
               ),
             ),
           );

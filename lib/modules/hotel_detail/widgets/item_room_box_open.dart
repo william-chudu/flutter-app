@@ -54,7 +54,7 @@ final class ItemRoomBoxOpen extends StatelessWidget {
                   Expanded(
                     child: Text(
                       roomRate.roomName,
-                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                      style: context.text.titleLarge,
                     ),
                   ),
                   const SizedBox(width: 10),
@@ -75,11 +75,7 @@ final class ItemRoomBoxOpen extends StatelessWidget {
                     },
                     child: Text(
                       label.roomInformation,
-                      style: const TextStyle(
-                        color: Colors.blue,
-                        decoration: TextDecoration.underline,
-                        decorationColor: Colors.blue,
-                      ),
+                      style: context.text.headlineSmall,
                     ),
                   ),
                 ],
@@ -158,11 +154,7 @@ class _ListItemInfoRoomRateState extends State<ListItemInfoRoomRate> {
                     },
                     child: Text(
                       isShowAllPrices ? label.hideAllPriceTypes : label.showAllPriceTypes,
-                      style: const TextStyle(
-                        color: Colors.blue,
-                        decoration: TextDecoration.underline,
-                        decorationColor: Colors.blue,
-                      ),
+                      style: context.text.headlineSmall,
                     ),
                   ),
                 ),
@@ -221,16 +213,12 @@ class _BoxInfoRoomRateState extends State<BoxInfoRoomRate> {
       children: [
         Text(
           widget.room.tenLoaiGia,
-          style: const TextStyle(
-            color: Colors.orange,
-            fontWeight: FontWeight.w600,
-            fontSize: 16,
-          ),
+          style: context.text.titleMedium?.copyWith(color: Colors.orange),
         ),
         const SizedBox(height: 5),
         Text(
           widget.room.strThoiGianO ?? 'Unlimited',
-          style: TextStyle(color: Colors.red[700]),
+          style: context.text.bodyMedium?.copyWith(color: Colors.red[700]),
         ),
         const SizedBox(height: 5),
         GestureDetector(
@@ -239,25 +227,20 @@ class _BoxInfoRoomRateState extends State<BoxInfoRoomRate> {
           },
           child: Text(
             label.seeDetailRoomPriceAndPolicy,
-            style: const TextStyle(
-              color: Colors.blue,
-              decoration: TextDecoration.underline,
-              decorationColor: Colors.blue,
-              height: 2,
-            ),
+            style: context.text.headlineSmall?.copyWith(height: 2),
           ),
         ),
         const SizedBox(height: 5),
         Text(
           widget.extraInfo,
-          style: const TextStyle(color: Colors.grey),
+          style: context.text.bodyMedium?.copyWith(color: Colors.grey),
         ),
         const SizedBox(height: 10),
         MoneyWidget(money: widget.room.averageRateDeal),
         const SizedBox(height: 10),
         Text(
           label.noOfRoom,
-          style: const TextStyle(color: Colors.grey),
+          style: context.text.bodyMedium?.copyWith(color: Colors.grey),
         ),
         const SizedBox(height: 5),
         Row(
@@ -284,7 +267,7 @@ class _BoxInfoRoomRateState extends State<BoxInfoRoomRate> {
                     const SizedBox(width: 10),
                     Text(
                       noOfRooms.toString(),
-                      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                      style: context.text.displaySmall,
                     ),
                     const SizedBox(width: 10),
                     GestureDetector(
@@ -318,7 +301,7 @@ class _BoxInfoRoomRateState extends State<BoxInfoRoomRate> {
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
                 child: Text(
                   label.addToCart,
-                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+                  style: context.text.labelSmall?.copyWith(color: context.color.surfaceTint),
                 ),
               ),
             ButtonFilledWidget(
@@ -327,7 +310,7 @@ class _BoxInfoRoomRateState extends State<BoxInfoRoomRate> {
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
               child: Text(
                 label.bookNow,
-                style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+                style: context.text.labelSmall?.copyWith(color: context.color.surfaceTint),
               ),
             )
           ],

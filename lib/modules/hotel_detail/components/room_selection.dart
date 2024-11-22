@@ -14,7 +14,7 @@ final class RoomSelection extends StatelessWidget {
           const SizedBox(height: 20),
           Text(
             label.youAreSeeingPriceOfPeriod,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+            style: context.text.labelMedium,
           ),
           const SizedBox(height: 10),
           Container(
@@ -62,17 +62,13 @@ final class RoomSelection extends StatelessWidget {
                               children: [
                                 TextSpan(
                                   text: '${label.checkIn}\n',
-                                  style: TextStyle(
-                                    color: Colors.grey[600],
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400,
-                                  ),
+                                  style:
+                                      context.text.labelMedium?.copyWith(color: Colors.grey[600]),
                                 ),
                                 TextSpan(
                                   text: Utils.time.format(date: info.checkIn, oF: TimeType.edm),
-                                  style: const TextStyle(
+                                  style: context.text.labelMedium?.copyWith(
                                     color: Colors.blue,
-                                    fontSize: 16,
                                     height: 1.5,
                                   ),
                                 )
@@ -86,17 +82,13 @@ final class RoomSelection extends StatelessWidget {
                               children: [
                                 TextSpan(
                                   text: '${label.checkOut}\n',
-                                  style: TextStyle(
-                                    color: Colors.grey[600],
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400,
-                                  ),
+                                  style:
+                                      context.text.labelMedium?.copyWith(color: Colors.grey[600]),
                                 ),
                                 TextSpan(
                                   text: Utils.time.format(date: info.checkOut, oF: TimeType.edm),
-                                  style: const TextStyle(
+                                  style: context.text.labelMedium?.copyWith(
                                     color: Colors.blue,
-                                    fontSize: 16,
                                     height: 1.5,
                                   ),
                                 )
@@ -118,12 +110,7 @@ final class RoomSelection extends StatelessWidget {
             },
             child: Text(
               label.change,
-              style: const TextStyle(
-                color: Colors.blue,
-                fontSize: 16,
-                decoration: TextDecoration.underline,
-                decorationColor: Colors.blue,
-              ),
+              style: context.text.headlineMedium,
             ),
           ),
           const Divider(height: 40, indent: 20, endIndent: 20),

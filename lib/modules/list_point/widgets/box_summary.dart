@@ -36,7 +36,7 @@ final class BoxSummary extends StatelessWidget {
           ),
           child: Text(
             first,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            style: context.text.labelLarge,
           ),
         ),
         Container(
@@ -61,27 +61,19 @@ final class BoxSummary extends StatelessWidget {
                 children: [
                   Text(
                     second,
-                    style: const TextStyle(fontSize: 16),
+                    style: context.text.labelMedium,
                   ),
                   pointLock == null
                       ? Text(
                           secondValue,
-                          style: const TextStyle(
-                            fontSize: 16,
-                            color: Colors.blue,
-                            fontWeight: FontWeight.w600,
-                          ),
+                          style: context.text.titleMedium?.copyWith(color: Colors.blue),
                         )
                       : ValueListenableBuilder(
                           valueListenable: pointLock as ValueNotifier<int>,
                           builder: (_, value, __) {
                             return Text(
                               value.toString(),
-                              style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.green,
-                                fontWeight: FontWeight.w600,
-                              ),
+                              style: context.text.titleMedium?.copyWith(color: Colors.green),
                             );
                           },
                         ),
@@ -93,7 +85,7 @@ final class BoxSummary extends StatelessWidget {
                 children: [
                   Text(
                     third,
-                    style: const TextStyle(fontSize: 16),
+                    style: context.text.labelMedium,
                   ),
                   thirdValue,
                 ],

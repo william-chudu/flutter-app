@@ -6,7 +6,7 @@ part of 'memship_account_profile.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class MemShipAccountProfileAdapter extends TypeAdapter<MemShipAccountProfile> {
+class MemshipAccountProfileAdapter extends TypeAdapter<MemShipAccountProfile> {
   @override
   final int typeId = 2;
 
@@ -59,7 +59,7 @@ class MemShipAccountProfileAdapter extends TypeAdapter<MemShipAccountProfile> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is MemShipAccountProfileAdapter &&
+      other is MemshipAccountProfileAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

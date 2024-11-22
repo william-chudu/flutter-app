@@ -1,5 +1,6 @@
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/extensions/string.dart';
 import 'package:chudu24/modules/bootstrap/bloc/app_search/app_search_bloc.dart';
 import 'package:chudu24/modules/notfound/index.dart';
@@ -36,17 +37,12 @@ class AppbarTitle extends StatelessWidget {
           children: [
             Text(
               data.search?.title.toTitleCase() ?? '',
-              style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 22),
+              style: context.text.displayMedium,
             ),
             Text(
               subtime.toString(),
-              style: const TextStyle(
-                color: Colors.blue,
+              style: context.text.headlineSmall?.copyWith(
                 fontSize: 14,
-                wordSpacing: 2,
-                fontWeight: FontWeight.w600,
-                decoration: TextDecoration.underline,
-                decorationColor: Colors.blue,
               ),
             ),
           ],

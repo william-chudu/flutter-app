@@ -1,6 +1,7 @@
 import 'package:chudu24/components/button.dart';
 import 'package:chudu24/components/image_builder.dart';
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/modules/account/index.dart';
 import 'package:flutter/material.dart';
 
@@ -33,11 +34,7 @@ final class NotLogin extends StatelessWidget {
               child: Center(
                 child: Text(
                   label.signIn,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
+                  style: context.text.titleLarge?.copyWith(color: context.color.surfaceTint),
                 ),
               ),
             ),
@@ -54,11 +51,7 @@ final class NotLogin extends StatelessWidget {
               child: Center(
                 child: Text(
                   label.register,
-                  style: const TextStyle(
-                    color: Colors.blue,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
+                  style: context.text.titleLarge?.copyWith(color: Colors.blue),
                 ),
               ),
             ),

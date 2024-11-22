@@ -4,6 +4,7 @@ import 'package:chudu24/components/image_builder.dart';
 import 'package:chudu24/components/loading.dart';
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/extensions/list.dart';
 import 'package:chudu24/extensions/string.dart';
 import 'package:chudu24/modules/bootstrap/bloc/app_search/app_search_bloc.dart';
@@ -24,6 +25,7 @@ final class ModalSearchInfo extends StatefulWidget {
   static void showModal(BuildContext context) {
     showBottomSheet(
       context: context,
+      backgroundColor: context.color.primaryContainer.withOpacity(1),
       builder: (BuildContext ctxModal) {
         return MultiBlocProvider(
           providers: [
@@ -114,7 +116,7 @@ class _ModalSearchInfoState extends State<ModalSearchInfo> {
                   child: Center(
                     child: Text(
                       label.search,
-                      style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+                      style: context.text.displayLarge,
                     ),
                   ),
                 ),
@@ -128,7 +130,7 @@ class _ModalSearchInfoState extends State<ModalSearchInfo> {
             const SizedBox(height: 10),
             Container(
               decoration: BoxDecoration(
-                color: Colors.grey[200],
+                color: context.color.secondaryContainer,
                 borderRadius: BorderRadius.circular(5),
               ),
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
@@ -139,7 +141,7 @@ class _ModalSearchInfoState extends State<ModalSearchInfo> {
                       controller: inputController,
                       decoration: InputDecoration(
                         hintText: label.addressOrHotel,
-                        hintStyle: const TextStyle(fontSize: 16, color: Colors.grey),
+                        hintStyle: context.text.bodyLarge,
                         border: InputBorder.none,
                       ),
                       onChanged: (keyword) {
@@ -259,7 +261,7 @@ final class _ListCities extends StatelessWidget {
         const SizedBox(height: 10),
         Text(
           label.area,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: context.text.titleLarge,
         ),
         const SizedBox(height: 10),
         ...List<Widget>.generate(
@@ -280,7 +282,7 @@ final class _ListCities extends StatelessWidget {
                   Expanded(
                     child: Text(
                       city.display,
-                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                      style: context.text.labelMedium,
                     ),
                   ),
                 ],
@@ -309,7 +311,7 @@ final class _ListHotels extends StatelessWidget {
         const Divider(height: 40),
         Text(
           label.hotel,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: context.text.titleLarge,
         ),
         const SizedBox(height: 10),
         ...List<Widget>.generate(
@@ -331,11 +333,11 @@ final class _ListHotels extends StatelessWidget {
                       children: [
                         Text(
                           hotel.hotelname,
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                          style: context.text.labelMedium,
                         ),
                         Text(
                           hotel.address1,
-                          style: const TextStyle(fontSize: 16, color: Colors.grey),
+                          style: context.text.bodyMedium,
                         ),
                       ],
                     ),
@@ -368,7 +370,7 @@ final class _ListTickets extends StatelessWidget {
         const Divider(height: 40),
         Text(
           label.cityService,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: context.text.titleLarge,
         ),
         const SizedBox(height: 10),
         ...List<Widget>.generate(
@@ -381,7 +383,7 @@ final class _ListTickets extends StatelessWidget {
                 Expanded(
                   child: Text(
                     tickets[i].cityname,
-                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                    style: context.text.labelMedium,
                   ),
                 ),
               ],
@@ -427,7 +429,7 @@ final class _ListTicketItems extends StatelessWidget {
         const Divider(height: 40),
         Text(
           label.ticket,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: context.text.titleLarge,
         ),
         const SizedBox(height: 10),
         ...List<Widget>.generate(
@@ -445,7 +447,7 @@ final class _ListTicketItems extends StatelessWidget {
                       Expanded(
                         child: Text(
                           item.serviceName,
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                          style: context.text.labelMedium,
                         ),
                       ),
                     ],
@@ -463,7 +465,7 @@ final class _ListTicketItems extends StatelessWidget {
                           Expanded(
                             child: Text(
                               item.serviceName,
-                              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                              style: context.text.labelMedium,
                             ),
                           ),
                         ],
@@ -478,7 +480,7 @@ final class _ListTicketItems extends StatelessWidget {
                           Expanded(
                             child: Text(
                               item.address ?? '',
-                              style: const TextStyle(fontSize: 16, color: Colors.grey),
+                              style: context.text.bodyMedium,
                             ),
                           ),
                         ],
@@ -508,6 +510,7 @@ class _TopDestination extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         BlocBuilder<TopDestinationBloc, TopDestinationState>(
           builder: (ctxTopDest, state) {
@@ -524,7 +527,7 @@ class _TopDestination extends StatelessWidget {
                 const SizedBox(height: 20),
                 Text(
                   label.topDestination,
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: context.text.titleLarge,
                 ),
                 const SizedBox(height: 10),
                 Wrap(
@@ -535,7 +538,7 @@ class _TopDestination extends StatelessWidget {
                     (index) {
                       final location = state.locations[index];
                       return ChoiceChip(
-                        backgroundColor: Colors.grey[200],
+                        backgroundColor: context.color.secondaryContainer,
                         selected: false,
                         onSelected: (value) {
                           onSubmitLocation(location.cityId, location.title, SearchType.city);
@@ -543,7 +546,7 @@ class _TopDestination extends StatelessWidget {
                         shape: StadiumBorder(
                           side: BorderSide(width: 0, color: Colors.grey[200] ?? Colors.grey),
                         ),
-                        labelStyle: const TextStyle(fontSize: 16),
+                        labelStyle: context.text.titleMedium,
                         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
                         label: Text(location.title),
@@ -581,7 +584,7 @@ class _TopDestination extends StatelessWidget {
                   children: [
                     Text(
                       label.historySearch,
-                      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: context.text.titleLarge,
                     ),
                     GestureDetector(
                       onTap: () {
@@ -596,7 +599,10 @@ class _TopDestination extends StatelessWidget {
                                   onPressed: () {
                                     Navigator.of(context).pop();
                                   },
-                                  child: Text(label.cancel),
+                                  child: Text(
+                                    label.cancel,
+                                    style: context.text.labelSmall,
+                                  ),
                                 ),
                                 TextButton(
                                   onPressed: () {
@@ -607,7 +613,9 @@ class _TopDestination extends StatelessWidget {
                                   },
                                   child: Text(
                                     label.accept,
-                                    style: const TextStyle(color: Colors.red),
+                                    style: context.text.labelSmall?.copyWith(
+                                      color: AppConstants.accent,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -617,11 +625,8 @@ class _TopDestination extends StatelessWidget {
                       },
                       child: Text(
                         label.deleteAll,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          color: Colors.blue,
-                          decoration: TextDecoration.underline,
-                          decorationColor: Colors.blue,
+                        style: context.text.headlineSmall?.copyWith(
+                          fontSize: context.text.titleMedium?.fontSize,
                         ),
                       ),
                     ),
@@ -685,12 +690,12 @@ class _TopDestination extends StatelessWidget {
                             children: [
                               Text(
                                 item.keywordCityName,
-                                style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+                                style: context.text.titleMedium,
                               ),
                               const SizedBox(height: 5),
                               Text(
                                 str.toString(),
-                                style: const TextStyle(color: Colors.grey),
+                                style: context.text.bodyMedium,
                               ),
                             ],
                           )

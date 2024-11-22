@@ -37,11 +37,7 @@ final class CartHeader extends StatelessWidget {
               ),
               Text(
                 label.selectAll,
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white,
-                ),
+                style: context.text.titleLarge?.copyWith(color: Colors.white),
               ),
             ],
           ),
@@ -49,11 +45,7 @@ final class CartHeader extends StatelessWidget {
             children: [
               Text(
                 label.delete,
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white,
-                ),
+                style: context.text.titleLarge?.copyWith(color: Colors.white),
               ),
               IconButton(
                 onPressed: () {

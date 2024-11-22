@@ -25,7 +25,7 @@ final class ListJourney extends StatelessWidget {
           child: Text(
             str.toString(),
             textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.grey),
+            style: context.text.labelLarge?.copyWith(color: Colors.grey),
           ),
         ),
       );
@@ -42,7 +42,7 @@ final class ListJourney extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 color: index == 0
-                    ? Colors.orange.shade600
+                    ? context.color.surfaceBright
                     : index == 1
                         ? Colors.blue
                         : Colors.green,
@@ -59,7 +59,7 @@ final class ListJourney extends StatelessWidget {
                   bottomLeft: Radius.circular(10),
                   bottomRight: Radius.circular(10),
                 ),
-                color: Colors.grey.shade400,
+                color: context.color.secondaryContainer,
               ),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -68,11 +68,11 @@ final class ListJourney extends StatelessWidget {
                   children: [
                     Text(
                       '${item.soPhong} - ${item.soDem}',
-                      style: const TextStyle(fontWeight: FontWeight.w600),
+                      style: context.text.titleSmall,
                     ),
                     Text(
                       item.tongGiaBan,
-                      style: const TextStyle(fontWeight: FontWeight.w600),
+                      style: context.text.titleSmall,
                     ),
                   ],
                 ),

@@ -1,3 +1,4 @@
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 
 final class NotFoundScreen extends StatelessWidget {
@@ -15,15 +16,13 @@ final class NotFoundScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const Center(
+      body: Center(
         child: Text(
           '404',
-          style: TextStyle(
+          style: context.text.headlineLarge?.copyWith(
             fontSize: 100,
-            fontWeight: FontWeight.bold,
-            color: Colors.black26,
-            decoration: TextDecoration.underline,
-            decorationColor: Colors.black12,
+            color: context.color.outline,
+            decorationColor: context.color.outline,
             decorationThickness: 0.5,
           ),
         ),

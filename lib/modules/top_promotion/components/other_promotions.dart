@@ -26,10 +26,7 @@ final class OtherPromotions extends StatelessWidget {
                       padding: const EdgeInsets.all(10),
                       child: Text(
                         promotion.title,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: context.text.titleMedium,
                       ),
                     ),
                   ),

@@ -1,6 +1,6 @@
 part of '../index.dart';
 
-class HotelTitle extends StatelessWidget {
+final class HotelTitle extends StatelessWidget {
   const HotelTitle({super.key, required this.hotel});
 
   final HotelInfoDetail hotel;
@@ -10,7 +10,7 @@ class HotelTitle extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.grey[50],
+        color: context.color.secondaryContainer,
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -20,11 +20,11 @@ class HotelTitle extends StatelessWidget {
           children: [
             Text(
               hotel.hotelname,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              style: context.text.displaySmall,
             ),
             Text(
               hotel.address1,
-              style: const TextStyle(fontSize: 16),
+              style: context.text.bodyLarge,
               maxLines: 2,
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,

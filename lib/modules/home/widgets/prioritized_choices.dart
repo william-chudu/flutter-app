@@ -1,5 +1,6 @@
 import 'package:chudu24/components/image_builder.dart';
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/extensions/string.dart';
 import 'package:flutter/material.dart';
 
@@ -29,11 +30,9 @@ final class PrioritizedChoices extends StatelessWidget {
       title,
       maxLines: 1,
       overflow: TextOverflow.ellipsis,
-      style: const TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
-        shadows: [
+      style: context.text.titleLarge?.copyWith(
+        color: context.color.surfaceTint,
+        shadows: const [
           Shadow(offset: Offset(2, 2), blurRadius: 10),
         ],
       ),
@@ -73,10 +72,8 @@ final class PrioritizedChoices extends StatelessWidget {
                           summary ?? '',
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white,
+                          style: context.text.labelSmall?.copyWith(
+                            color: context.color.surfaceTint,
                           ),
                         ),
                         const SizedBox(height: 10),
@@ -88,9 +85,8 @@ final class PrioritizedChoices extends StatelessWidget {
                           ),
                           child: Text(
                             AppConstants.shared.label.bookNow,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
+                            style: context.text.bodyMedium?.copyWith(
+                              color: context.color.surfaceTint,
                             ),
                           ),
                         ),

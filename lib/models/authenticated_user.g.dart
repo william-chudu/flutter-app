@@ -6,7 +6,7 @@ part of 'authenticated_user.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class AuthernticatedUserAdapter extends TypeAdapter<AuthenticatedUser> {
+class AuthenticatedUserAdapter extends TypeAdapter<AuthenticatedUser> {
   @override
   final int typeId = 1;
 
@@ -68,7 +68,7 @@ class AuthernticatedUserAdapter extends TypeAdapter<AuthenticatedUser> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is AuthernticatedUserAdapter &&
+      other is AuthenticatedUserAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

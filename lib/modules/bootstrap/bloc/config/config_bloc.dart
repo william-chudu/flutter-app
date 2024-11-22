@@ -26,8 +26,8 @@ class ConfigBloc extends Bloc<ConfigEvent, ConfigState> {
       final appDocumentDirectory = await getApplicationDocumentsDirectory();
       Hive.init(appDocumentDirectory.path);
       Hive.registerAdapter(CartHotelAdapter());
-      Hive.registerAdapter(AuthernticatedUserAdapter());
-      Hive.registerAdapter(MemShipAccountProfileAdapter());
+      Hive.registerAdapter(AuthenticatedUserAdapter());
+      Hive.registerAdapter(MemshipAccountProfileAdapter());
 
       final data = await Future.wait([
         ApiClient.shared.mPost(UrlPath.shared.config),

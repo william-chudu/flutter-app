@@ -1,4 +1,5 @@
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -45,7 +46,7 @@ class _TravelNewsState extends State<TravelNews> {
       appBar: AppBar(
         title: Text(
           AppConstants.shared.label.travelNews,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+          style: context.text.displayMedium,
         ),
       ),
       body: SafeArea(

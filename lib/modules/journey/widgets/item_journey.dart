@@ -21,11 +21,7 @@ final class ItemJourney extends StatelessWidget {
           padding: const EdgeInsets.all(10.0),
           child: Text(
             item.hotelnames,
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-              color: Colors.white,
-            ),
+            style: context.text.titleMedium?.copyWith(color: Colors.white),
           ),
         ),
         const Divider(height: 2, thickness: 2, color: Colors.white),
@@ -59,9 +55,7 @@ final class ItemJourney extends StatelessWidget {
               const SizedBox(height: 10),
               Text(
                 label.seemore,
-                style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
+                style: context.text.headlineSmall?.copyWith(
                   color: Colors.white,
                   decoration: TextDecoration.underline,
                   decorationColor: Colors.white,

@@ -25,11 +25,7 @@ final class OpeningDeal extends StatelessWidget {
                     decoration: const BoxDecoration(color: Colors.green),
                     child: Text(
                       AppConstants.shared.label.sellingDeal,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                      ),
+                      style: context.text.labelLarge?.copyWith(color: context.color.surfaceTint),
                     ),
                   ),
                   Container(
@@ -69,12 +65,15 @@ final class OpeningDeal extends StatelessWidget {
                                 Expanded(
                                   child: Text(
                                     deal.tenLoaiGia,
-                                    style: TextStyle(color: Colors.orange[600], fontSize: 16),
+                                    style: context.text.labelMedium?.copyWith(
+                                      color: context.color.surfaceBright,
+                                    ),
                                     maxLines: 1,
                                   ),
                                 ),
                                 const SizedBox(width: 10),
-                                Icon(Icons.chevron_right_rounded, color: Colors.orange[600]),
+                                Icon(Icons.chevron_right_rounded,
+                                    color: context.color.surfaceBright),
                               ],
                             ),
                           ),

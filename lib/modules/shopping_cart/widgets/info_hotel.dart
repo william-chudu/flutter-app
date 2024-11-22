@@ -36,11 +36,7 @@ final class InfoHotel extends StatelessWidget {
                   Expanded(
                     child: Text(
                       room.hotelName,
-                      style: const TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
+                      style: context.text.titleMedium?.copyWith(color: Colors.blue),
                     ),
                   ),
                   const SizedBox(width: 10),
@@ -50,7 +46,7 @@ final class InfoHotel extends StatelessWidget {
               const SizedBox(height: 5),
               Text(
                 room.address,
-                style: const TextStyle(fontWeight: FontWeight.w500),
+                style: context.text.labelSmall,
               ),
               const SizedBox(height: 5),
               Row(
@@ -65,7 +61,7 @@ final class InfoHotel extends StatelessWidget {
                   const SizedBox(width: 5),
                   Text(
                     '${room.reviews} ${label.review}',
-                    style: const TextStyle(fontWeight: FontWeight.w500),
+                    style: context.text.labelSmall,
                   ),
                 ],
               ),

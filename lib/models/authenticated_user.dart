@@ -5,7 +5,7 @@ import 'memship_account_profile.dart';
 
 part 'authenticated_user.g.dart';
 
-@HiveType(typeId: 1, adapterName: ConstantType.authernticatedUser)
+@HiveType(typeId: 1, adapterName: ConstantType.nAthenticatedUser)
 final class AuthenticatedUser {
   @HiveField(0)
   final String accountBusinessType;

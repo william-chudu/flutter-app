@@ -24,10 +24,8 @@ final class ModalDeal extends StatelessWidget {
                   children: [
                     Text(
                       deal.tenLoaiGia,
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.orange[600],
-                        fontWeight: FontWeight.w600,
+                      style: context.text.titleLarge?.copyWith(
+                        color: context.color.surfaceBright,
                       ),
                     ),
                     const Divider(height: 30),
@@ -36,7 +34,7 @@ final class ModalDeal extends StatelessWidget {
                       children: [
                         Text(
                           label.startingPrice,
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                          style: context.text.labelMedium,
                         ),
                         MoneyWidget(money: deal.minRateVnd),
                       ],
@@ -47,18 +45,18 @@ final class ModalDeal extends StatelessWidget {
                       children: [
                         Text(
                           label.sellingTime,
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                          style: context.text.labelMedium,
                         ),
                         Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
                               Utils.time.format(date: deal.thoiGianBanStart),
-                              style: const TextStyle(fontSize: 16),
+                              style: context.text.bodyLarge,
                             ),
                             Text(
                               Utils.time.format(date: deal.thoiGianBanEnd),
-                              style: const TextStyle(fontSize: 16),
+                              style: context.text.bodyLarge,
                             ),
                           ],
                         ),
@@ -70,18 +68,18 @@ final class ModalDeal extends StatelessWidget {
                       children: [
                         Text(
                           label.usingTime,
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                          style: context.text.labelMedium,
                         ),
                         Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
                               Utils.time.format(date: deal.thoiGianSuDungStart),
-                              style: const TextStyle(fontSize: 16),
+                              style: context.text.bodyLarge,
                             ),
                             Text(
                               Utils.time.format(date: deal.thoiGianSuDungEnd),
-                              style: const TextStyle(fontSize: 16),
+                              style: context.text.bodyLarge,
                             ),
                           ],
                         ),
@@ -108,7 +106,7 @@ final class ModalDeal extends StatelessWidget {
                             Expanded(
                               child: Text(
                                 item.includeName,
-                                style: const TextStyle(fontSize: 16),
+                                style: context.text.bodyLarge,
                               ),
                             ),
                           ],
@@ -131,11 +129,7 @@ final class ModalDeal extends StatelessWidget {
           child: Center(
             child: Text(
               label.watchDetailPrice,
-              style: const TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+              style: context.text.displaySmall?.copyWith(color: context.color.surfaceTint),
             ),
           ),
         ),

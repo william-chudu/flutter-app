@@ -7,6 +7,7 @@ import 'package:chudu24/components/review_count.dart';
 import 'package:chudu24/components/star.dart';
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/models/hotel_image.dart';
 import 'package:chudu24/modules/bootstrap/bloc/app_search/app_search_bloc.dart';
 import 'package:chudu24/modules/loading/index.dart';
@@ -75,7 +76,7 @@ final class HotelReview extends StatelessWidget {
           appBar: AppBar(
             title: Text(
               hotel.hotelname,
-              style: const TextStyle(fontWeight: FontWeight.w600),
+              style: context.text.displayMedium,
             ),
           ),
           body: SafeArea(
@@ -104,10 +105,7 @@ final class HotelReview extends StatelessWidget {
                           const Divider(height: 40),
                           Text(
                             label.imagesFromCustomer,
-                            style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: context.text.displaySmall,
                           ),
                           PhotoSlider(
                             borderThickness: 3,
@@ -120,10 +118,7 @@ final class HotelReview extends StatelessWidget {
                           const Divider(height: 40),
                           Text(
                             label.reviewsFromCustomer,
-                            style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: context.text.displaySmall,
                           ),
                           const SizedBox(height: 10),
                         ],

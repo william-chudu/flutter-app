@@ -1,6 +1,7 @@
 import 'package:chudu24/components/tabbar_header.dart';
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/models/authenticated_user.dart';
 import 'package:chudu24/modules/bootstrap/bloc/authentication/authentication_bloc.dart';
 import 'package:chudu24/modules/not_login/index.dart';
@@ -49,12 +50,12 @@ final class Journey extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             label.journey,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: context.text.displayMedium,
           ),
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(40),
             child: TabbarHeader(
-              fontSize: 16,
+              textStyle: context.text.titleMedium,
               labels: [
                 label.processing,
                 label.prepareForCheckIn,

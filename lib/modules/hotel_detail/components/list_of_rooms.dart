@@ -108,41 +108,39 @@ final class _BoxConsultation extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 40),
           child: Column(
             children: [
-              const Text(
+              Text(
                 'Xin lưu ý, mức giá trên đây có thể thay đổi đôi chút vào các dịp lễ, tết, thời gian cao điểm.',
-                style: TextStyle(color: Colors.grey),
+                textAlign: TextAlign.center,
+                style: context.text.bodyLarge,
               ),
               const SizedBox(height: 20),
               RichText(
-                text: const TextSpan(
+                textAlign: TextAlign.center,
+                text: TextSpan(
                   children: [
                     TextSpan(
                       text: 'Quý Khách vui lòng liên hệ với Chudu24 qua số ',
-                      style: TextStyle(
-                        color: Colors.grey,
-                      ),
+                      style: context.text.bodyLarge,
                     ),
                     TextSpan(
                       text: '0375656505',
-                      style: TextStyle(
-                        color: Colors.grey,
+                      style: context.text.bodyLarge?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     TextSpan(
                       text: ' hoặc ',
-                      style: TextStyle(color: Colors.grey),
+                      style: context.text.bodyLarge,
                     ),
                     TextSpan(
                       text: '0328381259',
-                      style: TextStyle(
-                        color: Colors.grey,
+                      style: context.text.bodyLarge?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     TextSpan(
                       text: ' để được tư vấn thêm.',
-                      style: TextStyle(color: Colors.grey),
+                      style: context.text.bodyLarge,
                     ),
                   ],
                 ),
@@ -156,11 +154,7 @@ final class _BoxConsultation extends StatelessWidget {
                   child: Text(
                     labelSubmit.toUpperCase(),
                     textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
+                    style: context.text.titleMedium?.copyWith(color: context.color.surfaceTint),
                   ),
                 ),
             ],

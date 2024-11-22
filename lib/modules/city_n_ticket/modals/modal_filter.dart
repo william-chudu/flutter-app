@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:chudu24/components/button.dart';
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/modules/city_n_ticket/bloc/list_hotel/list_hotel_bloc.dart';
 import 'package:chudu24/modules/city_n_ticket/models/param_list_hotel.dart';
 import 'package:chudu24/utils/index.dart';
@@ -54,10 +55,10 @@ class _ModalFilterState extends State<ModalFilter> {
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const SizedBox(height: 20),
+        const SizedBox(height: 30),
         Text(
           label.filter,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: context.text.displayMedium,
         ),
         const SizedBox(height: 20),
         Padding(
@@ -144,10 +145,8 @@ class _ModalFilterState extends State<ModalFilter> {
                   child: Center(
                     child: Text(
                       label.clearFilter,
-                      style: const TextStyle(
+                      style: context.text.titleLarge?.copyWith(
                         color: Colors.blueAccent,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
                       ),
                     ),
                   ),
@@ -167,10 +166,8 @@ class _ModalFilterState extends State<ModalFilter> {
                   child: Center(
                     child: Text(
                       label.apply,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
+                      style: context.text.titleLarge?.copyWith(
+                        color: context.color.surfaceTint,
                       ),
                     ),
                   ),

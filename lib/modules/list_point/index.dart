@@ -1,5 +1,6 @@
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/models/authenticated_user.dart';
 import 'package:chudu24/modules/bootstrap/bloc/authentication/authentication_bloc.dart';
 import 'package:chudu24/modules/list_point/bloc/list_point/list_point_bloc.dart';
@@ -54,7 +55,7 @@ final class ListPoint extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           label.point,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+          style: context.text.displayMedium,
         ),
       ),
       body: SafeArea(
@@ -69,11 +70,7 @@ final class ListPoint extends StatelessWidget {
                 secondValue: '',
                 thirdValue: Text(
                   Utils.money.currency(user.totalPoint),
-                  style: const TextStyle(
-                    fontSize: 16,
-                    color: Colors.blue,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: context.text.titleMedium?.copyWith(color: Colors.blue),
                 ),
               ),
               const SizedBox(height: 20),
@@ -91,7 +88,7 @@ final class ListPoint extends StatelessWidget {
                   },
                   child: Text(
                     label.seemore,
-                    style: const TextStyle(color: Colors.blue, fontSize: 16),
+                    style: context.text.labelMedium?.copyWith(color: Colors.blue),
                   ),
                 ),
               ),

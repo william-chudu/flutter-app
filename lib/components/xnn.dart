@@ -1,4 +1,5 @@
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 
 class XnnWidget extends StatelessWidget {
@@ -22,10 +23,8 @@ class XnnWidget extends StatelessWidget {
           Icon(Icons.bolt, color: isBox ? Colors.white : Colors.orange),
           Text(
             label.confirmNow,
-            style: TextStyle(
+            style: context.text.labelSmall?.copyWith(
               color: isBox ? Colors.white : Colors.orange,
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
             ),
           ),
         ],

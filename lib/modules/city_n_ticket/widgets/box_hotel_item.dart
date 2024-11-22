@@ -4,6 +4,7 @@ import 'package:chudu24/components/review_count.dart';
 import 'package:chudu24/components/star.dart';
 import 'package:chudu24/components/xnn.dart';
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/extensions/string.dart';
 import 'package:chudu24/modules/bootstrap/models/address_search.dart';
 import 'package:chudu24/modules/city_n_ticket/models/hotel_info.dart';
@@ -67,7 +68,6 @@ class _BoxHotelItemState extends State<BoxHotelItem> {
           HotelThumbnail(thumbnail: hotel.thumbnail.imgUrl, width: width, height: _height),
           Expanded(
             child: Container(
-              color: Colors.white54,
               width: width * 3 / 5 - 1,
               padding: const EdgeInsets.only(left: 10.0),
               child: Column(
@@ -79,7 +79,7 @@ class _BoxHotelItemState extends State<BoxHotelItem> {
                     maxLines: 2,
                     softWrap: true,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    style: context.text.titleMedium,
                   ),
                   const SizedBox(height: 5),
                   SingleChildScrollView(

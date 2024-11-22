@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:chudu24/components/button.dart';
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/modules/bootstrap/bloc/app_search/app_search_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -63,7 +64,7 @@ class _ModalRoomAndGuestState extends State<ModalRoomAndGuest> {
               children: [
                 Text(
                   label.roomAndGuest.toUpperCase(),
-                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: context.text.displayMedium,
                 ),
                 const SizedBox(height: 20),
                 BoxCountValue(
@@ -106,10 +107,8 @@ class _ModalRoomAndGuestState extends State<ModalRoomAndGuest> {
                   child: Center(
                     child: Text(
                       label.submit,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
+                      style: context.text.titleLarge?.copyWith(
+                        color: context.color.surfaceTint,
                       ),
                     ),
                   ),
@@ -146,7 +145,7 @@ class BoxCountValue extends StatelessWidget {
       children: [
         Text(
           label,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: context.text.titleLarge,
         ),
         StreamBuilder<int>(
           stream: adultStream.stream,
@@ -172,7 +171,7 @@ class BoxCountValue extends StatelessWidget {
                   child: Text(
                     count.toString(),
                     textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                    style: context.text.displaySmall,
                   ),
                 ),
                 const SizedBox(width: 10),

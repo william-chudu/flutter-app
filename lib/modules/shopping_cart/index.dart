@@ -3,6 +3,7 @@ import 'package:chudu24/components/money.dart';
 import 'package:chudu24/components/star.dart';
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/enum/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:chudu24/extensions/string.dart';
 import 'package:chudu24/models/info_cart_hotel.dart';
 import 'package:chudu24/modules/shopping_cart/bloc/cart/cart_bloc.dart';
@@ -40,7 +41,7 @@ final class ShoppingCart extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           label.shoppingCart,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+          style: context.text.displayMedium,
         ),
       ),
       body: SafeArea(

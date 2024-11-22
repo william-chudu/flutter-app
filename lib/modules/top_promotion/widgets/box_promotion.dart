@@ -35,11 +35,7 @@ final class BoxPromotion extends StatelessWidget {
               children: [
                 Text(
                   sale.tieuDe,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
-                    color: Colors.green,
-                  ),
+                  style: context.text.titleMedium?.copyWith(color: Colors.green),
                 ),
                 const SizedBox(height: 10),
                 Text(sale.tomTat),
@@ -68,11 +64,7 @@ final class BoxPromotion extends StatelessWidget {
                       },
                       child: Text(
                         label.viewDetail,
-                        style: const TextStyle(
-                          color: Colors.blue,
-                          decoration: TextDecoration.underline,
-                          decorationColor: Colors.blue,
-                        ),
+                        style: context.text.headlineSmall,
                       ),
                     ),
                   ],

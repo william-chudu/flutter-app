@@ -9,7 +9,7 @@ class TitleProperty extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       label,
-      style: const TextStyle(color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 18),
+      style: context.text.titleLarge?.copyWith(color: Colors.blue),
     );
   }
 }

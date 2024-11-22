@@ -23,31 +23,15 @@ final class ItemReview extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              review.reviewedBy,
-              style: const TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            ),
+            Text(review.reviewedBy, style: context.text.titleMedium),
             RichText(
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: review.snippetReviewRating.toString(),
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
-                  ),
-                  const TextSpan(
+                      text: review.snippetReviewRating.toString(), style: context.text.titleMedium),
+                  TextSpan(
                     text: '/10',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                    ),
+                    style: context.text.labelMedium,
                   ),
                 ],
               ),
@@ -60,11 +44,7 @@ final class ItemReview extends StatelessWidget {
           children: [
             Text(
               Utils.time.format(date: review.addDate, oF: TimeType.dMY),
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 16,
-                letterSpacing: 1,
-              ),
+              style: context.text.titleMedium?.copyWith(letterSpacing: 1),
             ),
             StarRating(star: review.rating, size: 18),
           ],
@@ -72,16 +52,12 @@ final class ItemReview extends StatelessWidget {
         const SizedBox(height: 10),
         Text(
           review.titleVn,
-          style: TextStyle(
-            fontWeight: FontWeight.w700,
-            color: Colors.green[700],
-            fontSize: 18,
-          ),
+          style: context.text.titleLarge?.copyWith(color: Colors.green[700]),
         ),
         const SizedBox(height: 5),
         Text(
           review.contentVn,
-          style: const TextStyle(fontSize: 16),
+          style: context.text.labelMedium,
         ),
         const SizedBox(height: 10),
         DetailReviewScore(

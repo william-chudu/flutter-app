@@ -14,7 +14,6 @@ import 'package:chudu24/modules/notifications/index.dart';
 import 'package:chudu24/modules/search_info/index.dart';
 import 'package:chudu24/modules/account/index.dart';
 import 'package:chudu24/modules/shopping_cart/index.dart';
-import 'package:chudu24/modules/splash/index.dart';
 import 'package:chudu24/modules/top_promotion/index.dart';
 import 'package:chudu24/modules/travel_news/index.dart';
 import 'package:chudu24/modules/webview/index.dart';
@@ -23,8 +22,6 @@ import 'package:flutter/material.dart';
 class AppRouter {
   static Route onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
-      case SplashScreen.routeName:
-        return SplashScreen.route();
       case NotFoundScreen.routeName:
         return NotFoundScreen.route();
       case BottomTabsScreen.routeName:

@@ -19,12 +19,12 @@ final class ItemUserInfo extends StatelessWidget {
       children: [
         Text(
           title,
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+          style: context.text.labelMedium,
         ),
         const SizedBox(height: 5),
         Text(
           content,
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: context.text.titleMedium,
         ),
       ],
     );

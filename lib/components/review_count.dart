@@ -1,4 +1,5 @@
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 
 class ReviewCount extends StatelessWidget {
@@ -23,16 +24,14 @@ class ReviewCount extends StatelessWidget {
         children: [
           TextSpan(
             text: '$count',
-            style: TextStyle(
-              color: isDetailReview ? Colors.black : AppConstants.accent,
-              fontWeight: FontWeight.w600,
+            style: context.text.labelMedium?.copyWith(
+              color: isDetailReview ? context.color.primary : AppConstants.accent,
               fontSize: fontSize + (isDetailReview ? 2 : 0),
             ),
           ),
           TextSpan(
             text: ' ${label.review}',
-            style: TextStyle(
-              color: (isDetailReview ? Colors.black87 : Colors.black54),
+            style: context.text.bodyLarge?.copyWith(
               fontSize: fontSize,
             ),
           ),
@@ -53,11 +52,7 @@ class ReviewCount extends StatelessWidget {
                 child: Center(
                   child: Text(
                     averageReview,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
+                    style: context.text.displaySmall?.copyWith(color: context.color.surfaceTint),
                   ),
                 ),
               ),
@@ -75,7 +70,7 @@ class ReviewCount extends StatelessWidget {
                 ),
                 child: Text(
                   averageReview,
-                  style: const TextStyle(color: Colors.white),
+                  style: context.text.bodyMedium?.copyWith(color: context.color.surfaceTint),
                 ),
               ),
             ],

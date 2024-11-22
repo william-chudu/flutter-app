@@ -1,4 +1,5 @@
 import 'package:chudu24/constants/index.dart';
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 
 class PhoneWidget extends StatelessWidget {
@@ -15,19 +16,18 @@ class PhoneWidget extends StatelessWidget {
         children: [
           TextSpan(
             text: label.call,
-            style: TextStyle(fontSize: fontSize, color: Colors.black),
+            style: context.text.bodyMedium?.copyWith(fontSize: fontSize),
           ),
           TextSpan(
             text: ' 0375 65 65 05 ',
-            style: TextStyle(
+            style: context.text.titleMedium?.copyWith(
               fontSize: fontSize,
               color: AppConstants.accent,
-              fontWeight: FontWeight.bold,
             ),
           ),
           TextSpan(
             text: isGoodPrice ? label.forGoodPrice : '',
-            style: TextStyle(fontSize: fontSize, color: Colors.black),
+            style: context.text.bodyMedium?.copyWith(fontSize: fontSize),
           ),
         ],
       ),

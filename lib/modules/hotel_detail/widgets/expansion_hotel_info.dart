@@ -42,7 +42,7 @@ final class ExpansionHotelInfo extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Text(
                         item.title,
-                        style: const TextStyle(fontWeight: FontWeight.w600),
+                        style: context.text.labelSmall,
                       ),
                     ),
                     children: [
