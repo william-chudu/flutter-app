@@ -1,6 +1,5 @@
 import 'package:chudu24/constants/index.dart';
 import 'package:chudu24/extensions/build_context.dart';
-import 'package:chudu24/modals/modal_room_and_guest.dart';
 import 'package:chudu24/utils/index.dart';
 import 'package:flutter/material.dart';
 
