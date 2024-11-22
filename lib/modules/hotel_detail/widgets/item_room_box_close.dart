@@ -44,9 +44,9 @@ final class ItemRoomBoxClose extends StatelessWidget {
                       onTap: () {
                         onTapAlbum(room.roomPhotos);
                       },
-                      child: const Icon(
+                      child: Icon(
                         Icons.photo_library_rounded,
-                        color: Colors.white,
+                        color: context.color.secondaryContainer,
                       ),
                     ),
                   ),
@@ -83,11 +83,7 @@ final class ItemRoomBoxClose extends StatelessWidget {
                     },
                     child: Text(
                       label.roomInformation,
-                      style: const TextStyle(
-                        color: Colors.blue,
-                        decoration: TextDecoration.underline,
-                        decorationColor: Colors.blue,
-                      ),
+                      style: context.text.headlineSmall,
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -101,10 +97,8 @@ final class ItemRoomBoxClose extends StatelessWidget {
                         Expanded(
                           child: Text(
                             label.viewPriceAndBookNow,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white,
-                            ),
+                            style: context.text.bodyMedium
+                                ?.copyWith(color: context.color.primaryContainer),
                           ),
                         ),
                         const SizedBox(width: 10),

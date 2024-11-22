@@ -18,9 +18,13 @@ final class ItemNavigation extends StatelessWidget {
       contentPadding: EdgeInsets.zero,
       title: Text(
         title,
-        style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
+        style: context.text.bodyLarge,
       ),
-      trailing: const Icon(Icons.chevron_right, color: AppConstants.accent, size: 25),
+      trailing: const Icon(
+        Icons.chevron_right,
+        color: AppConstants.accent,
+        size: 25,
+      ),
     );
   }
 }

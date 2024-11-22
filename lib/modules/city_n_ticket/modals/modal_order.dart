@@ -87,10 +87,8 @@ class _ModalFilterState extends State<ModalOrder> {
               child: Center(
                 child: Text(
                   label.apply,
-                  style: TextStyle(
+                  style: context.text.titleLarge?.copyWith(
                     color: context.color.surfaceTint,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
                   ),
                 ),
               ),
@@ -138,41 +136,16 @@ class ItemOrder extends StatelessWidget {
           contentPadding: const EdgeInsets.symmetric(horizontal: 0, vertical: 5),
           title: Text(
             title,
-            style: TextStyle(
-              color: isChecking ? Colors.green : Colors.black,
-              fontSize: 17,
-              fontWeight: FontWeight.bold,
+            style: context.text.titleLarge?.copyWith(
+              color: isChecking ? Colors.green : null,
             ),
           ),
           trailing: Icon(
             Icons.check,
-            color: isChecking ? Colors.green : Colors.black,
+            color: isChecking ? Colors.green : context.color.primary,
             size: 25,
           ),
         );
-        // Row(
-        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //   children: [
-        //     Expanded(
-        //       child: Padding(
-        //         padding: const EdgeInsets.symmetric(vertical: 20.0),
-        //         child: Text(
-        //           title,
-        //           style: TextStyle(
-        //             color: isChecking ? Colors.green : Colors.black,
-        //             fontSize: 17,
-        //             fontWeight: FontWeight.bold,
-        //           ),
-        //         ),
-        //       ),
-        //     ),
-        //     Icon(
-        //       Icons.check,
-        //       color: isChecking ? Colors.green : Colors.black,
-        //       size: 25,
-        //     ),
-        //   ],
-        // ),
       },
     );
   }

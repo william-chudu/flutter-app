@@ -21,8 +21,7 @@ final class BoxPlaceholderInput extends StatelessWidget {
   Widget build(BuildContext context) {
     final textWidget = Text(
       label,
-      style: TextStyle(
-        fontSize: context.text.titleMedium?.fontSize,
+      style: context.text.bodyLarge?.copyWith(
         color: context.color.outline,
       ),
     );

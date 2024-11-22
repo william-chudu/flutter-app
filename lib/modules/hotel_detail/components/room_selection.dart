@@ -62,16 +62,13 @@ final class RoomSelection extends StatelessWidget {
                               children: [
                                 TextSpan(
                                   text: '${label.checkIn}\n',
-                                  style: TextStyle(
-                                    color: Colors.grey[600],
-                                    fontSize: context.text.titleMedium?.fontSize,
-                                  ),
+                                  style:
+                                      context.text.labelMedium?.copyWith(color: Colors.grey[600]),
                                 ),
                                 TextSpan(
                                   text: Utils.time.format(date: info.checkIn, oF: TimeType.edm),
-                                  style: TextStyle(
+                                  style: context.text.labelMedium?.copyWith(
                                     color: Colors.blue,
-                                    fontSize: context.text.titleMedium?.fontSize,
                                     height: 1.5,
                                   ),
                                 )
@@ -85,16 +82,13 @@ final class RoomSelection extends StatelessWidget {
                               children: [
                                 TextSpan(
                                   text: '${label.checkOut}\n',
-                                  style: TextStyle(
-                                    color: Colors.grey[600],
-                                    fontSize: context.text.titleMedium?.fontSize,
-                                  ),
+                                  style:
+                                      context.text.labelMedium?.copyWith(color: Colors.grey[600]),
                                 ),
                                 TextSpan(
                                   text: Utils.time.format(date: info.checkOut, oF: TimeType.edm),
-                                  style: TextStyle(
+                                  style: context.text.labelMedium?.copyWith(
                                     color: Colors.blue,
-                                    fontSize: context.text.titleMedium?.fontSize,
                                     height: 1.5,
                                   ),
                                 )

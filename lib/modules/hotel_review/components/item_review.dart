@@ -52,16 +52,12 @@ final class ItemReview extends StatelessWidget {
         const SizedBox(height: 10),
         Text(
           review.titleVn,
-          style: TextStyle(
-            fontWeight: FontWeight.w700,
-            color: Colors.green[700],
-            fontSize: 18,
-          ),
+          style: context.text.titleLarge?.copyWith(color: Colors.green[700]),
         ),
         const SizedBox(height: 5),
         Text(
           review.contentVn,
-          style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
+          style: context.text.labelMedium,
         ),
         const SizedBox(height: 10),
         DetailReviewScore(

@@ -25,7 +25,7 @@ final class ModalSearchInfo extends StatefulWidget {
   static void showModal(BuildContext context) {
     showBottomSheet(
       context: context,
-      backgroundColor: context.color.primaryContainer,
+      backgroundColor: context.color.primaryContainer.withOpacity(1),
       builder: (BuildContext ctxModal) {
         return MultiBlocProvider(
           providers: [
@@ -130,7 +130,7 @@ class _ModalSearchInfoState extends State<ModalSearchInfo> {
             const SizedBox(height: 10),
             Container(
               decoration: BoxDecoration(
-                color: Colors.grey[200],
+                color: context.color.secondaryContainer,
                 borderRadius: BorderRadius.circular(5),
               ),
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
@@ -519,6 +519,7 @@ class _TopDestination extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         BlocBuilder<TopDestinationBloc, TopDestinationState>(
           builder: (ctxTopDest, state) {
@@ -535,7 +536,7 @@ class _TopDestination extends StatelessWidget {
                 const SizedBox(height: 20),
                 Text(
                   label.topDestination,
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: context.text.titleLarge,
                 ),
                 const SizedBox(height: 10),
                 Wrap(
@@ -546,7 +547,7 @@ class _TopDestination extends StatelessWidget {
                     (index) {
                       final location = state.locations[index];
                       return ChoiceChip(
-                        backgroundColor: Colors.grey[200],
+                        backgroundColor: context.color.secondaryContainer,
                         selected: false,
                         onSelected: (value) {
                           onSubmitLocation(location.cityId, location.title, SearchType.city);
@@ -592,7 +593,7 @@ class _TopDestination extends StatelessWidget {
                   children: [
                     Text(
                       label.historySearch,
-                      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: context.text.titleLarge,
                     ),
                     GestureDetector(
                       onTap: () {
@@ -607,7 +608,10 @@ class _TopDestination extends StatelessWidget {
                                   onPressed: () {
                                     Navigator.of(context).pop();
                                   },
-                                  child: Text(label.cancel),
+                                  child: Text(
+                                    label.cancel,
+                                    style: context.text.labelSmall,
+                                  ),
                                 ),
                                 TextButton(
                                   onPressed: () {
@@ -618,7 +622,9 @@ class _TopDestination extends StatelessWidget {
                                   },
                                   child: Text(
                                     label.accept,
-                                    style: const TextStyle(color: Colors.red),
+                                    style: context.text.labelSmall?.copyWith(
+                                      color: AppConstants.accent,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -628,11 +634,8 @@ class _TopDestination extends StatelessWidget {
                       },
                       child: Text(
                         label.deleteAll,
-                        style: TextStyle(
+                        style: context.text.headlineSmall?.copyWith(
                           fontSize: context.text.titleMedium?.fontSize,
-                          color: Colors.blue,
-                          decoration: TextDecoration.underline,
-                          decorationColor: Colors.blue,
                         ),
                       ),
                     ),
@@ -701,7 +704,7 @@ class _TopDestination extends StatelessWidget {
                               const SizedBox(height: 5),
                               Text(
                                 str.toString(),
-                                style: const TextStyle(color: Colors.grey),
+                                style: context.text.bodyMedium,
                               ),
                             ],
                           )

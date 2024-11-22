@@ -11,25 +11,19 @@ class Copyright extends StatelessWidget {
       children: [
         Text(
           'Copyright',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: context.color.primary),
+          style: context.text.displaySmall,
         ),
         const SizedBox(height: h20),
         RichText(
           text: TextSpan(
             children: [
-              const TextSpan(
+              TextSpan(
                 text: '0375656505',
-                style: TextStyle(
-                  color: Colors.blue,
-                  decoration: TextDecoration.underline,
-                  decorationColor: Colors.blue,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: context.text.headlineSmall?.copyWith(fontSize: 15),
               ),
               TextSpan(
                 text: ' - Giờ hành chính (1000đ/phút)',
-                style: TextStyle(color: context.color.outline, fontSize: 15),
+                style: context.text.bodyMedium,
               ),
             ],
           ),
@@ -38,18 +32,13 @@ class Copyright extends StatelessWidget {
         RichText(
           text: TextSpan(
             children: [
-              const TextSpan(
+              TextSpan(
                 text: '0328381259',
-                style: TextStyle(
-                    color: Colors.blue,
-                    decoration: TextDecoration.underline,
-                    decorationColor: Colors.blue,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500),
+                style: context.text.headlineSmall?.copyWith(fontSize: 15),
               ),
               TextSpan(
                 text: ' - 24/7 (1000đ/phút)',
-                style: TextStyle(color: context.color.outline, fontSize: 15),
+                style: context.text.bodyMedium,
               ),
             ],
           ),

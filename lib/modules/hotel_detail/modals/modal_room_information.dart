@@ -65,7 +65,7 @@ final class ModalRoomInformation extends StatelessWidget {
               const SizedBox(height: 20),
               Text(
                 room.roomName,
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                style: context.text.titleLarge,
               ),
               const Divider(height: 40),
               _LineInfo(
@@ -102,10 +102,7 @@ final class ModalRoomInformation extends StatelessWidget {
                       const SizedBox(width: 20),
                       Text(
                         item.facilityName,
-                        style: TextStyle(
-                          fontSize: context.text.titleMedium?.fontSize,
-                          height: 1.5,
-                        ),
+                        style: context.text.labelMedium?.copyWith(height: 1.5),
                       ),
                     ],
                   );
@@ -144,7 +141,7 @@ final class _LineInfo extends StatelessWidget {
               const SizedBox(width: 10),
               Text(
                 title,
-                style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
+                style: context.text.labelMedium,
               ),
             ],
           ),

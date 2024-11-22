@@ -97,10 +97,8 @@ class _SignInScreenState extends State<SignInScreen> {
                   child: Center(
                     child: Text(
                       widget.label.signIn,
-                      style: TextStyle(
+                      style: context.text.titleLarge?.copyWith(
                         color: context.color.surfaceTint,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
                       ),
                     ),
                   ),

@@ -1,3 +1,4 @@
+import 'package:chudu24/constants/index.dart';
 import 'package:flutter/material.dart';
 
 final class ErrorScreen extends StatelessWidget {
@@ -18,7 +19,11 @@ final class ErrorScreen extends StatelessWidget {
       body: const Center(
         child: Text(
           'ERROR',
-          style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold, color: Colors.red),
+          style: TextStyle(
+            fontSize: 50,
+            fontWeight: FontWeight.bold,
+            color: AppConstants.accent,
+          ),
         ),
       ),
     );

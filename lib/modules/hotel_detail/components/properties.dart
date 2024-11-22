@@ -44,12 +44,12 @@ final class Properties extends StatelessWidget {
                       Icon(
                         Icons.check_box_outlined,
                         size: 20,
-                        color: Colors.grey[700],
+                        color: context.color.outline,
                       ),
                       const SizedBox(width: 10),
                       Text(
                         hotel.facilities[ix].facilityName,
-                        style: context.text.titleMedium,
+                        style: context.text.bodyLarge,
                       ),
                     ],
                   );
@@ -62,7 +62,7 @@ final class Properties extends StatelessWidget {
                     },
                     child: Text(
                       label.seeAllFacilitiesOfHotel,
-                      style: const TextStyle(
+                      style: context.text.bodyLarge?.copyWith(
                         color: Colors.blue,
                         decoration: TextDecoration.underline,
                         decorationColor: Colors.blue,
@@ -85,7 +85,7 @@ final class Properties extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   hotel.address1,
-                  style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
+                  style: context.text.bodyLarge,
                 ),
                 const SizedBox(height: 10),
                 InkWell(
@@ -107,7 +107,7 @@ final class Properties extends StatelessWidget {
                             child: Text(
                               label.cannotShowMapNow,
                               textAlign: TextAlign.center,
-                              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                              style: context.text.titleLarge,
                             ),
                           ),
                         ),

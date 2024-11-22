@@ -12,7 +12,7 @@ final class CellPoint extends StatelessWidget {
       child: Text(
         title,
         textAlign: TextAlign.center,
-        style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
+        style: context.text.labelMedium,
       ),
     );
   }
@@ -32,7 +32,7 @@ final class CellPointPadding extends StatelessWidget {
         child: Text(
           title,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
+          style: context.text.labelMedium,
         ),
       ),
     );

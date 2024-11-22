@@ -34,11 +34,7 @@ final class NotLogin extends StatelessWidget {
               child: Center(
                 child: Text(
                   label.signIn,
-                  style: TextStyle(
-                    color: context.color.surfaceTint,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
+                  style: context.text.titleLarge?.copyWith(color: context.color.surfaceTint),
                 ),
               ),
             ),
@@ -55,11 +51,7 @@ final class NotLogin extends StatelessWidget {
               child: Center(
                 child: Text(
                   label.register,
-                  style: const TextStyle(
-                    color: Colors.blue,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
+                  style: context.text.titleLarge?.copyWith(color: Colors.blue),
                 ),
               ),
             ),

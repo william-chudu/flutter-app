@@ -12,11 +12,7 @@ final class TextJourney extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: const TextStyle(
-        fontSize: 14,
-        fontWeight: FontWeight.w500,
-        color: Colors.white,
-      ),
+      style: context.text.labelSmall?.copyWith(color: Colors.white),
     );
   }
 }

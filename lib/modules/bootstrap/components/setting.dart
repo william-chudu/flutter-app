@@ -35,7 +35,7 @@ final class Setting extends StatelessWidget {
                 children: [
                   Text(
                     label.english,
-                    style: const TextStyle(fontSize: 18),
+                    style: context.text.bodyLarge?.copyWith(fontSize: 18),
                   ),
                   BlocBuilder<LanguageBloc, LanguageState>(
                     builder: (context, state) {
@@ -60,7 +60,7 @@ final class Setting extends StatelessWidget {
                 children: [
                   Text(
                     label.darkTheme,
-                    style: const TextStyle(fontSize: 18),
+                    style: context.text.bodyLarge?.copyWith(fontSize: 18),
                   ),
                   BlocBuilder<AppThemeBloc, AppThemeState>(
                     builder: (context, state) {

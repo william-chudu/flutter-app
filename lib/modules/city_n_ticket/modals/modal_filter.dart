@@ -55,10 +55,10 @@ class _ModalFilterState extends State<ModalFilter> {
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const SizedBox(height: 20),
+        const SizedBox(height: 30),
         Text(
           label.filter,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: context.text.displayMedium,
         ),
         const SizedBox(height: 20),
         Padding(
@@ -145,10 +145,8 @@ class _ModalFilterState extends State<ModalFilter> {
                   child: Center(
                     child: Text(
                       label.clearFilter,
-                      style: const TextStyle(
+                      style: context.text.titleLarge?.copyWith(
                         color: Colors.blueAccent,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
                       ),
                     ),
                   ),
@@ -168,10 +166,8 @@ class _ModalFilterState extends State<ModalFilter> {
                   child: Center(
                     child: Text(
                       label.apply,
-                      style: TextStyle(
+                      style: context.text.titleLarge?.copyWith(
                         color: context.color.surfaceTint,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
                       ),
                     ),
                   ),

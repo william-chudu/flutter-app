@@ -72,12 +72,13 @@ final class Notifications extends StatelessWidget {
                                 const SizedBox(height: 10),
                                 Text(
                                   item.title,
-                                  style: const TextStyle(fontWeight: FontWeight.bold),
+                                  style: context.text.titleSmall,
                                 ),
                                 const SizedBox(height: 5),
                                 Text(
                                   item.datePublic,
-                                  style: const TextStyle(fontStyle: FontStyle.italic),
+                                  style: context.text.labelSmall
+                                      ?.copyWith(fontStyle: FontStyle.italic),
                                 ),
                                 if (hasContent) const SizedBox(height: 5),
                                 if (hasContent) Text(item.content),
@@ -92,7 +93,8 @@ final class Notifications extends StatelessWidget {
                                     },
                                     child: Text(
                                       label.seemore,
-                                      style: TextStyle(color: Colors.blue.shade900),
+                                      style: context.text.labelSmall
+                                          ?.copyWith(color: Colors.blue.shade900),
                                     ),
                                   ),
                                 const SizedBox(height: 15),

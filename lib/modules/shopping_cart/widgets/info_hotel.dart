@@ -46,7 +46,7 @@ final class InfoHotel extends StatelessWidget {
               const SizedBox(height: 5),
               Text(
                 room.address,
-                style: const TextStyle(fontWeight: FontWeight.w500),
+                style: context.text.labelSmall,
               ),
               const SizedBox(height: 5),
               Row(
@@ -61,7 +61,7 @@ final class InfoHotel extends StatelessWidget {
                   const SizedBox(width: 5),
                   Text(
                     '${room.reviews} ${label.review}',
-                    style: const TextStyle(fontWeight: FontWeight.w500),
+                    style: context.text.labelSmall,
                   ),
                 ],
               ),

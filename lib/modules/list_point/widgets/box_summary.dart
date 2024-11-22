@@ -36,7 +36,7 @@ final class BoxSummary extends StatelessWidget {
           ),
           child: Text(
             first,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            style: context.text.labelLarge,
           ),
         ),
         Container(
@@ -61,7 +61,7 @@ final class BoxSummary extends StatelessWidget {
                 children: [
                   Text(
                     second,
-                    style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
+                    style: context.text.labelMedium,
                   ),
                   pointLock == null
                       ? Text(
@@ -85,9 +85,7 @@ final class BoxSummary extends StatelessWidget {
                 children: [
                   Text(
                     third,
-                    style: TextStyle(
-                      fontSize: context.text.titleMedium?.fontSize,
-                    ),
+                    style: context.text.labelMedium,
                   ),
                   thirdValue,
                 ],

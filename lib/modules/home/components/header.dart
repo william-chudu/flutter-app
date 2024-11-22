@@ -19,16 +19,15 @@ class HeaderHome extends StatelessWidget {
             children: [
               Text(
                 label.constructiveOpinion,
-                style: TextStyle(color: context.color.primary),
+                style: context.text.bodyMedium,
               ),
               ButtonFilledWidget(
                 radius: 3,
                 padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 10),
                 child: Text(
                   label.opinion.toUpperCase(),
-                  style: TextStyle(
+                  style: context.text.bodySmall?.copyWith(
                     color: context.color.surfaceTint,
-                    fontSize: 12,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -54,9 +53,7 @@ class HeaderHome extends StatelessWidget {
                   const SizedBox(width: 5),
                   Text(
                     '0375656505',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                    style: context.text.displaySmall?.copyWith(
                       color: context.color.primary,
                     ),
                   ),

@@ -105,10 +105,7 @@ final class HotelReview extends StatelessWidget {
                           const Divider(height: 40),
                           Text(
                             label.imagesFromCustomer,
-                            style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: context.text.displaySmall,
                           ),
                           PhotoSlider(
                             borderThickness: 3,
@@ -121,10 +118,7 @@ final class HotelReview extends StatelessWidget {
                           const Divider(height: 40),
                           Text(
                             label.reviewsFromCustomer,
-                            style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: context.text.displaySmall,
                           ),
                           const SizedBox(height: 10),
                         ],

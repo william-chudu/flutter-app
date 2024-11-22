@@ -30,7 +30,7 @@ final class HotelFacilitiesDetail extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             hotel.hotelname,
-            style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+            style: context.text.displayLarge,
           ),
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(40),

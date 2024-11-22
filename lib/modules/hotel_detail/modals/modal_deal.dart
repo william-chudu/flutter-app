@@ -24,11 +24,7 @@ final class ModalDeal extends StatelessWidget {
                   children: [
                     Text(
                       deal.tenLoaiGia,
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.orange[600],
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: context.text.titleLarge?.copyWith(color: Colors.orange[600]),
                     ),
                     const Divider(height: 30),
                     Row(
@@ -54,11 +50,11 @@ final class ModalDeal extends StatelessWidget {
                           children: [
                             Text(
                               Utils.time.format(date: deal.thoiGianBanStart),
-                              style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
+                              style: context.text.bodyLarge,
                             ),
                             Text(
                               Utils.time.format(date: deal.thoiGianBanEnd),
-                              style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
+                              style: context.text.bodyLarge,
                             ),
                           ],
                         ),
@@ -77,11 +73,11 @@ final class ModalDeal extends StatelessWidget {
                           children: [
                             Text(
                               Utils.time.format(date: deal.thoiGianSuDungStart),
-                              style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
+                              style: context.text.bodyLarge,
                             ),
                             Text(
                               Utils.time.format(date: deal.thoiGianSuDungEnd),
-                              style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
+                              style: context.text.bodyLarge,
                             ),
                           ],
                         ),
@@ -108,9 +104,7 @@ final class ModalDeal extends StatelessWidget {
                             Expanded(
                               child: Text(
                                 item.includeName,
-                                style: TextStyle(
-                                  fontSize: context.text.titleMedium?.fontSize,
-                                ),
+                                style: context.text.bodyLarge,
                               ),
                             ),
                           ],
@@ -133,11 +127,7 @@ final class ModalDeal extends StatelessWidget {
           child: Center(
             child: Text(
               label.watchDetailPrice,
-              style: TextStyle(
-                fontSize: 20,
-                color: context.color.surfaceTint,
-                fontWeight: FontWeight.bold,
-              ),
+              style: context.text.displaySmall?.copyWith(color: context.color.surfaceTint),
             ),
           ),
         ),

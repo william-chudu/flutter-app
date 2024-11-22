@@ -55,9 +55,7 @@ final class ItemJourney extends StatelessWidget {
               const SizedBox(height: 10),
               Text(
                 label.seemore,
-                style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
+                style: context.text.headlineSmall?.copyWith(
                   color: Colors.white,
                   decoration: TextDecoration.underline,
                   decorationColor: Colors.white,
