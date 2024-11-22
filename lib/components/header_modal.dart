@@ -1,3 +1,4 @@
+import 'package:chudu24/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 
 final class HeaderModal extends StatelessWidget {
@@ -12,16 +13,19 @@ final class HeaderModal extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(
+          Text(
             '\u{274C}',
-            style: TextStyle(fontSize: 18, color: Colors.transparent),
+            style: TextStyle(
+              fontSize: context.text.titleMedium?.fontSize,
+              color: Colors.transparent,
+            ),
           ),
           SizedBox(
             height: 50,
             child: Center(
               child: Text(
                 label,
-                style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+                style: context.text.displayLarge,
               ),
             ),
           ),

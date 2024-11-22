@@ -3,7 +3,7 @@ import 'package:hive/hive.dart';
 
 part 'memship_account_profile.g.dart';
 
-@HiveType(typeId: 2, adapterName: ConstantType.memshipAccountProfile)
+@HiveType(typeId: 2, adapterName: ConstantType.nMemshipAccountProfile)
 final class MemShipAccountProfile {
   @HiveField(0)
   final String companyAddress;

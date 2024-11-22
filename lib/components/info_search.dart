@@ -129,15 +129,14 @@ final class InfoSearch extends StatelessWidget {
                   child: info.search?.title != null
                       ? Text(
                           info.search?.title ?? '',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: context.color.primary,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style: context.text.labelMedium,
                         )
                       : Text(
                           label.addressOrHotel,
-                          style: TextStyle(fontSize: 16, color: context.color.outline),
+                          style: TextStyle(
+                            fontSize: context.text.titleMedium?.fontSize,
+                            color: context.color.outline,
+                          ),
                         ),
                 ),
               ),
@@ -205,11 +204,7 @@ final class InfoSearch extends StatelessWidget {
                 child: Center(
                   child: Text(
                     label.search,
-                    style: TextStyle(
-                      color: context.color.surfaceTint,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: context.text.titleLarge?.copyWith(color: context.color.surfaceTint),
                   ),
                 ),
               ),

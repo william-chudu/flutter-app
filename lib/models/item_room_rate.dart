@@ -140,7 +140,7 @@ final class ArrLoaiGia {
         id: json["Id"] ?? json['rateplanId'] ?? json['sessionId'][0],
         tenLoaiGia: json["TenLoaiGia"],
         roomTypeId: json["RoomTypeId"],
-        roomTypeParentId: json["RoomTypeIdParent"],
+        roomTypeParentId: json["RoomTypeIdParent"] ?? '',
         roomName: json["RoomName"] ?? json['roomCode'],
         roomDescription: json["RoomDescription"] ?? '',
         cancellationPolicy: json["CancellationPolicy"] ?? '',

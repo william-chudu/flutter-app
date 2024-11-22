@@ -67,7 +67,7 @@ final class ItemRoomBoxClose extends StatelessWidget {
                           room.roomName,
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                          style: context.text.titleMedium,
                         ),
                       ),
                       const SizedBox(width: 10),

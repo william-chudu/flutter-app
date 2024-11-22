@@ -28,7 +28,7 @@ final class Profile extends StatelessWidget {
                   children: [
                     Text(
                       label.account,
-                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                      style: context.text.labelMedium,
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -36,12 +36,12 @@ final class Profile extends StatelessWidget {
                       children: [
                         Text(
                           user.memShipAccountProfile.fullName,
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          style: context.text.titleMedium,
                         ),
                         const SizedBox(height: 5),
                         Text(
                           user.accountUser,
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          style: context.text.titleMedium,
                         ),
                       ],
                     ),

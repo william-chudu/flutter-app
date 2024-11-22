@@ -14,10 +14,7 @@ final class InfoRoom extends StatelessWidget {
       children: [
         Text(
           room.priceInfo.roomName,
-          style: const TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 15,
-          ),
+          style: context.text.labelMedium,
         ),
         const SizedBox(height: 5),
         Builder(builder: (context) {
@@ -44,7 +41,7 @@ final class InfoRoom extends StatelessWidget {
           children: [
             Text(
               label.noOfRoom,
-              style: const TextStyle(fontSize: 16),
+              style: context.text.labelMedium,
             ),
             DropdownButton<int>(
               borderRadius: BorderRadius.circular(5),

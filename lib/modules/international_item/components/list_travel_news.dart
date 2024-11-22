@@ -33,7 +33,10 @@ final class ListTravelNews extends StatelessWidget {
                     },
                     child: Text(
                       '${label.seemore} >',
-                      style: const TextStyle(color: Colors.blue, fontSize: 16),
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: context.text.titleMedium?.fontSize,
+                      ),
                     ),
                   )
                 ],
@@ -71,7 +74,10 @@ final class ListTravelNews extends StatelessWidget {
                             item.tieuDe,
                             maxLines: 3,
                             overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(fontSize: 16, color: Colors.blue),
+                            style: TextStyle(
+                              fontSize: context.text.titleMedium?.fontSize,
+                              color: Colors.blue,
+                            ),
                           ),
                         ),
                       ],

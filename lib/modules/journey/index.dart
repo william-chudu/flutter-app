@@ -55,7 +55,7 @@ final class Journey extends StatelessWidget {
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(40),
             child: TabbarHeader(
-              fontSize: 16,
+              textStyle: context.text.titleMedium,
               labels: [
                 label.processing,
                 label.prepareForCheckIn,

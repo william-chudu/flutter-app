@@ -141,7 +141,10 @@ class _ModalSearchInfoState extends State<ModalSearchInfo> {
                       controller: inputController,
                       decoration: InputDecoration(
                         hintText: label.addressOrHotel,
-                        hintStyle: const TextStyle(fontSize: 16, color: Colors.grey),
+                        hintStyle: TextStyle(
+                          fontSize: context.text.titleMedium?.fontSize,
+                          color: Colors.grey,
+                        ),
                         border: InputBorder.none,
                       ),
                       onChanged: (keyword) {
@@ -282,7 +285,7 @@ final class _ListCities extends StatelessWidget {
                   Expanded(
                     child: Text(
                       city.display,
-                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                      style: context.text.labelMedium,
                     ),
                   ),
                 ],
@@ -333,11 +336,14 @@ final class _ListHotels extends StatelessWidget {
                       children: [
                         Text(
                           hotel.hotelname,
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                          style: context.text.labelMedium,
                         ),
                         Text(
                           hotel.address1,
-                          style: const TextStyle(fontSize: 16, color: Colors.grey),
+                          style: TextStyle(
+                            fontSize: context.text.titleMedium?.fontSize,
+                            color: Colors.grey,
+                          ),
                         ),
                       ],
                     ),
@@ -383,7 +389,7 @@ final class _ListTickets extends StatelessWidget {
                 Expanded(
                   child: Text(
                     tickets[i].cityname,
-                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                    style: context.text.labelMedium,
                   ),
                 ),
               ],
@@ -447,7 +453,7 @@ final class _ListTicketItems extends StatelessWidget {
                       Expanded(
                         child: Text(
                           item.serviceName,
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                          style: context.text.labelMedium,
                         ),
                       ),
                     ],
@@ -465,7 +471,7 @@ final class _ListTicketItems extends StatelessWidget {
                           Expanded(
                             child: Text(
                               item.serviceName,
-                              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                              style: context.text.labelMedium,
                             ),
                           ),
                         ],
@@ -480,7 +486,10 @@ final class _ListTicketItems extends StatelessWidget {
                           Expanded(
                             child: Text(
                               item.address ?? '',
-                              style: const TextStyle(fontSize: 16, color: Colors.grey),
+                              style: TextStyle(
+                                fontSize: context.text.titleMedium?.fontSize,
+                                color: Colors.grey,
+                              ),
                             ),
                           ),
                         ],
@@ -545,7 +554,7 @@ class _TopDestination extends StatelessWidget {
                         shape: StadiumBorder(
                           side: BorderSide(width: 0, color: Colors.grey[200] ?? Colors.grey),
                         ),
-                        labelStyle: const TextStyle(fontSize: 16),
+                        labelStyle: TextStyle(fontSize: context.text.titleMedium?.fontSize),
                         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
                         label: Text(location.title),
@@ -619,8 +628,8 @@ class _TopDestination extends StatelessWidget {
                       },
                       child: Text(
                         label.deleteAll,
-                        style: const TextStyle(
-                          fontSize: 16,
+                        style: TextStyle(
+                          fontSize: context.text.titleMedium?.fontSize,
                           color: Colors.blue,
                           decoration: TextDecoration.underline,
                           decorationColor: Colors.blue,
@@ -687,7 +696,7 @@ class _TopDestination extends StatelessWidget {
                             children: [
                               Text(
                                 item.keywordCityName,
-                                style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+                                style: context.text.labelMedium,
                               ),
                               const SizedBox(height: 5),
                               Text(

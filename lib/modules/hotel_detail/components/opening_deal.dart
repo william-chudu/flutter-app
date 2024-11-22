@@ -69,7 +69,10 @@ final class OpeningDeal extends StatelessWidget {
                                 Expanded(
                                   child: Text(
                                     deal.tenLoaiGia,
-                                    style: TextStyle(color: Colors.orange[600], fontSize: 16),
+                                    style: TextStyle(
+                                      color: Colors.orange[600],
+                                      fontSize: context.text.titleMedium?.fontSize,
+                                    ),
                                     maxLines: 1,
                                   ),
                                 ),

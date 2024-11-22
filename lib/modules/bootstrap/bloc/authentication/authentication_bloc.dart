@@ -22,7 +22,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
         emit(const AuthenticationLoading());
         await Future.delayed(const Duration(seconds: 0));
 
-        final box = await Hive.openBox<AuthenticatedUser>(ConstantType.authernticatedUser);
+        final box = await Hive.openBox<AuthenticatedUser>(ConstantType.authenticatedUser.first);
         final user = box.get(key);
 
         emit(AuthenticationInitial(user: user));
@@ -48,7 +48,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
         }
         await Future.delayed(const Duration(seconds: 2));
         final user = AuthenticatedUser.fromJson(json['data']);
-        final box = await Hive.openBox<AuthenticatedUser>(ConstantType.authernticatedUser);
+        final box = await Hive.openBox<AuthenticatedUser>(ConstantType.authenticatedUser.first);
         await box.put(key, user);
         emit(AuthenticationLoaded(user: user));
         await box.close();
@@ -59,7 +59,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
     });
 
     on<SignOutEvent>((SignOutEvent event, Emitter<AuthenticationState> emit) async {
-      final box = await Hive.openBox<AuthenticatedUser>(ConstantType.authernticatedUser);
+      final box = await Hive.openBox<AuthenticatedUser>(ConstantType.authenticatedUser.first);
       await box.clear();
       emit(const AuthenticationSignOut());
       await box.close();

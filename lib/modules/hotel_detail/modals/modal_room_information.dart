@@ -80,14 +80,14 @@ final class ModalRoomInformation extends StatelessWidget {
               const Divider(height: 40),
               Text(
                 label.roomInformation,
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                style: context.text.titleMedium,
               ),
               const SizedBox(height: 10),
               HtmlBox(content: room.roomDescription),
               const Divider(height: 40),
               Text(
                 label.facilitiesOfHotel,
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                style: context.text.titleMedium,
               ),
               const SizedBox(height: 10),
               ListView.builder(
@@ -102,7 +102,10 @@ final class ModalRoomInformation extends StatelessWidget {
                       const SizedBox(width: 20),
                       Text(
                         item.facilityName,
-                        style: const TextStyle(fontSize: 16, height: 1.5),
+                        style: TextStyle(
+                          fontSize: context.text.titleMedium?.fontSize,
+                          height: 1.5,
+                        ),
                       ),
                     ],
                   );
@@ -141,7 +144,7 @@ final class _LineInfo extends StatelessWidget {
               const SizedBox(width: 10),
               Text(
                 title,
-                style: const TextStyle(fontSize: 16),
+                style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
               ),
             ],
           ),
@@ -150,7 +153,7 @@ final class _LineInfo extends StatelessWidget {
             child: Text(
               content,
               textAlign: TextAlign.end,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              style: context.text.titleMedium,
             ),
           ),
         ],

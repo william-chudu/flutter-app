@@ -18,7 +18,7 @@ final class ItemNavigation extends StatelessWidget {
       contentPadding: EdgeInsets.zero,
       title: Text(
         title,
-        style: const TextStyle(fontSize: 16),
+        style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
       ),
       trailing: const Icon(Icons.chevron_right, color: AppConstants.accent, size: 25),
     );

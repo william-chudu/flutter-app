@@ -21,11 +21,7 @@ final class ItemJourney extends StatelessWidget {
           padding: const EdgeInsets.all(10.0),
           child: Text(
             item.hotelnames,
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-              color: Colors.white,
-            ),
+            style: context.text.titleMedium,
           ),
         ),
         const Divider(height: 2, thickness: 2, color: Colors.white),

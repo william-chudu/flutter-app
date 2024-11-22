@@ -39,11 +39,7 @@ final class ButtonLogin extends StatelessWidget {
                 child: Text(
                   AppConstants.shared.label.loginAndSeePromotion,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: context.color.surfaceTint,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: context.text.titleMedium?.copyWith(color: context.color.surfaceTint),
                 ),
               ),
               const Divider(height: 1),
@@ -59,7 +55,7 @@ final class ButtonLogin extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: context.color.surfaceTint,
-                fontSize: 16,
+                fontSize: context.text.titleMedium?.fontSize,
                 fontWeight: FontWeight.w500,
               ),
             ),

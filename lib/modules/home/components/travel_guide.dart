@@ -78,7 +78,7 @@ class TravelGuide extends StatelessWidget {
                                   guide.postTitle,
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(fontSize: 16, color: context.color.primary),
+                                  style: context.text.labelMedium,
                                 ),
                               ),
                             ],

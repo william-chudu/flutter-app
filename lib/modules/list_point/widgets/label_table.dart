@@ -15,7 +15,7 @@ final class LabelTable extends StatelessWidget {
           child: Text(
             title,
             textAlign: TextAlign.center,
-            style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+            style: context.text.titleMedium,
           ),
         ),
       ),

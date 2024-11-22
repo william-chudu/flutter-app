@@ -51,7 +51,7 @@ class _ModalDetailPromotionState extends State<ModalDetailPromotion> {
                   child: Center(
                     child: Text(
                       label.promotionDetail,
-                      style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+                      style: context.text.displayLarge,
                     ),
                   ),
                 ),
@@ -92,10 +92,7 @@ class _ModalDetailPromotionState extends State<ModalDetailPromotion> {
                           RichText(
                             text: TextSpan(
                               text: '${label.pricePerNight}:',
-                              style: const TextStyle(
-                                color: Colors.black,
-                                fontSize: 16,
-                              ),
+                              style: context.text.labelMedium,
                             ),
                           ),
                           const SizedBox(width: 20),
@@ -108,34 +105,25 @@ class _ModalDetailPromotionState extends State<ModalDetailPromotion> {
                                         TextSpan(text: label.priceJustFrom),
                                         TextSpan(
                                           text: ' ${Utils.money.money(info.minRateVnd)}.000 đ',
-                                          style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
+                                          style: context.text.titleLarge?.copyWith(
                                             color: AppConstants.accent,
-                                            fontSize: 18,
                                           ),
                                         ),
                                       ],
-                                      style: const TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                      ),
+                                      style: context.text.labelMedium,
                                     )
                                   : TextSpan(
                                       children: [
                                         TextSpan(text: label.call),
-                                        const TextSpan(
+                                        TextSpan(
                                           text: ' 0375656505 ',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
+                                          style: context.text.titleSmall?.copyWith(
                                             color: AppConstants.accent,
                                           ),
                                         ),
                                         TextSpan(text: label.forGoodPrice),
                                       ],
-                                      style: const TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                      ),
+                                      style: context.text.labelMedium,
                                     ),
                             ),
                           ),
@@ -144,7 +132,7 @@ class _ModalDetailPromotionState extends State<ModalDetailPromotion> {
                       const Divider(height: 40),
                       Text(
                         label.roomPriceIncludes,
-                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        style: context.text.titleMedium,
                       ),
                       const SizedBox(height: 10),
                       ...List<Widget>.generate(
@@ -160,26 +148,20 @@ class _ModalDetailPromotionState extends State<ModalDetailPromotion> {
                               ),
                               const SizedBox(width: 10),
                               Expanded(
-                                child: Text(
-                                  item.includeName,
-                                  style: const TextStyle(fontSize: 16),
-                                ),
+                                child: Text(item.includeName, style: context.text.labelMedium),
                               ),
                             ],
                           );
                         },
                       ).separator(const SizedBox(height: 10)),
                       const Divider(height: 40),
-                      Text(
-                        label.policyNotes,
-                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
+                      Text(label.policyNotes, style: context.text.titleMedium),
                       const SizedBox(height: 10),
                       HtmlBox(content: info.luuYChinhSach),
                       const Divider(height: 40),
                       Text(
                         label.cancelOrChangeRoomCondition,
-                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        style: context.text.titleMedium,
                       ),
                       const SizedBox(height: 10),
                       HtmlBox(content: info.cancellationPolicy),
@@ -212,14 +194,14 @@ class LineInfo extends StatelessWidget {
       children: [
         Text(
           '$title:',
-          style: const TextStyle(fontSize: 16),
+          style: context.text.labelMedium,
         ),
         const SizedBox(width: 20),
         Expanded(
           child: Text(
             detail,
             textAlign: TextAlign.end,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            style: context.text.titleMedium,
           ),
         ),
       ],

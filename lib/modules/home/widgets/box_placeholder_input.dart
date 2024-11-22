@@ -21,7 +21,10 @@ final class BoxPlaceholderInput extends StatelessWidget {
   Widget build(BuildContext context) {
     final textWidget = Text(
       label,
-      style: TextStyle(fontSize: 16, color: context.color.outline),
+      style: TextStyle(
+        fontSize: context.text.titleMedium?.fontSize,
+        color: context.color.outline,
+      ),
     );
     return Expanded(
       flex: flex,
@@ -41,11 +44,7 @@ final class BoxPlaceholderInput extends StatelessWidget {
                   textWidget,
                   Text(
                     content ?? '',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                      color: context.color.primary,
-                    ),
+                    style: context.text.labelMedium,
                   ),
                 ],
               ),

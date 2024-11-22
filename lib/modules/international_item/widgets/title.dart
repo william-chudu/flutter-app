@@ -9,11 +9,7 @@ final class Title extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: const TextStyle(
-        color: Colors.green,
-        fontSize: 16,
-        fontWeight: FontWeight.w600,
-      ),
+      style: context.text.titleMedium?.copyWith(color: Colors.green),
     );
   }
 }

@@ -221,10 +221,10 @@ class _BoxInfoRoomRateState extends State<BoxInfoRoomRate> {
       children: [
         Text(
           widget.room.tenLoaiGia,
-          style: const TextStyle(
+          style: TextStyle(
             color: Colors.orange,
             fontWeight: FontWeight.w600,
-            fontSize: 16,
+            fontSize: context.text.titleMedium?.fontSize,
           ),
         ),
         const SizedBox(height: 5),

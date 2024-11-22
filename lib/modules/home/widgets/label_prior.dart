@@ -33,7 +33,10 @@ final class LabelPrior extends StatelessWidget {
             if (detail != null)
               Text(
                 detail ?? '',
-                style: TextStyle(color: context.color.outline, fontSize: 16),
+                style: TextStyle(
+                  color: context.color.outline,
+                  fontSize: context.text.titleMedium?.fontSize,
+                ),
               ),
           ],
         ),
@@ -46,8 +49,8 @@ final class LabelPrior extends StatelessWidget {
             ),
             child: Text(
               '${AppConstants.shared.label.seemore} >',
-              style: const TextStyle(
-                fontSize: 16,
+              style: TextStyle(
+                fontSize: context.text.titleMedium?.fontSize,
                 color: Colors.blueAccent,
                 fontWeight: FontWeight.w500,
               ),

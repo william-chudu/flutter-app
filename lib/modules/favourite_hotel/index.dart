@@ -166,7 +166,7 @@ class _HotelItemState extends State<HotelItem> {
                     maxLines: 2,
                     softWrap: true,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    style: context.text.titleMedium,
                   ),
                   const SizedBox(height: 5),
                   SingleChildScrollView(

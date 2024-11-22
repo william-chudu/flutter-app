@@ -49,7 +49,7 @@ final class HotelFacilitiesDetail extends StatelessWidget {
                     height: 30,
                     child: Text(
                       tags[index],
-                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                      style: context.text.titleMedium,
                     ),
                   );
                 },

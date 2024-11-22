@@ -70,11 +70,7 @@ final class ListPoint extends StatelessWidget {
                 secondValue: '',
                 thirdValue: Text(
                   Utils.money.currency(user.totalPoint),
-                  style: const TextStyle(
-                    fontSize: 16,
-                    color: Colors.blue,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: context.text.titleMedium?.copyWith(color: Colors.blue),
                 ),
               ),
               const SizedBox(height: 20),
@@ -92,7 +88,7 @@ final class ListPoint extends StatelessWidget {
                   },
                   child: Text(
                     label.seemore,
-                    style: const TextStyle(color: Colors.blue, fontSize: 16),
+                    style: context.text.labelMedium?.copyWith(color: Colors.blue),
                   ),
                 ),
               ),

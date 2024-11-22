@@ -3,7 +3,7 @@ import 'package:hive/hive.dart';
 
 part 'info_cart_hotel.g.dart';
 
-@HiveType(typeId: 0, adapterName: ConstantType.hotel)
+@HiveType(typeId: 0, adapterName: ConstantType.nHotel)
 final class InfoCartHotel {
   @HiveField(0)
   final String checkIn;

@@ -24,7 +24,7 @@ class HotelTitle extends StatelessWidget {
             ),
             Text(
               hotel.address1,
-              style: const TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
               maxLines: 2,
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,

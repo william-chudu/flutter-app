@@ -156,11 +156,7 @@ final class _BoxConsultation extends StatelessWidget {
                   child: Text(
                     labelSubmit.toUpperCase(),
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: context.color.surfaceTint,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
+                    style: context.text.titleMedium?.copyWith(color: context.color.surfaceTint),
                   ),
                 ),
             ],

@@ -32,10 +32,7 @@ final class PopularChoices extends StatelessWidget {
                     width: double.infinity,
                     child: Text(
                       choice.title,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: context.text.titleMedium,
                     ),
                   ),
                 ),

@@ -33,7 +33,10 @@ final class HotelProperty extends StatelessWidget {
                 },
                 child: Text(
                   seemore,
-                  style: const TextStyle(color: Colors.blue, fontSize: 16),
+                  style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: context.text.titleMedium?.fontSize,
+                  ),
                 ),
               ),
             ],

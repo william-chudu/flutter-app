@@ -49,7 +49,7 @@ final class Properties extends StatelessWidget {
                       const SizedBox(width: 10),
                       Text(
                         hotel.facilities[ix].facilityName,
-                        style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+                        style: context.text.titleMedium,
                       ),
                     ],
                   );
@@ -85,7 +85,7 @@ final class Properties extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   hotel.address1,
-                  style: const TextStyle(fontSize: 16),
+                  style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
                 ),
                 const SizedBox(height: 10),
                 InkWell(
@@ -168,13 +168,7 @@ final class Properties extends StatelessWidget {
                     },
                     child: Text(
                       label.seeAllReviews,
-                      style: const TextStyle(
-                        color: Colors.blue,
-                        decoration: TextDecoration.underline,
-                        decorationColor: Colors.blue,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                      ),
+                      style: context.text.headlineMedium,
                     ),
                   ),
                 ),

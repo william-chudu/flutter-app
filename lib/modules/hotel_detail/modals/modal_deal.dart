@@ -36,7 +36,7 @@ final class ModalDeal extends StatelessWidget {
                       children: [
                         Text(
                           label.startingPrice,
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                          style: context.text.labelMedium,
                         ),
                         MoneyWidget(money: deal.minRateVnd),
                       ],
@@ -47,18 +47,18 @@ final class ModalDeal extends StatelessWidget {
                       children: [
                         Text(
                           label.sellingTime,
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                          style: context.text.labelMedium,
                         ),
                         Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
                               Utils.time.format(date: deal.thoiGianBanStart),
-                              style: const TextStyle(fontSize: 16),
+                              style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
                             ),
                             Text(
                               Utils.time.format(date: deal.thoiGianBanEnd),
-                              style: const TextStyle(fontSize: 16),
+                              style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
                             ),
                           ],
                         ),
@@ -70,18 +70,18 @@ final class ModalDeal extends StatelessWidget {
                       children: [
                         Text(
                           label.usingTime,
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                          style: context.text.labelMedium,
                         ),
                         Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
                               Utils.time.format(date: deal.thoiGianSuDungStart),
-                              style: const TextStyle(fontSize: 16),
+                              style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
                             ),
                             Text(
                               Utils.time.format(date: deal.thoiGianSuDungEnd),
-                              style: const TextStyle(fontSize: 16),
+                              style: TextStyle(fontSize: context.text.titleMedium?.fontSize),
                             ),
                           ],
                         ),
@@ -108,7 +108,9 @@ final class ModalDeal extends StatelessWidget {
                             Expanded(
                               child: Text(
                                 item.includeName,
-                                style: const TextStyle(fontSize: 16),
+                                style: TextStyle(
+                                  fontSize: context.text.titleMedium?.fontSize,
+                                ),
                               ),
                             ),
                           ],

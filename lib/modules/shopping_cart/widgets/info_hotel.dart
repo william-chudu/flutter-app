@@ -36,11 +36,7 @@ final class InfoHotel extends StatelessWidget {
                   Expanded(
                     child: Text(
                       room.hotelName,
-                      style: const TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
+                      style: context.text.titleMedium?.copyWith(color: Colors.blue),
                     ),
                   ),
                   const SizedBox(width: 10),
