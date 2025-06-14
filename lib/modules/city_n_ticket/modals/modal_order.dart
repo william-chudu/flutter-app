@@ -82,6 +82,9 @@ class _ModalFilterState extends State<ModalOrder> {
           final item = orders[index];
           if (item == null) {
             return ButtonFilledWidget(
+              onTap: () {
+                //
+              },
               margin: const EdgeInsets.symmetric(vertical: 20),
               padding: const EdgeInsets.symmetric(vertical: 15),
               child: Center(

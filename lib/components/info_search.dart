@@ -46,6 +46,9 @@ final class InfoSearch extends StatelessWidget {
           guestStr.write(' ');
           guestStr.write(label.children);
         }
+        if (info.children > 1) {
+          guestStr.write('s');
+        }
         void onTapDatetime() => showDateRangePicker(
               initialEntryMode: DatePickerEntryMode.calendarOnly,
               context: context,

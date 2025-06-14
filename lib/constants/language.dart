@@ -160,7 +160,7 @@ final class LanguageForApp {
     totalGuest: 'Total guest',
     noOfRoom: 'No Of Rooms',
     adult: 'Adult',
-    children: 'Children',
+    children: 'Kid',
     room: 'Room',
     topDestination: 'Top Destination',
     topPromotion: 'Top Promotion',

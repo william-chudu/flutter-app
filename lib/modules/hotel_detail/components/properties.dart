@@ -1,7 +1,11 @@
 part of '../index.dart';
 
 final class Properties extends StatelessWidget {
-  const Properties({super.key, required this.hotel, required this.onTap, required this.label});
+  const Properties(
+      {super.key,
+      required this.hotel,
+      required this.onTap,
+      required this.label});
 
   final HotelInfoDetail hotel;
   final void Function(String label) onTap;
@@ -91,9 +95,11 @@ final class Properties extends StatelessWidget {
                 InkWell(
                   onTap: () {
                     MapParam.now.cityId = int.tryParse(hotel.cityid) ?? 0;
-                    MapParam.now.hotelIdint = int.tryParse(hotel.hotelidint) ?? 0;
+                    MapParam.now.hotelIdint =
+                        int.tryParse(hotel.hotelidint) ?? 0;
                     MapParam.now.pointerlatitude = hotel.pointerlatitude.trim();
-                    MapParam.now.pointerlongtitude = hotel.pointerlongtitude.trim();
+                    MapParam.now.pointerlongtitude =
+                        hotel.pointerlongtitude.trim();
                     MapParam.now.hotelName = hotel.hotelname;
 
                     if (MapParam.now.isValid()) {
@@ -101,7 +107,8 @@ final class Properties extends StatelessWidget {
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          padding: const EdgeInsets.only(left: 40, right: 40, top: 20),
+                          padding: const EdgeInsets.only(
+                              left: 40, right: 40, top: 20),
                           backgroundColor: Colors.red[800],
                           content: Center(
                             child: Text(
@@ -125,9 +132,11 @@ final class Properties extends StatelessWidget {
             ),
           );
         } else if (index == propCount + 2) {
-          return ExpansionHotelInfo(label: label.regulationAndNote, list: _regulation());
+          return ExpansionHotelInfo(
+              label: label.regulationAndNote, list: _regulation());
         } else if (index == propCount + 3) {
-          return ExpansionHotelInfo(label: label.frequentQuestions, list: hotel.hotelFQA);
+          return ExpansionHotelInfo(
+              label: label.frequentQuestions, list: hotel.hotelFQA);
         } else {
           final reviewCount = int.tryParse(hotel.reviewcount) ?? 0;
           final reviewRatingTotal = int.tryParse(hotel.reviewratingtotal) ?? 0;
@@ -144,7 +153,9 @@ final class Properties extends StatelessWidget {
                 Center(
                   child: ReviewCount(
                     count: reviewCount,
-                    averageReview: (reviewCount == 0 ? 0 : (2 * reviewRatingTotal / reviewCount))
+                    averageReview: (reviewCount == 0
+                            ? 0
+                            : (2 * reviewRatingTotal / reviewCount))
                         .toStringAsFixed(1),
                     isDetailReview: true,
                   ),
@@ -180,16 +191,31 @@ final class Properties extends StatelessWidget {
     );
   }
 
+  String _getHour(String time) {
+    try {
+      final parsedTime = Utils.time.timeLocale.parse(time);
+      return Utils.time.format(date: parsedTime, oF: TimeType.hm);
+    } catch (e) {
+      print(e.toString());
+      return Utils.time.format(
+        date: DateTime.now(),
+        oF: TimeType.hm,
+      );
+    }
+  }
+
   List<Expansion> _regulation() {
     return [
       Expansion(
         id: 'QD1',
         title: 'Giờ Nhận - Trả Phòng',
-        content:
-            '''Giờ nhận phòng: <b>${Utils.time.format(date: Utils.time.timeLocale.parse(hotel.checkintime), oF: TimeType.hm)}</b>
-            <br/>Giờ trả phòng: <b>${Utils.time.format(date: Utils.time.timeLocale.parse(hotel.checkouttime), oF: TimeType.hm)}</b>''',
+        content: '''Giờ nhận phòng: <b>${_getHour(hotel.checkintime)}</b>
+            <br/>Giờ trả phòng: <b>${_getHour(hotel.checkouttime)}</b>''',
       ),
-      Expansion(id: 'QD2', title: 'Quy định nhận phòng', content: hotel.checkininstructions),
+      Expansion(
+          id: 'QD2',
+          title: 'Quy định nhận phòng',
+          content: hotel.checkininstructions),
       Expansion(
         id: 'QD3',
         title: 'Quy định hủy đổi của khách sạn',
